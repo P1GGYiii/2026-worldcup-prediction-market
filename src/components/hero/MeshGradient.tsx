@@ -23,7 +23,15 @@ export function MeshGradient() {
   }, []);
 
   return (
-    <div ref={ref} className="absolute inset-0 -z-10 overflow-hidden" aria-hidden>
+    <div
+      ref={ref}
+      className="absolute inset-0 -z-10 overflow-hidden"
+      style={{
+        maskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 100%)',
+      }}
+      aria-hidden
+    >
       <div
         className="absolute top-[15%] left-[10%] h-[640px] w-[640px] rounded-full opacity-50 mix-blend-screen blur-[120px] motion-safe:animate-[drift1_22s_ease-in-out_infinite]"
         style={{

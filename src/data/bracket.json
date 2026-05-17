@@ -22,19 +22,19 @@
     { "id": 88, "home": "D2", "away": "G2" }
   ],
   "r16": [
-    { "id": 89,  "home": "W73", "away": "W74" },
-    { "id": 90,  "home": "W75", "away": "W76" },
-    { "id": 91,  "home": "W77", "away": "W78" },
+    { "id": 89,  "home": "W74", "away": "W77" },
+    { "id": 90,  "home": "W73", "away": "W75" },
+    { "id": 91,  "home": "W76", "away": "W78" },
     { "id": 92,  "home": "W79", "away": "W80" },
-    { "id": 93,  "home": "W81", "away": "W82" },
-    { "id": 94,  "home": "W83", "away": "W84" },
-    { "id": 95,  "home": "W85", "away": "W86" },
-    { "id": 96,  "home": "W87", "away": "W88" }
+    { "id": 93,  "home": "W83", "away": "W84" },
+    { "id": 94,  "home": "W81", "away": "W82" },
+    { "id": 95,  "home": "W86", "away": "W88" },
+    { "id": 96,  "home": "W85", "away": "W87" }
   ],
   "qf": [
     { "id": 97,  "home": "W89", "away": "W90" },
-    { "id": 98,  "home": "W91", "away": "W92" },
-    { "id": 99,  "home": "W93", "away": "W94" },
+    { "id": 98,  "home": "W93", "away": "W94" },
+    { "id": 99,  "home": "W91", "away": "W92" },
     { "id": 100, "home": "W95", "away": "W96" }
   ],
   "sf": [
