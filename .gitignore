@@ -11,3 +11,15 @@ next-env.d.ts
 coverage/
 
 .vercel
+.env*.local
+
+# Editor / agent state
+.claude/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Brand assets dropped in project root (sources for public/logo.jpg + src/app/icon.jpg)
+Brandbook_*.pdf
+WhatsApp Image*.jpeg
+WhatsApp Image*.jpg

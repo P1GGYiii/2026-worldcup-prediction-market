@@ -69,7 +69,7 @@ export function SimulationControls({ state, onRun }: Props) {
             height: '420%',
             transform: 'translate(-50%, -50%)',
             background:
-              'radial-gradient(ellipse 50% 35% at 50% 50%, oklch(0.80 0.18 75 / 0.55), oklch(0.80 0.18 75 / 0.15) 35%, transparent 65%)',
+              'radial-gradient(ellipse 50% 35% at 50% 50%, oklch(0.66 0.10 180 / 0.55), oklch(0.66 0.10 180 / 0.15) 35%, transparent 65%)',
             filter: 'blur(28px)',
           }}
         />

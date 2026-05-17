@@ -1,104 +1,150 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocale } from 'next-intl';
 import { Flag } from './Flag';
 import { cn, formatPct } from '@/lib/utils';
-import { buildEdgeTable, type MarketOdds, type MarketOddsFile } from '@/lib/sim/market';
-import marketOddsData from '@/data/market-odds.json';
+import { computeEdge, computeEV, type MarketOdds, type MarketOddsFile } from '@/lib/sim/market';
 import type { SerializedResult } from '@/lib/sim/worker';
 
 interface Props { result: SerializedResult; }
 
-const FILE = marketOddsData as unknown as MarketOddsFile;
+type Book = 'polymarket' | 'kalshi';
+
+interface PivotRow {
+  team_id: string;
+  our_prob: number;
+  byBook: Partial<Record<Book, {
+    decimal_odds: number;
+    implied_prob: number;
+    fair_prob: number;
+    edge: number;
+    ev: number;
+  }>>;
+  bestEdge: number;
+  bestBook: Book | null;
+}
 
 export function MarketEdge({ result }: Props) {
   const locale = useLocale();
   const teamById = useMemo(() => new Map(result.teams.map((t) => [t.id, t])), [result]);
 
-  const rows = useMemo(() => {
-    const ourProbByTeamId = (market: MarketOdds['market'], teamId: string): number | undefined => {
+  const [file, setFile] = useState<MarketOddsFile | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    fetch('/api/odds')
+      .then((r) => r.json())
+      .then((d: MarketOddsFile) => { if (!cancelled) setFile(d); })
+      .catch((e: unknown) => { if (!cancelled) setErr(e instanceof Error ? e.message : String(e)); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, []);
+
+  const rows = useMemo<PivotRow[]>(() => {
+    if (!file?.odds?.length) return [];
+    const ourProb = (teamId: string): number | undefined => {
       const idx = result.teams.findIndex((t) => t.id === teamId);
       if (idx < 0) return undefined;
-      const N = result.numSimulations;
-      switch (market) {
-        case 'winner':   return result.stageCounts.champion[idx] / N;
-        case 'finalist': return result.stageCounts.final[idx] / N;
-        case 'top4':     return result.stageCounts.sf[idx] / N;
-        default:         return undefined;
-      }
+      return result.stageCounts.champion[idx] / result.numSimulations;
     };
-    return buildEdgeTable(FILE.odds as MarketOdds[], ourProbByTeamId);
-  }, [result]);
 
-  const hasOdds = FILE.odds.length > 0;
+    const byTeam = new Map<string, PivotRow>();
+    for (const o of file.odds as MarketOdds[]) {
+      if (o.market !== 'winner' || !o.team_id) continue;
+      const book = o.book as Book;
+      if (book !== 'polymarket' && book !== 'kalshi') continue;
+      const our = ourProb(o.team_id);
+      if (our === undefined) continue;
+
+      let row = byTeam.get(o.team_id);
+      if (!row) {
+        row = { team_id: o.team_id, our_prob: our, byBook: {}, bestEdge: -Infinity, bestBook: null };
+        byTeam.set(o.team_id, row);
+      }
+      const edge = computeEdge(our, o.fair_prob);
+      const ev = computeEV(our, o.decimal_odds);
+      row.byBook[book] = {
+        decimal_odds: o.decimal_odds,
+        implied_prob: o.implied_prob,
+        fair_prob: o.fair_prob,
+        edge,
+        ev,
+      };
+      if (edge > row.bestEdge) {
+        row.bestEdge = edge;
+        row.bestBook = book;
+      }
+    }
+    return [...byTeam.values()].sort((a, b) => b.bestEdge - a.bestEdge);
+  }, [file, result]);
+
+  const sources = file?._meta.sources || [];
 
   return (
-    <section className="mx-auto max-w-[1280px] px-6 py-20">
+    <section id="mercado" className="mx-auto max-w-[1280px] px-6 py-20 scroll-mt-24">
       <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="font-display text-4xl font-bold tracking-tight text-fg-0 sm:text-5xl">
             Edge vs mercado
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-fg-2">
-            Comparamos nuestra probabilidad MC con la implícita devigueada de bookies y mercados
-            de predicción. EV positivo = el modelo cree que la apuesta es rentable a largo plazo.
+            Comparamos nuestra probabilidad MC con la implícita devigueada de{' '}
+            <span className="text-fg-1">Polymarket</span> y <span className="text-fg-1">Kalshi</span>.
+            Una fila por equipo. Edge positivo = el modelo cree que la apuesta es value.
             <strong className="text-rose"> No es asesoría financiera.</strong>
           </p>
         </div>
-        {hasOdds && (
-          <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-fg-3">
-            {FILE._meta.sources.join(' · ')}
-          </div>
-        )}
+        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-fg-3">
+          {loading ? 'cargando…' : sources.length ? sources.join(' · ') : 'sin fuentes activas'}
+        </div>
       </header>
 
-      {!hasOdds ? (
-        <div className="rounded-2xl border border-dashed border-border bg-bg-1/30 p-10 text-center">
-          <div className="mx-auto max-w-md space-y-4">
-            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-gold">
-              Odds aún no recolectadas
-            </div>
-            <h3 className="font-display text-2xl font-bold text-fg-0">Conecta una fuente de mercado</h3>
-            <p className="text-sm text-fg-2">
-              Para activar esta sección, configurá <code className="rounded bg-bg-2/60 px-1 py-0.5 font-mono text-xs">ODDS_API_KEY</code> (the-odds-api.com)
-              o <code className="rounded bg-bg-2/60 px-1 py-0.5 font-mono text-xs">POLYMARKET_SLUG</code> en <code className="rounded bg-bg-2/60 px-1 py-0.5 font-mono text-xs">.env.local</code> y corré:
-            </p>
-            <pre className="overflow-x-auto rounded-lg border border-border bg-bg-2/40 px-4 py-2 text-left font-mono text-xs text-fg-1">
-              npm run fetch-odds
-            </pre>
-            <p className="text-xs text-fg-3">
-              Una vez populado <code>src/data/market-odds.json</code>, esta tabla muestra automáticamente
-              edge (nuestra prob − fair_prob del mercado) y EV por unidad para cada equipo y casa de apuestas.
-            </p>
-          </div>
-        </div>
+      {loading ? (
+        <SkeletonTable />
+      ) : err || rows.length === 0 ? (
+        <EmptyState message={err || 'No hay odds disponibles. Probá refrescar — el cache es de 5 min.'} />
       ) : (
         <div className="overflow-x-auto rounded-2xl border border-border glass">
           <table className="min-w-full">
             <thead>
               <tr className="text-[10px] uppercase tracking-[0.18em] text-fg-3 font-mono">
-                <th className="px-4 py-3 text-left">Mercado</th>
                 <th className="px-4 py-3 text-left">Equipo</th>
-                <th className="px-3 py-3 text-right">Cuota</th>
-                <th className="px-3 py-3 text-right">Book</th>
-                <th className="px-3 py-3 text-right">Fair</th>
                 <th className="px-3 py-3 text-right">Nuestra</th>
-                <th className="px-3 py-3 text-right">Edge</th>
-                <th className="px-3 py-3 text-right">EV /u</th>
+                <th className="px-3 py-3 text-right border-l border-border/40" colSpan={3}>
+                  <span className="text-violet-hi">Polymarket</span>
+                </th>
+                <th className="px-3 py-3 text-right border-l border-border/40" colSpan={3}>
+                  <span className="text-emerald">Kalshi</span>
+                </th>
+                <th className="px-3 py-3 text-right border-l border-border/40">Mejor</th>
+              </tr>
+              <tr className="text-[10px] uppercase tracking-[0.14em] text-fg-3 font-mono">
+                <th className="px-4 py-1.5 text-left" />
+                <th className="px-3 py-1.5 text-right" />
+                <th className="px-3 py-1.5 text-right border-l border-border/40">prob</th>
+                <th className="px-3 py-1.5 text-right">edge</th>
+                <th className="px-3 py-1.5 text-right">EV/u</th>
+                <th className="px-3 py-1.5 text-right border-l border-border/40">prob</th>
+                <th className="px-3 py-1.5 text-right">edge</th>
+                <th className="px-3 py-1.5 text-right">EV/u</th>
+                <th className="px-3 py-1.5 text-right border-l border-border/40" />
               </tr>
             </thead>
             <tbody>
-              {rows.map((r, i) => {
+              {rows.map((r) => {
                 const team = teamById.get(r.team_id);
                 if (!team) return null;
-                const positive = r.edge > 0;
+                const poly = r.byBook.polymarket;
+                const kal = r.byBook.kalshi;
                 return (
-                  <tr key={`${r.market}-${r.team_id}-${r.book}-${i}`}
-                      className={cn('border-t border-border/40', positive && 'bg-emerald-lo/5')}>
-                    <td className="px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-fg-3">
-                      {r.market}
-                    </td>
+                  <tr key={r.team_id} className={cn(
+                    'border-t border-border/40',
+                    r.bestEdge > 0.01 && 'bg-emerald-lo/5',
+                  )}>
                     <td className="px-4 py-2">
                       <div className="flex items-center gap-2">
                         <Flag code={team.flag} size={18} />
@@ -107,27 +153,24 @@ export function MarketEdge({ result }: Props) {
                         </span>
                       </div>
                     </td>
-                    <td className="px-3 py-2 text-right font-mono text-xs tabular text-fg-0">
-                      {r.decimal_odds.toFixed(2)}
-                    </td>
-                    <td className="px-3 py-2 text-right text-xs text-fg-2">{r.book}</td>
-                    <td className="px-3 py-2 text-right font-mono text-xs tabular text-fg-2">
-                      {formatPct(r.fair_prob, 1)}
-                    </td>
-                    <td className="px-3 py-2 text-right font-mono text-xs tabular text-fg-0">
+                    <td className="px-3 py-2 text-right font-mono text-xs tabular text-fg-0 font-medium">
                       {formatPct(r.our_prob, 1)}
                     </td>
-                    <td className={cn(
-                      'px-3 py-2 text-right font-mono text-xs tabular',
-                      positive ? 'text-emerald' : 'text-rose',
-                    )}>
-                      {positive ? '+' : ''}{formatPct(r.edge, 1)}
-                    </td>
-                    <td className={cn(
-                      'px-3 py-2 text-right font-mono text-xs tabular font-bold',
-                      r.ev > 0 ? 'text-emerald' : 'text-fg-3',
-                    )}>
-                      {r.ev > 0 ? '+' : ''}{r.ev.toFixed(3)}
+                    <BookCells book={poly} />
+                    <BookCells book={kal} />
+                    <td className="px-3 py-2 text-right border-l border-border/40">
+                      {r.bestBook && r.bestEdge > 0 ? (
+                        <span className={cn(
+                          'inline-block rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider',
+                          r.bestBook === 'polymarket'
+                            ? 'bg-violet-hi/15 text-violet-hi'
+                            : 'bg-emerald/15 text-emerald',
+                        )}>
+                          {r.bestBook}
+                        </span>
+                      ) : (
+                        <span className="font-mono text-[10px] text-fg-3">—</span>
+                      )}
                     </td>
                   </tr>
                 );
@@ -139,10 +182,65 @@ export function MarketEdge({ result }: Props) {
 
       <p className="mt-4 text-[10px] leading-relaxed text-fg-3">
         Disclaimer: edge positivo no garantiza ganancia. El modelo captura nivel histórico (ELO) pero NO
-        modela lesiones, forma reciente, cambios de DT, ni el sentiment del mercado. La casa cobra margen
-        (vig), nosotros lo restamos proporcionalmente para calcular el "fair_prob". Esto es análisis estadístico,
+        modela lesiones, forma reciente, cambios de DT, ni el sentiment del mercado. Cada fuente devigueada
+        por separado (Polymarket binario, Kalshi mid del bid/ask). Esto es análisis estadístico,
         no consejo financiero. Apostá lo que puedas perder.
       </p>
     </section>
+  );
+}
+
+function BookCells({ book }: { book: PivotRow['byBook'][Book] }) {
+  if (!book) {
+    return (
+      <>
+        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3 border-l border-border/40">—</td>
+        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3">—</td>
+        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3">—</td>
+      </>
+    );
+  }
+  const positive = book.edge > 0;
+  return (
+    <>
+      <td className="px-3 py-2 text-right font-mono text-xs tabular text-fg-2 border-l border-border/40">
+        {formatPct(book.fair_prob, 1)}
+      </td>
+      <td className={cn(
+        'px-3 py-2 text-right font-mono text-xs tabular',
+        positive ? 'text-emerald' : 'text-rose/80',
+      )}>
+        {positive ? '+' : ''}{formatPct(book.edge, 1)}
+      </td>
+      <td className={cn(
+        'px-3 py-2 text-right font-mono text-xs tabular',
+        book.ev > 0 ? 'text-emerald font-bold' : 'text-fg-3',
+      )}>
+        {book.ev > 0 ? '+' : ''}{book.ev.toFixed(3)}
+      </td>
+    </>
+  );
+}
+
+function SkeletonTable() {
+  return (
+    <div className="rounded-2xl border border-border glass p-6 space-y-3">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div key={i} className="h-8 w-full animate-pulse rounded-md bg-bg-2/40" />
+      ))}
+    </div>
+  );
+}
+
+function EmptyState({ message }: { message: string }) {
+  return (
+    <div className="rounded-2xl border border-dashed border-border bg-bg-1/30 p-10 text-center">
+      <div className="mx-auto max-w-md space-y-3">
+        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-gold">
+          Mercado sin datos
+        </div>
+        <p className="text-sm text-fg-2">{message}</p>
+      </div>
+    </div>
   );
 }

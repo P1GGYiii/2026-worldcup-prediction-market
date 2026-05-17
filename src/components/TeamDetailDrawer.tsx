@@ -292,7 +292,7 @@ function StageBar({ label, value, tone = 'emerald' }: { label: string; value: nu
           style={{
             width: `${value * 100}%`,
             background: tone === 'gold'
-              ? 'linear-gradient(90deg, oklch(0.65 0.18 70), oklch(0.90 0.16 80))'
+              ? 'linear-gradient(90deg, oklch(0.52 0.08 180), oklch(0.78 0.09 180))'
               : 'linear-gradient(90deg, oklch(0.55 0.18 155), oklch(0.72 0.17 155))',
           }}
         />

@@ -15,6 +15,7 @@ import { TournamentStats } from './TournamentStats';
 import { MarketEdge } from './MarketEdge';
 import { TeamDetailDrawer } from './TeamDetailDrawer';
 import { MatchDetailDrawer } from './MatchDetailDrawer';
+import { SectionNav } from './layout/SectionNav';
 
 export function Dashboard() {
   const { state, run } = useSimulation();
@@ -36,15 +37,33 @@ export function Dashboard() {
 
       {state.result && (
         <>
-          <ChampionProbBar result={state.result} />
-          <StageMatrix result={state.result} />
-          <GroupCards result={state.result} />
-          <BracketTree result={state.result} />
-          <MatchCalendar result={state.result} />
-          <TournamentStats result={state.result} />
+          <SectionNav />
+
+          <div id="resumen" className="scroll-mt-32">
+            <ChampionProbBar result={state.result} />
+            <StageMatrix result={state.result} />
+          </div>
+
+          <div id="grupos" className="scroll-mt-32">
+            <GroupCards result={state.result} />
+          </div>
+
+          <div id="bracket" className="scroll-mt-32">
+            <BracketTree result={state.result} />
+          </div>
+
+          <div id="calendario" className="scroll-mt-32">
+            <MatchCalendar result={state.result} />
+          </div>
+
+          <div id="stats" className="scroll-mt-32">
+            <TournamentStats result={state.result} />
+            <GoalStats result={state.result} />
+            <SurpriseCards result={state.result} />
+          </div>
+
           <MarketEdge result={state.result} />
-          <GoalStats result={state.result} />
-          <SurpriseCards result={state.result} />
+
           <TeamDetailDrawer result={state.result} />
           <MatchDetailDrawer result={state.result} />
         </>
@@ -55,8 +74,8 @@ export function Dashboard() {
 
 function fireConfetti() {
   const colors = [
-    'oklch(0.80 0.18 75)',
-    'oklch(0.90 0.16 80)',
+    'oklch(0.66 0.10 180)',
+    'oklch(0.78 0.09 180)',
     'oklch(0.72 0.17 155)',
     'oklch(0.65 0.20 295)',
     'oklch(0.97 0.005 260)',

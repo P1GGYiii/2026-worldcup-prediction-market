@@ -1,19 +1,35 @@
 @import "tailwindcss";
 
+/*
+ * Outliners brand palette (extracted from Brandbook_Outliners_2025.pdf):
+ *   #041111  bg base       deepest teal-black
+ *   #0d1916  surface 1     elevated panel
+ *   #042320  surface 2     card body
+ *   #02403b  surface 3     border / divider
+ *   #027268  brand dark    dark teal
+ *   #25a091  brand mid     primary accent (replaces previous "gold")
+ *
+ * The legacy --color-gold token is preserved as an ALIAS to the brand teal so
+ * existing `text-gold` etc. classes keep working but render in Outliners teal.
+ * --color-gold-hi / --color-gold-lo are lighter/darker variants in the teal hue.
+ */
 @theme {
-  --color-bg-0: oklch(0.13 0.02 260);
-  --color-bg-1: oklch(0.18 0.025 260);
-  --color-bg-2: oklch(0.23 0.03 260);
-  --color-bg-3: oklch(0.28 0.035 260);
+  --color-bg-0: oklch(0.13 0.013 195);  /* #041111 */
+  --color-bg-1: oklch(0.18 0.014 175);  /* #0d1916 */
+  --color-bg-2: oklch(0.23 0.022 180);  /* #042320 */
+  --color-bg-3: oklch(0.34 0.040 180);  /* #02403b */
 
-  --color-fg-0: oklch(0.97 0.005 260);
-  --color-fg-1: oklch(0.78 0.01 260);
-  --color-fg-2: oklch(0.55 0.015 260);
-  --color-fg-3: oklch(0.40 0.015 260);
+  --color-fg-0: oklch(0.97 0.005 180);
+  --color-fg-1: oklch(0.82 0.012 180);
+  --color-fg-2: oklch(0.62 0.018 180);
+  --color-fg-3: oklch(0.46 0.020 180);
 
-  --color-gold: oklch(0.80 0.18 75);
-  --color-gold-hi: oklch(0.90 0.16 80);
-  --color-gold-lo: oklch(0.65 0.18 70);
+  /* Brand teal (replaces "gold" as the primary accent). Token name kept for
+     compatibility with existing components. */
+  --color-gold: oklch(0.66 0.10 180);     /* #25a091 brand mid */
+  --color-gold-hi: oklch(0.78 0.09 180);  /* lighter teal */
+  --color-gold-lo: oklch(0.52 0.08 180);  /* #027268 brand dark */
+
   --color-emerald: oklch(0.72 0.17 155);
   --color-emerald-lo: oklch(0.55 0.18 155);
   --color-rose: oklch(0.65 0.22 18);
@@ -21,13 +37,15 @@
   --color-cyan: oklch(0.75 0.13 220);
 
   --color-border: oklch(1 0 0 / 0.06);
-  --color-border-strong: oklch(1 0 0 / 0.12);
+  --color-border-strong: oklch(1 0 0 / 0.14);
 
-  --font-sans: "Geist Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Space Grotesk", "Geist Sans", system-ui, sans-serif;
+  /* Outliners brand uses Montserrat (per brandbook). Geist remains the body
+     font for legibility at small sizes; Montserrat covers display + UI accents. */
+  --font-sans: "Geist Sans", "Montserrat", system-ui, -apple-system, sans-serif;
+  --font-display: "Montserrat", "Geist Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Geist Mono", ui-monospace, monospace;
 
-  --shadow-glow-gold: 0 20px 60px -12px oklch(0.80 0.18 75 / 0.45);
+  --shadow-glow-gold: 0 20px 60px -12px oklch(0.66 0.10 180 / 0.45);
   --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.05) inset, 0 24px 64px -16px oklch(0 0 0 / 0.6);
   --shadow-card-hover: 0 1px 0 0 oklch(1 0 0 / 0.08) inset, 0 32px 80px -16px oklch(0 0 0 / 0.7);
 
@@ -50,8 +68,8 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background-image:
-    radial-gradient(ellipse 110% 60% at 50% -10%, oklch(0.80 0.18 75 / 0.06), transparent 70%),
-    radial-gradient(ellipse 80% 50% at 85% 15%, oklch(0.65 0.20 295 / 0.05), transparent 70%);
+    radial-gradient(ellipse 110% 60% at 50% -10%, oklch(0.66 0.10 180 / 0.10), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 85% 15%, oklch(0.52 0.08 180 / 0.08), transparent 70%);
   background-attachment: fixed;
 }
 
@@ -76,7 +94,7 @@ body::before {
 
 /* Selection */
 ::selection {
-  background: oklch(0.80 0.18 75 / 0.35);
+  background: oklch(0.66 0.10 180 / 0.35);
   color: var(--color-fg-0);
 }
 
@@ -118,7 +136,7 @@ body::before {
 }
 
 .glass {
-  background: oklch(0.18 0.025 260 / 0.55);
+  background: oklch(0.18 0.014 175 / 0.55);
   border: 1px solid var(--color-border);
 }
 

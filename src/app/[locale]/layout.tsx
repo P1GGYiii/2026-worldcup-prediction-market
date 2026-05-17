@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
+import { Geist, Montserrat, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -9,7 +9,7 @@ import { Footer } from '@/components/layout/Footer';
 import '../globals.css';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist' });
-const display = Space_Grotesk({ subsets: ['latin'], variable: '--font-display', weight: ['400', '500', '600', '700'] });
+const display = Montserrat({ subsets: ['latin'], variable: '--font-display', weight: ['100', '300', '400', '500', '600', '700', '800', '900'] });
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export function generateStaticParams() {

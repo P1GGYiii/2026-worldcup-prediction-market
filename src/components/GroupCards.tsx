@@ -97,7 +97,7 @@ export function GroupCards({ result }: Props) {
                           width: `${pct}%`,
                           background:
                             pct > 75
-                              ? 'linear-gradient(90deg, oklch(0.72 0.17 155), oklch(0.80 0.18 75))'
+                              ? 'linear-gradient(90deg, oklch(0.72 0.17 155), oklch(0.66 0.10 180))'
                               : pct > 40
                               ? 'oklch(0.72 0.17 155 / 0.8)'
                               : 'oklch(0.55 0.18 155 / 0.6)',

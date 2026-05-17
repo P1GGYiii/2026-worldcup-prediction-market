@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Simulador Mundial 2026",
-    "description": "Monte Carlo con ELO + Poisson. 100.000 simulaciones del Mundial 2026."
+    "title": "Outliners Worldcup 2026 — Analytics",
+    "description": "Monte Carlo con ELO + Poisson. 100.000 simulaciones del Mundial 2026. By Outliners."
   },
   "header": {
-    "brand": "Mundial 2026 · Simulador",
+    "brand": "Outliners · Worldcup 2026",
     "nav_simulate": "Simular",
     "nav_methodology": "Metodología",
     "nav_about": "Acerca",

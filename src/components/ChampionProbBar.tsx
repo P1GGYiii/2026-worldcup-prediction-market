@@ -76,7 +76,7 @@ export function ChampionProbBar({ result }: Props) {
                 className="pointer-events-none absolute inset-0 -z-10 rounded-xl opacity-60"
                 style={{
                   background:
-                    'conic-gradient(from var(--angle, 0deg), transparent 0deg, oklch(0.80 0.18 75 / 0.4) 90deg, transparent 180deg, oklch(0.65 0.20 295 / 0.3) 270deg, transparent 360deg)',
+                    'conic-gradient(from var(--angle, 0deg), transparent 0deg, oklch(0.66 0.10 180 / 0.45) 90deg, transparent 180deg, oklch(0.52 0.08 180 / 0.3) 270deg, transparent 360deg)',
                   filter: 'blur(20px)',
                   animation: 'spin-slow 10s linear infinite',
                 }}
@@ -96,9 +96,9 @@ export function ChampionProbBar({ result }: Props) {
                   width: `${(r.pct / max) * 100}%`,
                   background:
                     i === 0
-                      ? 'linear-gradient(90deg, oklch(0.80 0.18 75) 0%, oklch(0.90 0.16 80) 100%)'
-                      : 'linear-gradient(90deg, oklch(0.65 0.18 70 / 0.85) 0%, oklch(0.80 0.18 75 / 0.85) 100%)',
-                  boxShadow: i === 0 ? '0 0 24px -4px oklch(0.80 0.18 75 / 0.65)' : 'none',
+                      ? 'linear-gradient(90deg, oklch(0.66 0.10 180) 0%, oklch(0.78 0.09 180) 100%)'
+                      : 'linear-gradient(90deg, oklch(0.52 0.08 180 / 0.85) 0%, oklch(0.66 0.10 180 / 0.85) 100%)',
+                  boxShadow: i === 0 ? '0 0 24px -4px oklch(0.66 0.10 180 / 0.65)' : 'none',
                 }}
               />
             </div>
@@ -107,7 +107,7 @@ export function ChampionProbBar({ result }: Props) {
             </div>
 
             {i === 0 && (
-              <span className="absolute -top-2 right-3 rounded-full bg-gold px-2 py-0.5 font-mono text-[9px] font-bold tracking-[0.15em] text-bg-0 shadow-[0_4px_16px_-4px_oklch(0.80_0.18_75/0.8)]">
+              <span className="absolute -top-2 right-3 rounded-full bg-gold px-2 py-0.5 font-mono text-[9px] font-bold tracking-[0.15em] text-bg-0 shadow-[0_4px_16px_-4px_oklch(0.66_0.10_180/0.8)]">
                 {t('most_likely')}
               </span>
             )}

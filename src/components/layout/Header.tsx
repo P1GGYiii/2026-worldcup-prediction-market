@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
-import { Trophy } from 'lucide-react';
 
 export function Header() {
   const t = useTranslations('header');
@@ -39,13 +39,20 @@ export function Header() {
             : 'mx-6 h-14 border-transparent',
         )}
       >
-        <Link href="/" className="flex items-center gap-2 group">
-          <Trophy className="h-5 w-5 text-gold transition-transform group-hover:rotate-12" strokeWidth={1.5} />
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <Image
+            src="/logo.jpg"
+            alt="Outliners"
+            width={28}
+            height={28}
+            priority
+            className="rounded-md ring-1 ring-gold/30 transition-transform group-hover:scale-110"
+          />
           <span className="text-sm font-medium tracking-wide text-fg-0">{t('brand')}</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 text-sm text-fg-2">
-          <a href="#simulate" className="hover:text-fg-0 transition-colors">{t('nav_simulate')}</a>
+          <Link href="/#simulate" className="hover:text-fg-0 transition-colors">{t('nav_simulate')}</Link>
           <Link href="/methodology" className="hover:text-fg-0 transition-colors">{t('nav_methodology')}</Link>
         </nav>
 
