@@ -115,7 +115,7 @@ export function MarketEdge({ result }: Props) {
                 <th className="px-4 py-3 text-left">Equipo</th>
                 <th className="px-3 py-3 text-right">Nuestra</th>
                 <th className="px-3 py-3 text-right border-l border-border/40" colSpan={3}>
-                  <span className="text-violet-hi">Polymarket</span>
+                  <span className="text-violet">Polymarket</span>
                 </th>
                 <th className="px-3 py-3 text-right border-l border-border/40" colSpan={3}>
                   <span className="text-emerald">Kalshi</span>
@@ -163,7 +163,7 @@ export function MarketEdge({ result }: Props) {
                         <span className={cn(
                           'inline-block rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider',
                           r.bestBook === 'polymarket'
-                            ? 'bg-violet-hi/15 text-violet-hi'
+                            ? 'bg-violet/15 text-violet'
                             : 'bg-emerald/15 text-emerald',
                         )}>
                           {r.bestBook}
