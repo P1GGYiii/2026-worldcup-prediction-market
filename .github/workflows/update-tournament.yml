@@ -38,39 +38,34 @@ jobs:
         uses: actions/checkout@v4
 
       - if: steps.gate.outputs.outside-window == 'false'
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - if: steps.gate.outputs.outside-window == 'false'
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+          cache: npm
 
       - if: steps.gate.outputs.outside-window == 'false'
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Fetch results
         if: steps.gate.outputs.outside-window == 'false'
         run: |
           RANGE="${{ github.event.inputs.range }}"
           if [[ -n "$RANGE" ]]; then
-            pnpm tsx scripts/fetch-results.ts --range "$RANGE"
+            npx tsx scripts/fetch-results.ts --range "$RANGE"
           else
             # Default: walk yesterday + today to catch overnight matches.
             YDAY=$(date -u -d 'yesterday' +%Y%m%d)
             TDAY=$(date -u +%Y%m%d)
-            pnpm tsx scripts/fetch-results.ts --range "$YDAY..$TDAY"
+            npx tsx scripts/fetch-results.ts --range "$YDAY..$TDAY"
           fi
 
       - name: Fetch cards + derive suspensions
         if: steps.gate.outputs.outside-window == 'false'
-        run: pnpm tsx scripts/fetch-cards.ts --all || echo 'cards scrape failed (non-fatal — results still committed)'
+        run: npx tsx scripts/fetch-cards.ts --all || echo 'cards scrape failed (non-fatal — results still committed)'
 
       - name: Snapshot Monte Carlo
         if: steps.gate.outputs.outside-window == 'false'
-        run: pnpm tsx scripts/snapshot-run.ts --n 50000
+        run: npx tsx scripts/snapshot-run.ts --n 50000
 
       - name: Commit if changed
         if: steps.gate.outputs.outside-window == 'false'
