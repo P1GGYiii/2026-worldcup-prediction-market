@@ -2,6 +2,7 @@ import type { Team } from './types';
 import { sampleScore } from './match';
 import { shootoutWinProb } from './penalties';
 import type { XoshiroRNG } from './rng';
+import type { Stage as AbsenceStage } from './absences';
 
 export interface KnockoutMatch {
   homeIdx: number;
@@ -26,8 +27,9 @@ export function simulateKnockout(
   awayIdx: number,
   teams: Team[],
   rng: XoshiroRNG,
+  stage: AbsenceStage = 'r16',
 ): KnockoutMatch {
-  const { ga: gh, gb: ga } = sampleScore(teams[homeIdx], teams[awayIdx], rng, true);
+  const { ga: gh, gb: ga } = sampleScore(teams[homeIdx], teams[awayIdx], rng, true, stage);
   let winnerIdx: number;
   let loserIdx: number;
   let drawn = false;

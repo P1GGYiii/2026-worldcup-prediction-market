@@ -28,6 +28,13 @@
 import { lambdaFor } from './goals';
 import { HOST_BONUS } from './elo';
 import { shootoutWinProb, shootoutRate, shootoutSampleSize } from './penalties';
+import {
+  historicalAbsences,
+  teamPenalty,
+  DEFAULT_ABSENCE_WEIGHTS,
+  type AbsenceWeights,
+  type Stage as AbsenceStage,
+} from './absences';
 import backtestData from '@/data/backtest.json';
 
 const MAX_GOALS = 8;  // P(>8 goals at λ=3) ≈ 0.001 — negligible
@@ -171,6 +178,14 @@ export interface BacktestOptions {
   recentAlpha?: number;
   /** Lookback window in years for the ELO delta (default: 1). */
   recentLookbackYears?: number;
+  /**
+   * Player-absences weighting (Tier 1 #4a). If provided, looks up
+   * historical absences for each (year, team_id) and subtracts a per-team
+   * ELO penalty based on the criticality formula in absences.ts.
+   * Pass `null` (or omit) to disable. Default disabled so legacy backtests
+   * keep their baseline numbers.
+   */
+  absenceWeights?: AbsenceWeights | null;
 }
 
 /** Cap on the |α·Δ| adjustment to avoid outliers blowing up predictions. */
@@ -196,15 +211,24 @@ function recentFormAdjustment(
 function scoreMatch(
   m: RawMatch, year: number, hostId: string, elo: Record<string, number>,
   history: Record<string, Record<string, number>> | undefined,
-  opts: Required<BacktestOptions>,
+  opts: Required<Omit<BacktestOptions, 'absenceWeights'>> & { absenceWeights: AbsenceWeights | null },
 ): ScoredMatch | null {
   const eloH = elo[m.home];
   const eloA = elo[m.away];
   if (eloH === undefined || eloA === undefined) return null;
 
   // Recent-form blend: each team's effective ELO is adjusted by α · Δ.
-  const eloHEff = eloH + recentFormAdjustment(m.home, eloH, history, opts.recentAlpha, opts.recentLookbackYears);
-  const eloAEff = eloA + recentFormAdjustment(m.away, eloA, history, opts.recentAlpha, opts.recentLookbackYears);
+  let eloHEff = eloH + recentFormAdjustment(m.home, eloH, history, opts.recentAlpha, opts.recentLookbackYears);
+  let eloAEff = eloA + recentFormAdjustment(m.away, eloA, history, opts.recentAlpha, opts.recentLookbackYears);
+
+  // Player-absences penalty: stage-aware lookup from absences.json.
+  if (opts.absenceWeights) {
+    const stage = m.stage as AbsenceStage;
+    const absH = historicalAbsences(year, m.home);
+    const absA = historicalAbsences(year, m.away);
+    if (absH.length > 0) eloHEff += teamPenalty(absH, opts.absenceWeights, stage);
+    if (absA.length > 0) eloAEff += teamPenalty(absA, opts.absenceWeights, stage);
+  }
 
   // Host bonus: configurable value + whether to apply in KO.
   const inHostMatch = opts.applyInKO || m.stage === 'group';
@@ -275,11 +299,12 @@ function buildCalibration(scored: ScoredMatch[]): CalibrationBucket[] {
 }
 
 export function runBacktest(options: BacktestOptions = {}): BacktestResult {
-  const opts: Required<BacktestOptions> = {
+  const opts = {
     hostBonus: options.hostBonus ?? HOST_BONUS,
     applyInKO: options.applyInKO ?? false,
     recentAlpha: options.recentAlpha ?? 0,
     recentLookbackYears: options.recentLookbackYears ?? 1,
+    absenceWeights: options.absenceWeights ?? null,
   };
   const file = backtestData as unknown as BacktestFile;
   const scored: ScoredMatch[] = [];
@@ -446,6 +471,66 @@ export function runPenaltyEvaluation(): PenaltyEvalSummary {
     baselineBrier: 0.25,
     rows,
   };
+}
+
+/**
+ * Sweep the (α, β, γ) simplex for the absences weight function.
+ * α + β + γ = 1.0 is enforced; combos that don't sum to ~1.0 are skipped.
+ *
+ * Reports two aggregates per cell:
+ *   - `overall`: Brier across all 192 matches (most won't be affected)
+ *   - `affected`: Brier restricted to matches where at least one team had a
+ *     documented absence at that stage. This is the calibration signal.
+ *
+ * The affected set is small (~10-15 matches across WC 2014/18/22 with our
+ * current historical seed). Interpret with care — n is low.
+ */
+export interface AbsenceSweepCell {
+  alpha: number;
+  beta: number;
+  gamma: number;
+  overall: Aggregate;
+  affected: Aggregate;
+}
+
+function isAffectedMatch(year: number, home: string, away: string, stage: Stage): boolean {
+  const absH = historicalAbsences(year, home);
+  const absA = historicalAbsences(year, away);
+  const stageMatchesAny = (list: ReturnType<typeof historicalAbsences>) =>
+    list.some((a) => {
+      const from = (a.applies_from_stage ?? 'group') as Stage;
+      const order: Stage[] = ['group', 'r16', 'qf', 'sf', '3rd', 'final'];
+      return order.indexOf(stage) >= order.indexOf(from);
+    });
+  return stageMatchesAny(absH) || stageMatchesAny(absA);
+}
+
+export function runAbsenceSweep(stepSize: number = 0.1): AbsenceSweepCell[] {
+  const out: AbsenceSweepCell[] = [];
+  const steps = Math.round(1 / stepSize) + 1;
+  for (let i = 0; i < steps; i++) {
+    for (let j = 0; j < steps - i; j++) {
+      const alpha = +(i * stepSize).toFixed(2);
+      const beta = +(j * stepSize).toFixed(2);
+      const gamma = +(1 - alpha - beta).toFixed(2);
+      if (gamma < -1e-9) continue;
+      const r = runBacktest({ absenceWeights: { alpha, beta, gamma } });
+      const affected = aggregate(
+        r.scored.filter((s) => isAffectedMatch(s.year, s.home, s.away, s.stage)),
+      );
+      out.push({ alpha, beta, gamma, overall: r.overall, affected });
+    }
+  }
+  return out;
+}
+
+/** Run a baseline (absences off) and return Brier on the affected subset for reference. */
+export function runAbsenceBaseline(): { overall: Aggregate; affected: Aggregate } {
+  const r = runBacktest();
+  const affected = aggregate(
+    r.scored.filter((s) => isAffectedMatch(s.year, s.home, s.away, s.stage)),
+  );
+  return { overall: r.overall, affected };
 }
 
 export function runBonusSweep(values: number[] = [0, 50, 80, 100, 120, 150, 180, 220]): SweepPoint[] {

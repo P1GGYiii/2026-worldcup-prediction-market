@@ -171,7 +171,7 @@ export function simulateTournament(
     for (const m of matches) {
       const homeIdx = resolveSlot(m.home, m.id, 'home');
       const awayIdx = resolveSlot(m.away, m.id, 'away');
-      const r = simulateKnockout(homeIdx, awayIdx, teams, rng);
+      const r = simulateKnockout(homeIdx, awayIdx, teams, rng, fixtureStage);
       matchWinner.set(m.id, r.winnerIdx);
       matchLoser.set(m.id, r.loserIdx);
       goalsFor[homeIdx] += r.gh; goalsAgainst[homeIdx] += r.ga;
@@ -194,7 +194,7 @@ export function simulateTournament(
     const m = BRACKET.third_place;
     const homeIdx = resolveSlot(m.home, m.id, 'home');
     const awayIdx = resolveSlot(m.away, m.id, 'away');
-    const r = simulateKnockout(homeIdx, awayIdx, teams, rng);
+    const r = simulateKnockout(homeIdx, awayIdx, teams, rng, '3rd');
     matchWinner.set(m.id, r.winnerIdx);
     matchLoser.set(m.id, r.loserIdx);
     goalsFor[homeIdx] += r.gh; goalsAgainst[homeIdx] += r.ga;
@@ -209,7 +209,7 @@ export function simulateTournament(
     const m = BRACKET.final;
     const homeIdx = resolveSlot(m.home, m.id, 'home');
     const awayIdx = resolveSlot(m.away, m.id, 'away');
-    const r = simulateKnockout(homeIdx, awayIdx, teams, rng);
+    const r = simulateKnockout(homeIdx, awayIdx, teams, rng, 'final');
     matchWinner.set(m.id, r.winnerIdx);
     matchLoser.set(m.id, r.loserIdx);
     goalsFor[homeIdx] += r.gh; goalsAgainst[homeIdx] += r.ga;

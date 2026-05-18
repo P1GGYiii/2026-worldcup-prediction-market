@@ -52,10 +52,10 @@ export function buildMatchStats(
   const isGroup = fixture.stage === 'group';
   const bonusHome = isGroup && homeTeam.is_host ? HOST_BONUS : 0;
   const bonusAway = isGroup && awayTeam.is_host ? HOST_BONUS : 0;
-  // Use effective ELO (with recent-form blend) so the per-match stats shown
-  // in the drawer reflect the same model the engine is sampling from.
-  const eloHome = effectiveElo(homeTeam);
-  const eloAway = effectiveElo(awayTeam);
+  // Use effective ELO (recent-form blend + absences at this stage) so the
+  // per-match stats shown in the drawer reflect the same model the engine samples.
+  const eloHome = effectiveElo(homeTeam, fixture.stage);
+  const eloAway = effectiveElo(awayTeam, fixture.stage);
   const lambdaHome = lambdaFor(eloHome, eloAway, bonusHome);
   const lambdaAway = lambdaFor(eloAway, eloHome, bonusAway);
 

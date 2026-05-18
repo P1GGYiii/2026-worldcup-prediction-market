@@ -2,6 +2,12 @@ import type { Team } from './types';
 import { HOST_BONUS } from './elo';
 import { lambdaFor, samplePoisson } from './goals';
 import type { XoshiroRNG } from './rng';
+import {
+  currentAbsences,
+  teamPenalty,
+  DEFAULT_ABSENCE_WEIGHTS,
+  type Stage,
+} from './absences';
 
 /**
  * Recent-form blend (Tier 1 #2, calibrated 2026-05-17 via backtest sweep).
@@ -28,9 +34,21 @@ export function recentFormAdjustment(team: Team): number {
   return Math.max(-RECENT_CAP_ELO, Math.min(RECENT_CAP_ELO, adj));
 }
 
-/** Effective ELO for live simulation = base ELO + recent-form adjustment. */
-export function effectiveElo(team: Team): number {
-  return team.elo + recentFormAdjustment(team);
+/**
+ * Per-team ELO penalty from documented current absences (Tier 1 #4a).
+ * Stage-aware: a player marked "applies_from_stage: sf" only penalizes
+ * SF onwards. Currently uses DEFAULT_ABSENCE_WEIGHTS — to be replaced by
+ * calibration sweep result (Tier 1 #4a calibration).
+ */
+export function absenceAdjustment(team: Team, stage: Stage = 'group'): number {
+  const list = currentAbsences(team.id);
+  if (list.length === 0) return 0;
+  return teamPenalty(list, DEFAULT_ABSENCE_WEIGHTS, stage);
+}
+
+/** Effective ELO for live simulation = base ELO + recent-form + absences. */
+export function effectiveElo(team: Team, stage: Stage = 'group'): number {
+  return team.elo + recentFormAdjustment(team) + absenceAdjustment(team, stage);
 }
 
 /**
@@ -55,9 +73,10 @@ export function sampleScore(
   b: Team,
   rng: XoshiroRNG,
   isKnockout: boolean,
+  stage: Stage = 'group',
 ): { ga: number; gb: number } {
-  const eloA = effectiveElo(a);
-  const eloB = effectiveElo(b);
+  const eloA = effectiveElo(a, stage);
+  const eloB = effectiveElo(b, stage);
   const bonusA = hostBonus(a, isKnockout);
   const bonusB = hostBonus(b, isKnockout);
   const lambdaA = lambdaFor(eloA, eloB, bonusA);
