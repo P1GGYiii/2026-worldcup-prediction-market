@@ -3,8 +3,15 @@ export interface Team {
   name_en: string;
   name_es: string;
   flag: string;
+  /** Current ELO rating (end-of-prior-year snapshot from eloratings.net). */
   elo: number;
   is_host: boolean;
+  /**
+   * ELO rating 12 months before `elo`. Used by the recent-form blend
+   * to up/down-weight teams that have changed level over the last year.
+   * `null` if no historical snapshot exists (new team / name change).
+   */
+  elo_1y_ago?: number | null;
 }
 
 export interface MatchResult {

@@ -47,6 +47,8 @@ interface RawTournament {
   host_id: string;
   host_name: string;
   elo: Record<string, number>;
+  /** Optional historical ELO snapshots keyed by `years_before` as string. */
+  elo_history?: Record<string, Record<string, number>>;
   matches: RawMatch[];
 }
 
@@ -159,22 +161,54 @@ export interface BacktestOptions {
   hostBonus?: number;
   /** Apply the host bonus in knockout matches too, not only group stage (default: false). */
   applyInKO?: boolean;
+  /**
+   * Recent-form weighting. ELO_eff = ELO + clamp(α · (ELO − ELO_X_years_ago), ±150).
+   * α = 0 disables (default). Lookback range must exist in the dataset.
+   */
+  recentAlpha?: number;
+  /** Lookback window in years for the ELO delta (default: 1). */
+  recentLookbackYears?: number;
+}
+
+/** Cap on the |α·Δ| adjustment to avoid outliers blowing up predictions. */
+const RECENT_CAP_ELO = 150;
+
+function recentFormAdjustment(
+  teamId: string,
+  baseElo: number,
+  history: Record<string, Record<string, number>> | undefined,
+  alpha: number,
+  lookbackYears: number,
+): number {
+  if (alpha === 0 || !history) return 0;
+  const snap = history[String(lookbackYears)];
+  if (!snap) return 0;
+  const past = snap[teamId];
+  if (past === undefined) return 0;  // team didn't exist / not in older snapshot
+  const delta = baseElo - past;
+  const adj = alpha * delta;
+  return Math.max(-RECENT_CAP_ELO, Math.min(RECENT_CAP_ELO, adj));
 }
 
 function scoreMatch(
   m: RawMatch, year: number, hostId: string, elo: Record<string, number>,
+  history: Record<string, Record<string, number>> | undefined,
   opts: Required<BacktestOptions>,
 ): ScoredMatch | null {
   const eloH = elo[m.home];
   const eloA = elo[m.away];
   if (eloH === undefined || eloA === undefined) return null;
 
+  // Recent-form blend: each team's effective ELO is adjusted by α · Δ.
+  const eloHEff = eloH + recentFormAdjustment(m.home, eloH, history, opts.recentAlpha, opts.recentLookbackYears);
+  const eloAEff = eloA + recentFormAdjustment(m.away, eloA, history, opts.recentAlpha, opts.recentLookbackYears);
+
   // Host bonus: configurable value + whether to apply in KO.
   const inHostMatch = opts.applyInKO || m.stage === 'group';
   const bonusH = inHostMatch && m.home === hostId ? opts.hostBonus : 0;
   const bonusA = inHostMatch && m.away === hostId ? opts.hostBonus : 0;
 
-  const pred = predictMatch(eloH, eloA, bonusH, bonusA);
+  const pred = predictMatch(eloHEff, eloAEff, bonusH, bonusA);
   const observedClass: 0 | 1 | 2 = m.gh > m.ga ? 0 : m.gh === m.ga ? 1 : 2;
   const pVec = [pred.pHome, pred.pDraw, pred.pAway];
   const pActual = pVec[observedClass];
@@ -241,6 +275,8 @@ export function runBacktest(options: BacktestOptions = {}): BacktestResult {
   const opts: Required<BacktestOptions> = {
     hostBonus: options.hostBonus ?? HOST_BONUS,
     applyInKO: options.applyInKO ?? false,
+    recentAlpha: options.recentAlpha ?? 0,
+    recentLookbackYears: options.recentLookbackYears ?? 1,
   };
   const file = backtestData as unknown as BacktestFile;
   const scored: ScoredMatch[] = [];
@@ -249,7 +285,7 @@ export function runBacktest(options: BacktestOptions = {}): BacktestResult {
   for (const t of file.tournaments) {
     const tScored: ScoredMatch[] = [];
     for (const m of t.matches) {
-      const s = scoreMatch(m, t.year, t.host_id, t.elo, opts);
+      const s = scoreMatch(m, t.year, t.host_id, t.elo, t.elo_history, opts);
       if (s) tScored.push(s);
     }
     scored.push(...tScored);
@@ -298,6 +334,32 @@ export interface SweepPoint {
 }
 
 const HOST_IDS = new Set<string>();
+
+/**
+ * 2-D sweep for the recent-form blend.
+ * For each (alpha, lookbackYears) we report the overall Brier across all
+ * 192 matches — every match is potentially affected (unlike the host sweep
+ * which only moved 28 host-involving matches).
+ */
+export interface RecentFormSweepCell {
+  alpha: number;
+  lookbackYears: number;
+  overall: Aggregate;
+}
+
+export function runRecentFormSweep(
+  alphas: number[] = [0, 0.1, 0.2, 0.3, 0.5],
+  lookbacks: number[] = [1, 2, 3, 4, 5],
+): RecentFormSweepCell[] {
+  const out: RecentFormSweepCell[] = [];
+  for (const lookbackYears of lookbacks) {
+    for (const alpha of alphas) {
+      const r = runBacktest({ recentAlpha: alpha, recentLookbackYears: lookbackYears });
+      out.push({ alpha, lookbackYears, overall: r.overall });
+    }
+  }
+  return out;
+}
 
 export function runBonusSweep(values: number[] = [0, 50, 80, 100, 120, 150, 180, 220]): SweepPoint[] {
   const file = backtestData as unknown as BacktestFile;

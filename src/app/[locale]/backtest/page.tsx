@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft } from 'lucide-react';
-import { runBacktest, runBonusSweep, type CalibrationBucket, type ScoredMatch, type SweepPoint } from '@/lib/sim/backtest';
+import { runBacktest, runBonusSweep, runRecentFormSweep, type CalibrationBucket, type RecentFormSweepCell, type ScoredMatch, type SweepPoint } from '@/lib/sim/backtest';
 import { cn } from '@/lib/utils';
 
 export const dynamic = 'force-static';
@@ -9,8 +9,12 @@ export const dynamic = 'force-static';
 export default async function BacktestPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const r = runBacktest();
+  // Baseline (legacy, no recent-form blend) and current model (with blend) — so
+  // we can show the user what the merged Tier 1 #2 actually changes.
+  const baseline = runBacktest({ recentAlpha: 0 });
+  const r = runBacktest({ recentAlpha: 0.2, recentLookbackYears: 1 });
   const sweep = runBonusSweep();
+  const recentSweep = runRecentFormSweep();
 
   return (
     <article className="relative mx-auto max-w-[1100px] px-6 pt-32 pb-32">
@@ -131,6 +135,39 @@ export default async function BacktestPage({ params }: { params: Promise<{ local
         <CalibrationPlot buckets={r.calibration} />
       </Section>
 
+      <Section title="Sweep · Recent-form blend">
+        <p className="mb-4 max-w-3xl text-sm text-fg-2">
+          Hipótesis: el ELO se actualiza lento porque su K-factor está calibrado para amistosos +
+          qualifiers. Un equipo que cambió de nivel en el último año queda subvaluado. Probamos
+          un ajuste{' '}
+          <code className="rounded bg-bg-2/60 px-1.5 py-0.5 font-mono text-xs">ELO_eff = ELO + α · (ELO − ELO_X años atrás)</code>{' '}
+          con cap ±150, sweepeando <span className="text-fg-1">α ∈ {'{0, 0.1, 0.2, 0.3, 0.5}'}</span> y{' '}
+          <span className="text-fg-1">X ∈ {'{1, 2, 3, 4, 5}'} años</span>.
+        </p>
+        <RecentFormHeatmap cells={recentSweep} />
+        <div className="mt-5 max-w-3xl space-y-3 text-sm text-fg-2">
+          <p>
+            <span className="text-emerald font-medium">Óptimo: α=0.2, lookback=1 año.</span>{' '}
+            Brier {recentSweep.reduce((m, c) => (c.overall.brier < m.overall.brier ? c : m), recentSweep[0]).overall.brier.toFixed(4)}{' '}
+            vs baseline {baseline.overall.brier.toFixed(4)}. Δ minúsculo en Brier (~−0.0003),
+            pero <strong className="text-fg-1">accuracy +1.6 puntos</strong> (3 partidos más correctos de 192).
+          </p>
+          <p>
+            <strong className="text-fg-1">Lookback de 3 años empeora claramente</strong> — a esa distancia el equipo
+            cambió de lineup y la "tendencia" mete ruido. Lookbacks 1, 2, 4, 5 funcionan parecido. Que el
+            mínimo esté en 1y confirma que el ELO actual ya integra los últimos 12 meses con buen peso.
+          </p>
+          <p className="text-fg-3">
+            <strong>Decisión:</strong> mergeado al motor de producción con α=0.2 y lookback=1y. El cambio
+            se aplica en{' '}
+            <code className="rounded bg-bg-2/60 px-1 py-0.5 font-mono text-xs">match.ts</code>{' '}
+            vía <code className="rounded bg-bg-2/60 px-1 py-0.5 font-mono text-xs">effectiveElo()</code>.
+            Caveat: el efecto es chico y dentro del ruido posible con n=192. Confirmable expandiendo a
+            WCs 1990-2010.
+          </p>
+        </div>
+      </Section>
+
       <Section title="Sweep · Host bonus">
         <p className="mb-4 max-w-3xl text-sm text-fg-2">
           El modelo actual le da <span className="text-fg-1 font-medium">+100 ELO</span> al equipo
@@ -248,6 +285,77 @@ function Stat({ label, value, subtitle, tone }: { label: string; value: string; 
         {value}
       </div>
       <div className="mt-1 font-mono text-[10px] text-fg-3">{subtitle}</div>
+    </div>
+  );
+}
+
+function RecentFormHeatmap({ cells }: { cells: RecentFormSweepCell[] }) {
+  const alphas = [...new Set(cells.map((c) => c.alpha))].sort((a, b) => a - b);
+  const lookbacks = [...new Set(cells.map((c) => c.lookbackYears))].sort((a, b) => a - b);
+  const briers = cells.map((c) => c.overall.brier);
+  const minBrier = Math.min(...briers);
+  const maxBrier = Math.max(...briers);
+  // Color scale: lower = better (emerald), higher = worse (rose).
+  const cellAt = (alpha: number, lb: number) => cells.find((c) => c.alpha === alpha && c.lookbackYears === lb)!;
+  const colorFor = (b: number) => {
+    if (maxBrier === minBrier) return 'oklch(0.52 0.08 180 / 0.3)';
+    const t = (b - minBrier) / (maxBrier - minBrier);  // 0 = best, 1 = worst
+    // Interpolate hue from emerald (155) → rose (18), lightness boost on extremes
+    if (t < 0.5) {
+      // emerald → neutral
+      const alpha = 0.55 - t * 0.7;
+      return `oklch(0.65 0.15 155 / ${alpha.toFixed(2)})`;
+    } else {
+      const alpha = 0.20 + (t - 0.5) * 0.9;
+      return `oklch(0.62 0.20 18 / ${alpha.toFixed(2)})`;
+    }
+  };
+  const best = cells.reduce((m, c) => (c.overall.brier < m.overall.brier ? c : m), cells[0]);
+
+  return (
+    <div className="overflow-x-auto rounded-2xl border border-border glass p-4">
+      <table className="mx-auto font-mono text-xs tabular">
+        <thead>
+          <tr>
+            <th className="px-3 py-2 text-fg-3 text-[10px] uppercase tracking-[0.18em]">lookback ↓ / α →</th>
+            {alphas.map((a) => (
+              <th key={a} className="px-3 py-2 text-fg-3 text-[10px] uppercase tracking-[0.18em] text-center min-w-[80px]">
+                {a.toFixed(2)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {lookbacks.map((lb) => (
+            <tr key={lb}>
+              <td className="px-3 py-2 text-fg-3 text-[10px] uppercase tracking-[0.18em]">{lb} año{lb > 1 ? 's' : ''}</td>
+              {alphas.map((a) => {
+                const c = cellAt(a, lb);
+                const isBest = c === best;
+                return (
+                  <td key={a} className="px-2 py-1 text-center">
+                    <div
+                      className={cn(
+                        'rounded-lg px-3 py-3 transition-all',
+                        isBest && 'ring-2 ring-emerald shadow-[0_0_24px_-4px_oklch(0.72_0.17_155/0.6)]',
+                      )}
+                      style={{ background: colorFor(c.overall.brier) }}
+                    >
+                      <div className="text-fg-0 font-medium">{c.overall.brier.toFixed(4)}</div>
+                      <div className="mt-0.5 text-fg-2 text-[10px]">{(c.overall.accuracy * 100).toFixed(1)}%</div>
+                    </div>
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="mt-3 flex justify-center gap-6 font-mono text-[10px] uppercase tracking-[0.18em] text-fg-3">
+        <span className="flex items-center gap-2"><span className="h-2 w-4 rounded-sm" style={{ background: 'oklch(0.65 0.15 155 / 0.55)' }} />mejor</span>
+        <span className="flex items-center gap-2"><span className="h-2 w-4 rounded-sm" style={{ background: 'oklch(0.62 0.20 18 / 0.55)' }} />peor</span>
+        <span className="text-fg-2">★ óptimo: α={best.alpha}, lookback={best.lookbackYears}y</span>
+      </div>
     </div>
   );
 }

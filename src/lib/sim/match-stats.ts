@@ -6,6 +6,7 @@
 import type { Team, MatchAggregateSerialized } from './types';
 import { lambdaFor, BASE_LAMBDA } from './goals';
 import { HOST_BONUS } from './elo';
+import { effectiveElo } from './match';
 
 export interface MatchStats {
   homeTeam: Team;
@@ -51,8 +52,12 @@ export function buildMatchStats(
   const isGroup = fixture.stage === 'group';
   const bonusHome = isGroup && homeTeam.is_host ? HOST_BONUS : 0;
   const bonusAway = isGroup && awayTeam.is_host ? HOST_BONUS : 0;
-  const lambdaHome = lambdaFor(homeTeam.elo, awayTeam.elo, bonusHome);
-  const lambdaAway = lambdaFor(awayTeam.elo, homeTeam.elo, bonusAway);
+  // Use effective ELO (with recent-form blend) so the per-match stats shown
+  // in the drawer reflect the same model the engine is sampling from.
+  const eloHome = effectiveElo(homeTeam);
+  const eloAway = effectiveElo(awayTeam);
+  const lambdaHome = lambdaFor(eloHome, eloAway, bonusHome);
+  const lambdaAway = lambdaFor(eloAway, eloHome, bonusAway);
 
   const scoreProb = new Float64Array(64);
   if (fixture.count > 0) {

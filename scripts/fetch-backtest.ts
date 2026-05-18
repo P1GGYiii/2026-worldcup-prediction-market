@@ -143,8 +143,20 @@ interface BacktestTournament {
   year: number;
   host_id: string;
   host_name: string;
-  /** Pre-tournament ELO ratings keyed by ISO3. */
+  /** Pre-tournament ELO ratings keyed by ISO3 (end-of-prior-year snapshot). */
   elo: Record<string, number>;
+  /**
+   * Past ELO snapshots for recent-form weighting. Key = years before the
+   * pre-tournament snapshot. So for WC 2014 (pre-snapshot = end of 2013):
+   *   elo_history["1"] = end of 2012 (12 months before pre-snapshot)
+   *   elo_history["2"] = end of 2011
+   *   ...
+   *   elo_history["5"] = end of 2008
+   * Teams missing from the older snapshot (new admissions, name changes) are
+   * simply absent — the predictor falls back to the base ELO with no recent
+   * adjustment for those teams.
+   */
+  elo_history: Record<string, Record<string, number>>;
   matches: BacktestMatch[];
   /** Teams referenced in matches but missing from the elo map (skipped). */
   missing_elo: string[];
@@ -152,10 +164,16 @@ interface BacktestTournament {
   unmapped_names: string[];
 }
 
+/** Years of historical ELO to capture for recent-form weighting. */
+const LOOKBACK_YEARS = [1, 2, 3, 4, 5];
+
 async function compileTournament(spec: TournamentSpec): Promise<BacktestTournament> {
-  const [elo, matches] = await Promise.all([
+  // Fetch in parallel: matches + base ELO + N lookback snapshots.
+  const historicalYears = LOOKBACK_YEARS.map((y) => spec.eloYear - y);
+  const [elo, matches, ...history] = await Promise.all([
     fetchEloYear(spec.eloYear),
     fetchMatches(spec.year),
+    ...historicalYears.map((y) => fetchEloYear(y)),
   ]);
 
   const unmapped = new Set<string>();
@@ -187,11 +205,24 @@ async function compileTournament(spec: TournamentSpec): Promise<BacktestTourname
     else eloOut[id] = r;
   }
 
+  // Project each historical snapshot onto the tournament's team set.
+  const eloHistory: Record<string, Record<string, number>> = {};
+  LOOKBACK_YEARS.forEach((years, i) => {
+    const snap = history[i];
+    const proj: Record<string, number> = {};
+    for (const id of usedIds) {
+      const r = snap.get(id);
+      if (r !== undefined) proj[id] = r;
+    }
+    eloHistory[String(years)] = proj;
+  });
+
   return {
     year: spec.year,
     host_id: spec.hostId,
     host_name: spec.hostName,
     elo: eloOut,
+    elo_history: eloHistory,
     matches: out,
     missing_elo: missing,
     unmapped_names: [...unmapped],

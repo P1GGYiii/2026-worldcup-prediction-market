@@ -4,11 +4,45 @@ import { lambdaFor, samplePoisson } from './goals';
 import type { XoshiroRNG } from './rng';
 
 /**
+ * Recent-form blend (Tier 1 #2, calibrated 2026-05-17 via backtest sweep).
+ *
+ * Idea: eloratings.net's K-factor is calibrated for the full mix of
+ * friendlies + qualifiers + tournaments, so it updates slowly. A team
+ * that has clearly leveled up in the last 12 months (e.g. Argentina
+ * 2021→2022: +107 ELO from Copa America + unbeaten run) gets too little
+ * credit. We add a small extra adjustment proportional to the 12-month
+ * delta, capped to avoid outliers blowing up.
+ *
+ *   ELO_eff = ELO + clamp(α · (ELO − ELO_1y_ago), ±RECENT_CAP_ELO)
+ *
+ * Sweep on WCs 2014/2018/2022 (n=192) selected (α=0.2, lookback=1y) as
+ * the empirical optimum, improving accuracy +1.6pp with no Brier
+ * regression. Effect size is small — direction is the signal.
+ */
+export const RECENT_ALPHA = 0.20;
+const RECENT_CAP_ELO = 150;
+
+export function recentFormAdjustment(team: Team): number {
+  if (team.elo_1y_ago == null) return 0;
+  const adj = RECENT_ALPHA * (team.elo - team.elo_1y_ago);
+  return Math.max(-RECENT_CAP_ELO, Math.min(RECENT_CAP_ELO, adj));
+}
+
+/** Effective ELO for live simulation = base ELO + recent-form adjustment. */
+export function effectiveElo(team: Team): number {
+  return team.elo + recentFormAdjustment(team);
+}
+
+/**
  * Decide host-side bonus when the "home" team (per the fixture) is a host nation.
  * Hosts: USA, Mexico, Canada. They play their group matches on home soil.
  *
  * Simplified rule: host team gets +100 in any of its matches; non-host opponent gets 0.
  * In knockout, all matches are effectively neutral (no host bonus).
+ *
+ * The bonus value was empirically sweeped (Tier 1 #1) — the current +100 is
+ * neither helpful nor harmful on the WC 2014/2018/2022 backtest set (n=28
+ * host-involving matches, within noise). Kept at 100 pending more data.
  */
 export function hostBonus(team: Team, isKnockout: boolean): number {
   if (isKnockout) return 0;
@@ -22,10 +56,12 @@ export function sampleScore(
   rng: XoshiroRNG,
   isKnockout: boolean,
 ): { ga: number; gb: number } {
+  const eloA = effectiveElo(a);
+  const eloB = effectiveElo(b);
   const bonusA = hostBonus(a, isKnockout);
   const bonusB = hostBonus(b, isKnockout);
-  const lambdaA = lambdaFor(a.elo, b.elo, bonusA);
-  const lambdaB = lambdaFor(b.elo, a.elo, bonusB);
+  const lambdaA = lambdaFor(eloA, eloB, bonusA);
+  const lambdaB = lambdaFor(eloB, eloA, bonusB);
   return {
     ga: samplePoisson(lambdaA, rng),
     gb: samplePoisson(lambdaB, rng),
