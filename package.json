@@ -9,6 +9,7 @@
     "scrape-elo": "tsx scripts/scrape-elo.ts",
     "fetch-odds": "tsx scripts/fetch-odds.ts",
     "fetch-backtest": "tsx scripts/fetch-backtest.ts",
+    "fetch-absences": "tsx scripts/fetch-absences.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },
