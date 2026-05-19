@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-05-18T18:28:39.373Z",
+    "current_updated_at": "2026-05-19T12:18:13.471Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -185,10 +185,10 @@
     ],
     "BRA": [
       {
-        "player": "Gabriel Sara",
-        "position": "CM",
+        "player": "Alisson",
+        "position": "GK",
         "minutes_qual": 0,
-        "market_value_mil": 22,
+        "market_value_mil": 17,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -335,13 +335,6 @@
         "minutes_qual": 0,
         "market_value_mil": 2,
         "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Dominic Solanke",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 35,
-        "reason": "Injured (flagged by transfermarkt)"
       }
     ],
     "ESP": [
@@ -380,6 +373,13 @@
         "position": "CM",
         "minutes_qual": 0,
         "market_value_mil": 50,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Ousmane Dembélé",
+        "position": "ATT",
+        "minutes_qual": 0,
+        "market_value_mil": 100,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -487,15 +487,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "NOR": [
-      {
-        "player": "Leo Østigård",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 10,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "NOR": [],
     "NZL": [
       {
         "player": "Tyler Bindon",
