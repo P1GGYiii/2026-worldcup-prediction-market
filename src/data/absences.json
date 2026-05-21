@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-05-20T11:55:01.338Z",
+    "current_updated_at": "2026-05-21T12:22:49.929Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -160,13 +160,6 @@
     ],
     "BEL": [
       {
-        "player": "Amadou Onana",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 45,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
         "player": "Romelu Lukaku",
         "position": "ATT",
         "minutes_qual": 0,
@@ -189,6 +182,13 @@
         "position": "GK",
         "minutes_qual": 0,
         "market_value_mil": 17,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Neymar",
+        "position": "AM",
+        "minutes_qual": 0,
+        "market_value_mil": 10,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -242,15 +242,16 @@
       }
     ],
     "CPV": [],
-    "CRO": [],
-    "CUW": [
+    "CRO": [
       {
-        "player": "Riechedly Bazoer",
+        "player": "Josip Sutalo",
         "position": "CB",
         "minutes_qual": 0,
-        "market_value_mil": 2.2,
+        "market_value_mil": 15,
         "reason": "Injured (flagged by transfermarkt)"
-      },
+      }
+    ],
+    "CUW": [
       {
         "player": "Livano Comenencia",
         "position": "FB",
@@ -298,15 +299,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "EGY": [
-      {
-        "player": "Islam Issa",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 0.7,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "EGY": [],
     "ENG": [
       {
         "player": "Tino Livramento",
@@ -362,13 +355,6 @@
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
-        "player": "Manu Koné",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 50,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
         "player": "Ousmane Dembélé",
         "position": "ATT",
         "minutes_qual": 0,
@@ -378,14 +364,22 @@
     ],
     "GER": [
       {
-        "player": "Serge Gnabry",
-        "position": "AM",
+        "player": "Manuel Neuer",
+        "position": "GK",
         "minutes_qual": 0,
-        "market_value_mil": 20,
+        "market_value_mil": 4,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "GHA": [],
+    "GHA": [
+      {
+        "player": "Mohammed Kudus",
+        "position": "WG",
+        "minutes_qual": 0,
+        "market_value_mil": 55,
+        "reason": "Injured (flagged by transfermarkt)"
+      }
+    ],
     "HAI": [
       {
         "player": "Johny Placide",
@@ -415,6 +409,20 @@
     ],
     "JOR": [],
     "JPN": [
+      {
+        "player": "Ko Itakura",
+        "position": "CB",
+        "minutes_qual": 0,
+        "market_value_mil": 10,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Takehiro Tomiyasu",
+        "position": "FB",
+        "minutes_qual": 0,
+        "market_value_mil": 8,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
       {
         "player": "Wataru Endo",
         "position": "DM",
@@ -522,6 +530,13 @@
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
+        "player": "Ramón Sosa",
+        "position": "AM",
+        "minutes_qual": 0,
+        "market_value_mil": 10,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
         "player": "Antonio Sanabria",
         "position": "ATT",
         "minutes_qual": 0,
@@ -568,15 +583,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "TUN": [
-      {
-        "player": "Elias Achouri",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 3.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "TUN": [],
     "TUR": [],
     "URU": [
       {
@@ -598,13 +605,6 @@
         "position": "FB",
         "minutes_qual": 0,
         "market_value_mil": 4,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Federico Valverde",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 120,
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
@@ -657,7 +657,7 @@
         "player": "Jaloliddin Masharipov",
         "position": "WG",
         "minutes_qual": 0,
-        "market_value_mil": 1.2,
+        "market_value_mil": 1,
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
