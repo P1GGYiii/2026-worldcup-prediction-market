@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-05-24T10:48:11.214Z",
+    "current_updated_at": "2026-05-25T12:40:23.121Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -99,7 +99,7 @@
         "player": "Anthony Mandréa",
         "position": "GK",
         "minutes_qual": 0,
-        "market_value_mil": 0.4,
+        "market_value_mil": 0.35,
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
@@ -206,13 +206,6 @@
         "minutes_qual": 0,
         "market_value_mil": 1,
         "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Ralph Priso",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 0.8,
-        "reason": "Injured (flagged by transfermarkt)"
       }
     ],
     "CIV": [
@@ -295,13 +288,6 @@
         "minutes_qual": 0,
         "market_value_mil": 7,
         "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Hugo Sochurek",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 3.5,
-        "reason": "Injured (flagged by transfermarkt)"
       }
     ],
     "ECU": [
@@ -313,10 +299,10 @@
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
-        "player": "Willian Pacho",
-        "position": "CB",
+        "player": "Nilson Angulo",
+        "position": "WG",
         "minutes_qual": 0,
-        "market_value_mil": 70,
+        "market_value_mil": 17,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -332,10 +318,10 @@
     ],
     "ESP": [
       {
-        "player": "Fermín López",
-        "position": "AM",
+        "player": "Nico Williams",
+        "position": "WG",
         "minutes_qual": 0,
-        "market_value_mil": 100,
+        "market_value_mil": 50,
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
@@ -391,13 +377,6 @@
     ],
     "IRN": [
       {
-        "player": "Roozbeh Cheshmi",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 0.45,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
         "player": "Alireza Jahanbakhsh",
         "position": "WG",
         "minutes_qual": 0,
@@ -416,13 +395,6 @@
     ],
     "JOR": [],
     "JPN": [
-      {
-        "player": "Ko Itakura",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 10,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
       {
         "player": "Yuito Suzuki",
         "position": "AM",
@@ -477,15 +449,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "PAN": [
-      {
-        "player": "Carlos Harvey",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 0.6,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "PAN": [],
     "PAR": [
       {
         "player": "Fabián Balbuena",
@@ -499,13 +463,6 @@
         "position": "CM",
         "minutes_qual": 0,
         "market_value_mil": 25,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Miguel Almirón",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 9,
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
@@ -561,6 +518,13 @@
         "position": "WG",
         "minutes_qual": 0,
         "market_value_mil": 75,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Kerem Aktürkoğlu",
+        "position": "WG",
+        "minutes_qual": 0,
+        "market_value_mil": 20,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
