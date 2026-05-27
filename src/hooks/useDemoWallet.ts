@@ -5,14 +5,21 @@ import type { SerializedResult } from '@/lib/sim/worker';
 import type { SampleSim } from '@/lib/sim/types';
 import { buildDemoMarkets, resolveMarketYes, settlementLabel } from '@/lib/demo/markets';
 import type { DemoMarket, DemoMarketPosition, DemoTicketListing, DemoWalletState } from '@/lib/demo/types';
-import { DEMO_STORAGE_KEY, defaultWalletState } from '@/lib/demo/types';
+import { DEMO_STORAGE_KEY, defaultWalletState, marketPriceForSide } from '@/lib/demo/types';
 
 function loadWallet(): DemoWalletState {
   if (typeof window === 'undefined') return defaultWalletState();
   try {
     const raw = localStorage.getItem(DEMO_STORAGE_KEY);
     if (!raw) return defaultWalletState();
-    return { ...defaultWalletState(), ...JSON.parse(raw) } as DemoWalletState;
+    const parsed = { ...defaultWalletState(), ...JSON.parse(raw) } as DemoWalletState;
+    return {
+      ...parsed,
+      positions: parsed.positions.map((p) => ({
+        ...p,
+        side: p.side === 'no' ? 'no' : 'yes',
+      })),
+    };
   } catch {
     return defaultWalletState();
   }
@@ -28,13 +35,17 @@ function newId(): string {
 }
 
 export function useDemoWallet() {
-  const [wallet, setWallet] = useState<DemoWalletState>(defaultWalletState);
-  const [hydrated, setHydrated] = useState(false);
+  const [wallet, setWallet] = useState<DemoWalletState>(() =>
+    typeof window !== 'undefined' ? loadWallet() : defaultWalletState(),
+  );
+  const [hydrated, setHydrated] = useState(() => typeof window !== 'undefined');
 
   useEffect(() => {
-    setWallet(loadWallet());
-    setHydrated(true);
-  }, []);
+    if (!hydrated) {
+      setWallet(loadWallet());
+      setHydrated(true);
+    }
+  }, [hydrated]);
 
   useEffect(() => {
     if (hydrated) saveWallet(wallet);
@@ -44,17 +55,18 @@ export function useDemoWallet() {
     setWallet(defaultWalletState());
   }, []);
 
-  const buyYes = useCallback((market: DemoMarket, amount: number) => {
-    if (amount <= 0 || market.yesPrice <= 0) return { ok: false as const, error: 'invalid_amount' };
+  const buySide = useCallback((market: DemoMarket, side: 'yes' | 'no', amount: number) => {
+    const price = marketPriceForSide(market, side);
+    if (amount <= 0 || price <= 0) return { ok: false as const, error: 'invalid_amount' };
     setWallet((w) => {
       if (amount > w.balance) return w;
-      const shares = amount / market.yesPrice;
+      const shares = amount / price;
       const pos: DemoMarketPosition = {
         id: newId(),
         marketId: market.id,
-        side: 'yes',
+        side,
         shares,
-        avgPrice: market.yesPrice,
+        avgPrice: price,
         createdAt: Date.now(),
       };
       return {
@@ -68,10 +80,21 @@ export function useDemoWallet() {
     return { ok: true as const };
   }, []);
 
-  const sellYes = useCallback((positionId: string, currentPrice: number) => {
+  const buyYes = useCallback(
+    (market: DemoMarket, amount: number) => buySide(market, 'yes', amount),
+    [buySide],
+  );
+
+  const buyNo = useCallback(
+    (market: DemoMarket, amount: number) => buySide(market, 'no', amount),
+    [buySide],
+  );
+
+  const sellPosition = useCallback((positionId: string, market: DemoMarket) => {
     setWallet((w) => {
       const pos = w.positions.find((p) => p.id === positionId && !p.settled);
       if (!pos) return w;
+      const currentPrice = marketPriceForSide(market, pos.side);
       const proceeds = pos.shares * currentPrice;
       return {
         ...w,
@@ -121,7 +144,8 @@ export function useDemoWallet() {
           if (p.settled) return p;
           const market = marketById.get(p.marketId);
           if (!market) return p;
-          const won = resolveMarketYes(market, sample, result.teams);
+          const yesWon = resolveMarketYes(market, sample, result.teams);
+          const won = p.side === 'yes' ? yesWon : !yesWon;
           const payout = won ? p.shares * 1 : 0;
           balance += payout;
           return { ...p, settled: true, payout };
@@ -154,7 +178,7 @@ export function useDemoWallet() {
       for (const p of wallet.positions) {
         if (p.settled) continue;
         const m = marketById.get(p.marketId);
-        if (m) posValue += p.shares * m.yesPrice;
+        if (m) posValue += p.shares * marketPriceForSide(m, p.side);
       }
       let ticketValue = 0;
       for (const h of wallet.tickets) {
@@ -171,7 +195,8 @@ export function useDemoWallet() {
     hydrated,
     resetWallet,
     buyYes,
-    sellYes,
+    buyNo,
+    sellPosition,
     buyTicket,
     sellTicket,
     settleMarkets,

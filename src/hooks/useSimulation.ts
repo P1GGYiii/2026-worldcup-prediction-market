@@ -30,37 +30,31 @@ const INITIAL: SimState = {
   error: null,
 };
 
-/** Survives locale navigation so results stay visible after ES ↔ EN switch. */
+/** Survives route navigation so results stay visible when switching pages. */
 let sharedState: SimState = INITIAL;
 let sharedWorker: Worker | null = null;
+const subscribers = new Set<Dispatch<SetStateAction<SimState>>>();
 
-function commitState(setState: Dispatch<SetStateAction<SimState>>, next: SimState) {
+function notify(next: SimState) {
   sharedState = next;
-  setState(next);
+  subscribers.forEach((setState) => setState(next));
 }
 
-function patchState(setState: Dispatch<SetStateAction<SimState>>, patch: Partial<SimState>) {
-  setState((prev) => {
-    const next = { ...prev, ...patch };
-    sharedState = next;
-    return next;
-  });
+function patchShared(patch: Partial<SimState>) {
+  notify({ ...sharedState, ...patch });
 }
 
-function attachWorkerHandlers(
-  worker: Worker,
-  setState: Dispatch<SetStateAction<SimState>>,
-) {
+function attachWorkerHandlers(worker: Worker) {
   worker.onmessage = (e: MessageEvent<WorkerOutbound>) => {
     const msg = e.data;
     if (msg.type === 'progress') {
-      patchState(setState, {
+      patchShared({
         completed: msg.completed,
         total: msg.total,
         scenario: msg.scenario,
       });
     } else if (msg.type === 'done') {
-      patchState(setState, {
+      patchShared({
         status: 'done',
         completed: msg.result.numSimulations,
         total: msg.result.numSimulations,
@@ -69,8 +63,14 @@ function attachWorkerHandlers(
         scenario: null,
         durationMs: msg.durationMs,
       });
+      if (typeof window !== 'undefined') {
+        void import('@/lib/demo/cache').then(({ scheduleDemoWarm, preloadDemoRoute }) => {
+          scheduleDemoWarm(msg.result);
+          preloadDemoRoute();
+        });
+      }
     } else if (msg.type === 'error') {
-      patchState(setState, { status: 'error', error: msg.message });
+      patchShared({ status: 'error', error: msg.message });
     }
   };
 }
@@ -80,10 +80,17 @@ export function useSimulation() {
   const [state, setState] = useState<SimState>(() => sharedState);
 
   useEffect(() => {
+    subscribers.add(setState);
+    setState(sharedState);
+    workerRef.current = sharedWorker;
+
     if (sharedWorker && sharedState.status === 'running') {
-      workerRef.current = sharedWorker;
-      attachWorkerHandlers(sharedWorker, setState);
+      attachWorkerHandlers(sharedWorker);
     }
+
+    return () => {
+      subscribers.delete(setState);
+    };
   }, []);
 
   const run = useCallback((numSimulations: number, seed?: number) => {
@@ -92,18 +99,18 @@ export function useSimulation() {
     sharedWorker = worker;
     workerRef.current = worker;
 
-    commitState(setState, {
+    // Keep existing results visible until the new run finishes.
+    notify({
+      ...sharedState,
       status: 'running',
       completed: 0,
       total: numSimulations,
-      result: null,
-      resultNoAbsences: null,
       scenario: 'withAbsences',
       durationMs: null,
       error: null,
     });
 
-    attachWorkerHandlers(worker, setState);
+    attachWorkerHandlers(worker);
     worker.postMessage({ type: 'run', numSimulations, seed });
   }, []);
 
@@ -111,7 +118,7 @@ export function useSimulation() {
     sharedWorker?.terminate();
     sharedWorker = null;
     workerRef.current = null;
-    commitState(setState, INITIAL);
+    notify(INITIAL);
   }, []);
 
   return { state, run, reset };

@@ -23,7 +23,7 @@ export interface DemoMarket {
 export interface DemoMarketPosition {
   id: string;
   marketId: string;
-  side: 'yes';
+  side: 'yes' | 'no';
   shares: number;
   avgPrice: number;
   createdAt: number;
@@ -69,4 +69,13 @@ export function defaultWalletState(): DemoWalletState {
     lastSettledAt: null,
     settlementLabel: null,
   };
+}
+
+/** NO price from model YES probability (binary market). */
+export function marketNoPrice(yesPrice: number): number {
+  return Math.max(0.01, Math.min(0.99, 1 - yesPrice));
+}
+
+export function marketPriceForSide(market: DemoMarket, side: 'yes' | 'no'): number {
+  return side === 'yes' ? market.yesPrice : marketNoPrice(market.yesPrice);
 }

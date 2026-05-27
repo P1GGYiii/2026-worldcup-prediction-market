@@ -1,14 +1,13 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft, Loader2, RefreshCw, RotateCcw, Sparkles } from 'lucide-react';
 import { useSimulation } from '@/hooks/useSimulation';
 import { useDemoWallet } from '@/hooks/useDemoWallet';
-import { buildDemoMarkets, pickSettlementSample } from '@/lib/demo/markets';
-import { buildTicketListings } from '@/lib/demo/tickets';
-import { DEMO_STARTING_BALANCE } from '@/lib/demo/types';
+import { pickSettlementSample } from '@/lib/demo/markets';
+import { getCachedListings, getCachedMarkets } from '@/lib/demo/cache';
 import { cn, formatNum } from '@/lib/utils';
 import { MarketsTab } from './MarketsTab';
 import { TicketsTab } from './TicketsTab';
@@ -25,17 +24,13 @@ export function DemoHub() {
   const wallet = useDemoWallet();
   const [tab, setTab] = useState<Tab>('markets');
 
-  useEffect(() => {
-    if (state.status === 'idle') run(DEMO_SIMS);
-  }, [state.status, run]);
-
   const result = state.result;
   const markets = useMemo(
-    () => (result ? buildDemoMarkets(result, locale) : []),
+    () => (result ? getCachedMarkets(result, locale) : []),
     [result, locale],
   );
   const listings = useMemo(
-    () => (result ? buildTicketListings(result, locale) : []),
+    () => (result ? getCachedListings(result, locale) : []),
     [result, locale],
   );
 
@@ -46,7 +41,9 @@ export function DemoHub() {
     wallet.settleMarkets(result, sample, locale);
   };
 
-  const loading = state.status === 'running' || state.status === 'idle';
+  const waitingForSim = !result && state.status === 'running';
+  const needsSim = !result && state.status !== 'running';
+  const loading = state.status === 'running';
   const progress = state.total > 0 ? state.completed / state.total : 0;
 
   return (
@@ -75,7 +72,7 @@ export function DemoHub() {
         <div>
           <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-fg-3">{t('wallet')}</p>
           <p className="font-mono text-3xl font-bold text-gold">
-            ${wallet.hydrated ? wallet.wallet.balance.toFixed(2) : DEMO_STARTING_BALANCE.toFixed(2)}
+            ${wallet.wallet.balance.toFixed(2)}
           </p>
         </div>
 
@@ -131,6 +128,7 @@ export function DemoHub() {
       )}
 
       {/* Tabs */}
+      {result && (
       <div className="mb-6 flex gap-1 rounded-xl border border-border bg-bg-1/30 p-1">
         {(['markets', 'tickets', 'portfolio'] as const).map((id) => (
           <button
@@ -146,11 +144,25 @@ export function DemoHub() {
           </button>
         ))}
       </div>
+      )}
 
       {!result ? (
-        <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-border bg-bg-1/20">
-          <Loader2 className="h-8 w-8 animate-spin text-gold/60" />
-        </div>
+        waitingForSim ? (
+          <div className="flex min-h-[240px] flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-bg-1/20">
+            <Loader2 className="h-8 w-8 animate-spin text-gold/60" />
+            <p className="text-sm text-fg-2">{t('waiting_for_sim')}</p>
+          </div>
+        ) : needsSim ? (
+          <div className="flex min-h-[240px] flex-col items-center justify-center gap-4 rounded-2xl border border-border bg-bg-1/20 px-6 text-center">
+            <p className="max-w-md text-sm text-fg-2">{t('needs_sim')}</p>
+            <Link
+              href="/"
+              className="rounded-lg bg-gold px-5 py-2.5 text-sm font-medium text-bg-0 transition-opacity hover:opacity-90"
+            >
+              {t('go_simulate')}
+            </Link>
+          </div>
+        ) : null
       ) : (
         <>
           {tab === 'markets' && <MarketsTab markets={markets} result={result} wallet={wallet} />}

@@ -4,9 +4,11 @@ import { useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { cn, formatPct } from '@/lib/utils';
 import type { DemoMarket } from '@/lib/demo/types';
+import { marketNoPrice, marketPriceForSide } from '@/lib/demo/types';
 import type { SerializedResult } from '@/lib/sim/worker';
 import type { useDemoWallet } from '@/hooks/useDemoWallet';
 import { marketTeamIds } from '@/lib/demo/flags';
+import { fireConfetti } from '@/lib/confetti';
 import { DemoTeamFlags } from './DemoTeamFlags';
 
 type Wallet = ReturnType<typeof useDemoWallet>;
@@ -52,6 +54,8 @@ export function MarketsTab({ markets, result, wallet }: Props) {
       <div className="grid gap-3 lg:grid-cols-2">
         {filtered.map((market) => {
           const amt = amounts[market.id] ?? '25';
+          const stake = parseFloat(amt || '0');
+          const noPrice = marketNoPrice(market.yesPrice);
 
           return (
             <article
@@ -70,19 +74,31 @@ export function MarketsTab({ markets, result, wallet }: Props) {
                     <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-fg-3">
                       {market.subtitle}
                     </p>
-                    <h3 className="mt-1 text-sm font-medium text-fg-0">{market.title}</h3>
+                    <h3 className="mt-1 font-display text-base font-semibold leading-snug text-fg-0 sm:text-lg">
+                      {market.title}
+                    </h3>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="font-mono text-lg font-semibold text-gold">
-                    {(market.yesPrice * 100).toFixed(1)}¢
-                  </p>
-                  <p className="text-[10px] text-fg-3">{formatPct(market.yesPrice)} model</p>
+                <div className="flex shrink-0 gap-3 text-right">
+                  <div>
+                    <p className="text-[10px] font-mono uppercase tracking-wider text-gold/80">YES</p>
+                    <p className="font-mono text-lg font-semibold text-gold">
+                      {(market.yesPrice * 100).toFixed(1)}¢
+                    </p>
+                    <p className="text-[10px] text-fg-3">{formatPct(market.yesPrice)}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-mono uppercase tracking-wider text-red-500">NO</p>
+                    <p className="font-mono text-lg font-semibold text-red-500">
+                      {(noPrice * 100).toFixed(1)}¢
+                    </p>
+                    <p className="text-[10px] text-fg-3">{formatPct(noPrice)}</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-4 flex items-end gap-2">
-                <label className="flex-1">
+              <div className="mt-3">
+                <label>
                   <span className="text-[10px] uppercase tracking-wider text-fg-3">{t('stake')}</span>
                   <div className="mt-1 flex items-center rounded-lg border border-border bg-bg-0/60">
                     <span className="pl-3 text-sm text-fg-3">$</span>
@@ -96,18 +112,34 @@ export function MarketsTab({ markets, result, wallet }: Props) {
                     />
                   </div>
                 </label>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const n = parseFloat(amt);
-                    if (!Number.isFinite(n) || n <= 0) return;
-                    wallet.buyYes(market, n);
-                  }}
-                  disabled={wallet.wallet.balance < parseFloat(amt || '0')}
-                  className="rounded-lg bg-gold px-4 py-2 text-sm font-medium text-bg-0 transition-opacity hover:opacity-90 disabled:opacity-40"
-                >
-                  {t('buy_yes')}
-                </button>
+                <div className="mt-4 flex gap-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (!Number.isFinite(stake) || stake <= 0) return;
+                      if (wallet.wallet.balance < stake) return;
+                      wallet.buyYes(market, stake);
+                      fireConfetti();
+                    }}
+                    disabled={wallet.wallet.balance < stake}
+                    className="flex-1 rounded-lg bg-gold px-4 py-2.5 text-sm font-medium text-bg-0 transition-opacity hover:opacity-90 disabled:opacity-40"
+                  >
+                    {t('buy_yes')}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (!Number.isFinite(stake) || stake <= 0) return;
+                      if (wallet.wallet.balance < stake) return;
+                      wallet.buyNo(market, stake);
+                      fireConfetti();
+                    }}
+                    disabled={wallet.wallet.balance < stake}
+                    className="flex-1 rounded-lg border border-red-500/45 bg-red-500/15 px-4 py-2.5 text-sm font-medium text-red-400 transition-colors hover:bg-red-500/20 disabled:opacity-40"
+                  >
+                    {t('buy_no')}
+                  </button>
+                </div>
               </div>
             </article>
           );
@@ -121,7 +153,8 @@ export function MarketsTab({ markets, result, wallet }: Props) {
             {openPositions.map((pos) => {
               const market = markets.find((m) => m.id === pos.marketId);
               if (!market) return null;
-              const mark = pos.shares * market.yesPrice;
+              const markPrice = marketPriceForSide(market, pos.side);
+              const mark = pos.shares * markPrice;
               const cost = pos.shares * pos.avgPrice;
               const pnl = mark - cost;
               return (
@@ -130,15 +163,23 @@ export function MarketsTab({ markets, result, wallet }: Props) {
                   className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border/60 bg-bg-0/40 px-3 py-2 text-sm"
                 >
                   <div className="flex min-w-0 items-center gap-2.5">
-                    {market && (
-                      <DemoTeamFlags
-                        result={result}
-                        teamIds={marketTeamIds(market)}
-                        size={22}
-                        layout={market.type === 'h2h' ? 'versus' : 'stack'}
-                      />
-                    )}
-                    <span className="text-fg-1">{market.title}</span>
+                    <DemoTeamFlags
+                      result={result}
+                      teamIds={marketTeamIds(market)}
+                      size={22}
+                      layout={market.type === 'h2h' ? 'versus' : 'stack'}
+                    />
+                    <span className="font-medium text-fg-0">{market.title}</span>
+                    <span
+                      className={cn(
+                        'rounded px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider',
+                        pos.side === 'yes'
+                          ? 'bg-gold/10 text-gold'
+                          : 'bg-red-500/15 text-red-500',
+                      )}
+                    >
+                      {pos.side === 'yes' ? t('side_yes') : t('side_no')}
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="font-mono text-xs text-fg-2">
@@ -149,7 +190,7 @@ export function MarketsTab({ markets, result, wallet }: Props) {
                     </span>
                     <button
                       type="button"
-                      onClick={() => wallet.sellYes(pos.id, market.yesPrice)}
+                      onClick={() => wallet.sellPosition(pos.id, market)}
                       className="rounded-md border border-border px-2 py-1 text-xs text-fg-2 hover:text-fg-0"
                     >
                       {t('sell')}

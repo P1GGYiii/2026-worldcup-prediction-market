@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
+import { entrancePlayed, markEntrancePlayed } from '@/lib/entranceAnimation';
 import { cn } from '@/lib/utils';
 
 const FLOATS = [
@@ -123,6 +124,15 @@ export function HeroGallery() {
     const floats = rootRef.current.querySelectorAll('.gallery-float');
     if (!hero) return;
 
+    const key = `gallery-${locale}`;
+
+    if (entrancePlayed(key)) {
+      gsap.set(hero, { opacity: 1, y: 0 });
+      gsap.set(floats, { opacity: 1, y: 0 });
+      return;
+    }
+
+    markEntrancePlayed(key);
     const ctx = gsap.context(() => {
       gsap.fromTo(
         hero,

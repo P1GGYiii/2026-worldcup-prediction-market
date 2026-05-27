@@ -1,7 +1,8 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, useRouter } from '@/i18n/routing';
 import { ArrowUpRight, BarChart3, Ticket, Wallet } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -13,10 +14,20 @@ const TAGS = [
 
 export function HeroDemoPromo() {
   const t = useTranslations('hero');
+  const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch('/demo');
+  }, [router]);
 
   return (
     <Link
       href="/demo"
+      prefetch
+      onMouseEnter={() => {
+        router.prefetch('/demo');
+        void import('@/components/demo/DemoHub');
+      }}
       className={cn(
         'group relative mt-5 block max-w-xl overflow-hidden rounded-2xl border border-gold/25',
         'bg-gradient-to-br from-gold/10 via-bg-1/50 to-bg-1/30 p-4 sm:p-5',

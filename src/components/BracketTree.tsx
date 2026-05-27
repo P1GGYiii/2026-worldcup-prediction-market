@@ -3,6 +3,7 @@
 import { useMemo, useRef, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { gsap } from 'gsap';
+import { entrancePlayed, markEntrancePlayed } from '@/lib/entranceAnimation';
 import { Flag } from './Flag';
 import { cn, formatPct } from '@/lib/utils';
 import type { SerializedResult } from '@/lib/sim/worker';
@@ -43,6 +44,14 @@ export function BracketTree({ result }: Props) {
     const cards = containerRef.current.querySelectorAll('[data-card]');
     if (!cards.length) return;
 
+    const key = `bracket-${locale}`;
+
+    if (entrancePlayed(key)) {
+      gsap.set(cards, { y: 0, opacity: 1 });
+      return;
+    }
+
+    markEntrancePlayed(key);
     const ctx = gsap.context(() => {
       gsap.fromTo(
         cards,

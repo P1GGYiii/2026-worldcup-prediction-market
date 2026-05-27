@@ -1,8 +1,7 @@
-import { setRequestLocale } from 'next-intl/server';
+'use client';
+
 import { DemoHub } from '@/components/demo/DemoHub';
 
-export default async function DemoPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+export default function DemoPage() {
   return <DemoHub />;
 }

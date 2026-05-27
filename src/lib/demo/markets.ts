@@ -86,9 +86,10 @@ export function buildDemoMarkets(result: SerializedResult, locale: 'es' | 'en' =
     });
   }
 
+  const fixtureMap = new Map(result.fixtures);
   fixtureRows.sort((a, b) => {
-    const fa = result.fixtures.find(([k]) => k === a.key)?.[1];
-    const fb = result.fixtures.find(([k]) => k === b.key)?.[1];
+    const fa = fixtureMap.get(a.key);
+    const fb = fixtureMap.get(b.key);
     const ta = fa ? fa.winsHome + fa.winsAway + fa.draws : 0;
     const tb = fb ? fb.winsHome + fb.winsAway + fb.draws : 0;
     return tb - ta;

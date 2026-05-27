@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
+import { entrancePlayed, markEntrancePlayed } from '@/lib/entranceAnimation';
 import { SimulationControls } from './SimulationControls';
 import { MeshGradient } from './hero/MeshGradient';
 import { HeroGallery } from './hero/HeroGallery';
@@ -22,6 +23,14 @@ export function Hero({ state, onRun }: HeroProps) {
   useEffect(() => {
     if (!titleRef.current) return;
     const words = titleRef.current.querySelectorAll('[data-word]');
+    const key = `hero-${locale}`;
+
+    if (entrancePlayed(key)) {
+      gsap.set(words, { opacity: 1, y: 0, filter: 'blur(0px)' });
+      return;
+    }
+
+    markEntrancePlayed(key);
     const ctx = gsap.context(() => {
       gsap.fromTo(
         words,
@@ -53,7 +62,7 @@ export function Hero({ state, onRun }: HeroProps) {
 
           <h1
             ref={titleRef}
-            className="mt-5 font-display font-bold leading-[1.02] tracking-[-0.03em] text-fg-0 text-[clamp(2.5rem,6vw,5rem)]"
+            className="mt-5 font-display text-[clamp(1.875rem,4.25vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.02em] text-fg-0"
           >
             <span className="block">
               {t('title_part1').split(' ').map((w, i) => (

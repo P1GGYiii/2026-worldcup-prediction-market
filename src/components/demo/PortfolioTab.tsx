@@ -60,7 +60,7 @@ export function PortfolioTab({ markets, listings, result, wallet }: Props) {
                     <span className="text-fg-1">{m?.title ?? p.marketId}</span>
                   </div>
                   <span className="ml-2 font-mono text-xs text-fg-3">
-                    {p.shares.toFixed(1)} YES @ {(p.avgPrice * 100).toFixed(1)}¢
+                    {p.shares.toFixed(1)} {p.side === 'no' ? t('side_no') : t('side_yes')} @ {(p.avgPrice * 100).toFixed(1)}¢
                   </span>
                 </li>
               );
@@ -88,7 +88,7 @@ export function PortfolioTab({ markets, listings, result, wallet }: Props) {
                     <span className="text-fg-1">{m?.title ?? p.marketId}</span>
                   </div>
                   <span className={cn('ml-2 font-mono text-xs', won ? 'text-emerald-400' : 'text-rose-400')}>
-                    {won ? t('won') : t('lost')} · ${(p.payout ?? 0).toFixed(2)}
+                    {p.side === 'no' ? t('side_no') : t('side_yes')} · {won ? t('won') : t('lost')} · ${(p.payout ?? 0).toFixed(2)}
                   </span>
                 </li>
               );

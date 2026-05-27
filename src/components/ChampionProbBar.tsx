@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
+import { entrancePlayed, markEntrancePlayed } from '@/lib/entranceAnimation';
 import { Flag } from './Flag';
 import { cn, formatPct, wilsonCI, formatCIHalf } from '@/lib/utils';
 import { useSelection } from '@/hooks/useSelection';
@@ -51,6 +52,14 @@ export function ChampionProbBar({ result, resultNoAbsences }: Props) {
     const bars = containerRef.current.querySelectorAll('[data-bar]');
     if (!bars.length) return;
 
+    const key = `champion-${locale}`;
+
+    if (entrancePlayed(key)) {
+      gsap.set(bars, { scaleX: 1, opacity: 1, transformOrigin: 'left' });
+      return;
+    }
+
+    markEntrancePlayed(key);
     const ctx = gsap.context(() => {
       gsap.fromTo(
         bars,
