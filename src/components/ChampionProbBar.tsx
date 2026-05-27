@@ -78,10 +78,10 @@ export function ChampionProbBar({ result, resultNoAbsences }: Props) {
   }, [active, locale]);
 
   return (
-    <section id="champion" className="mx-auto max-w-[1280px] px-6 py-20">
-      <header className="mb-10 flex flex-wrap items-end justify-between gap-4">
+    <section id="champion" className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 sm:py-20">
+      <header className="mb-8 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
         <div>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-fg-0 sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-fg-0 sm:text-4xl lg:text-5xl">
             {t('title')}
           </h2>
           <p className="mt-2 text-sm text-fg-2">
@@ -89,7 +89,7 @@ export function ChampionProbBar({ result, resultNoAbsences }: Props) {
           </p>
         </div>
         {resultNoAbsences && (
-          <div className="inline-flex items-center gap-1 rounded-full border border-border bg-bg-1/50 p-1 text-xs">
+          <div className="inline-flex w-full items-center gap-1 rounded-full border border-border bg-bg-1/50 p-1 text-xs sm:w-auto">
             <button
               onClick={() => setMode('with')}
               className={cn(
@@ -122,7 +122,7 @@ export function ChampionProbBar({ result, resultNoAbsences }: Props) {
             key={r.team.id}
             onClick={() => openTeam(r.team.id)}
             className={cn(
-              'group relative grid w-full grid-cols-[auto_140px_1fr_72px] items-center gap-3 rounded-xl border px-3 py-2 text-left transition-all',
+              'group relative grid w-full grid-cols-[auto_1fr_auto] grid-rows-[auto_auto] items-center gap-x-2 gap-y-1.5 rounded-xl border px-3 py-2.5 text-left transition-all sm:grid-cols-[auto_140px_1fr_72px] sm:grid-rows-1 sm:gap-3 sm:py-2',
               i === 0
                 ? 'border-gold/40 bg-gradient-to-r from-gold/10 to-transparent hover:border-gold/60'
                 : 'border-border bg-bg-1/30 hover:bg-bg-1/60 hover:border-border-strong',
@@ -140,14 +140,14 @@ export function ChampionProbBar({ result, resultNoAbsences }: Props) {
               />
             )}
 
-            <span className="w-6 text-right font-mono text-xs text-fg-3 tabular">{i + 1}</span>
-            <div className="flex items-center gap-2 min-w-0">
+            <span className="w-5 text-right font-mono text-xs text-fg-3 tabular sm:w-6">{i + 1}</span>
+            <div className="col-span-2 flex min-w-0 items-center gap-2 sm:col-span-1 sm:w-[140px]">
               <Flag code={r.team.flag} size={26} />
               <span className="truncate font-medium text-fg-0">
                 {locale === 'es' ? r.team.name_es : r.team.name_en}
               </span>
             </div>
-            <div className="relative h-6 overflow-hidden rounded-full bg-bg-2/60">
+            <div className="relative col-span-full h-5 overflow-hidden rounded-full bg-bg-2/60 sm:col-auto sm:col-start-3 sm:h-6">
               <div
                 data-bar
                 className="h-full rounded-full"
@@ -161,7 +161,7 @@ export function ChampionProbBar({ result, resultNoAbsences }: Props) {
                 }}
               />
             </div>
-            <div className="text-right font-mono text-sm font-medium tabular text-fg-0">
+            <div className="text-right font-mono text-xs font-medium tabular text-fg-0 sm:text-sm">
               <div>{formatPct(r.pct, 2)}</div>
               <div className="text-[9px] font-normal text-fg-3" title={`95% CI: ${formatPct(r.ci.lo, 2)}–${formatPct(r.ci.hi, 2)}`}>
                 {formatCIHalf(r.ci.halfWidth)}
@@ -169,7 +169,7 @@ export function ChampionProbBar({ result, resultNoAbsences }: Props) {
             </div>
 
             {i === 0 && (
-              <span className="absolute -top-2 right-3 rounded-full bg-gold px-2 py-0.5 font-mono text-[9px] font-bold tracking-[0.15em] text-bg-0 shadow-[0_4px_16px_-4px_oklch(0.76_0.13_180/0.8)]">
+              <span className="absolute -top-2 right-2 rounded-full bg-gold px-2 py-0.5 font-mono text-[8px] font-bold tracking-[0.12em] text-bg-0 shadow-[0_4px_16px_-4px_oklch(0.76_0.13_180/0.8)] sm:right-3 sm:text-[9px] sm:tracking-[0.15em]">
                 {t('most_likely')}
               </span>
             )}

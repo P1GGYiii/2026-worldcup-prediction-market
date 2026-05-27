@@ -62,7 +62,7 @@ export function MarketsTab({ markets, result, wallet }: Props) {
               key={market.id}
               className="rounded-2xl border border-border bg-bg-1/40 p-4 transition-colors hover:border-gold/20"
             >
-              <div className="flex items-start justify-between gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex min-w-0 flex-1 items-start gap-3">
                   <DemoTeamFlags
                     result={result}
@@ -79,7 +79,7 @@ export function MarketsTab({ markets, result, wallet }: Props) {
                     </h3>
                   </div>
                 </div>
-                <div className="flex shrink-0 gap-3 text-right">
+                <div className="flex w-full justify-between gap-4 sm:w-auto sm:shrink-0 sm:justify-end">
                   <div>
                     <p className="text-[10px] font-mono uppercase tracking-wider text-gold/80">YES</p>
                     <p className="font-mono text-lg font-semibold text-gold">
@@ -112,7 +112,7 @@ export function MarketsTab({ markets, result, wallet }: Props) {
                     />
                   </div>
                 </label>
-                <div className="mt-4 flex gap-3">
+                <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:gap-3">
                   <button
                     type="button"
                     onClick={() => {
@@ -162,14 +162,14 @@ export function MarketsTab({ markets, result, wallet }: Props) {
                   key={pos.id}
                   className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border/60 bg-bg-0/40 px-3 py-2 text-sm"
                 >
-                  <div className="flex min-w-0 items-center gap-2.5">
+                  <div className="flex min-w-0 flex-1 items-center gap-2.5">
                     <DemoTeamFlags
                       result={result}
                       teamIds={marketTeamIds(market)}
                       size={22}
                       layout={market.type === 'h2h' ? 'versus' : 'stack'}
                     />
-                    <span className="font-medium text-fg-0">{market.title}</span>
+                    <span className="min-w-0 truncate font-medium text-fg-0">{market.title}</span>
                     <span
                       className={cn(
                         'rounded px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider',
@@ -181,7 +181,7 @@ export function MarketsTab({ markets, result, wallet }: Props) {
                       {pos.side === 'yes' ? t('side_yes') : t('side_no')}
                     </span>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:gap-3">
                     <span className="font-mono text-xs text-fg-2">
                       {pos.shares.toFixed(1)} @ {(pos.avgPrice * 100).toFixed(1)}¢
                     </span>

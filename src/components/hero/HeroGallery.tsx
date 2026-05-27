@@ -24,7 +24,7 @@ const FLOATS = [
     altKey: 'alt_stars',
     tag: '04',
     objectPosition: 'object-[center_15%]',
-    cell: 'col-span-6 z-20 -translate-y-4 sm:-translate-y-7',
+    cell: 'col-span-6 z-20 -translate-y-2 sm:-translate-y-4 lg:-translate-y-7',
     height: 'h-[211px] sm:h-[254px]',
     tilt: '',
     featured: true,
@@ -158,9 +158,9 @@ export function HeroGallery() {
   }, [locale]);
 
   return (
-    <div ref={rootRef} className="relative w-full">
+    <div ref={rootRef} className="relative w-full overflow-hidden">
       <div
-        className="pointer-events-none absolute -inset-8 rounded-full opacity-55 blur-3xl"
+        className="pointer-events-none absolute -inset-4 rounded-full opacity-55 blur-3xl sm:-inset-8"
         style={{
           background:
             'radial-gradient(circle at 50% 20%, oklch(0.76 0.13 180 / 0.24), transparent 65%)',
@@ -192,11 +192,11 @@ export function HeroGallery() {
                 <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-gold/90 sm:text-[10px]">
                   {t('trophy_eyebrow')}
                 </p>
-                <p className="mt-1 font-display text-2xl font-light tracking-wide text-fg-0 sm:text-3xl">
+                <p className="mt-1 font-display text-xl font-light tracking-wide text-fg-0 sm:text-2xl lg:text-3xl">
                   {t('trophy')}
                 </p>
               </div>
-              <span className="font-display text-5xl font-thin leading-none text-fg-0/12 sm:text-6xl">
+              <span className="font-display text-4xl font-thin leading-none text-fg-0/12 sm:text-5xl lg:text-6xl">
                 01
               </span>
             </figcaption>
@@ -212,7 +212,7 @@ export function HeroGallery() {
             title={t(photo.titleKey)}
             tag={photo.tag}
             objectPosition={photo.objectPosition}
-            cell={cn(photo.cell, 'col-start-auto -mt-11 sm:-mt-[3.3rem]')}
+            cell={cn(photo.cell, 'col-start-auto -mt-6 sm:-mt-11 lg:-mt-[3.3rem]')}
             height={photo.height}
             tilt={photo.tilt}
             featured={'featured' in photo && photo.featured}

@@ -85,10 +85,10 @@ export function MarketEdge({ result }: Props) {
   const sources = file?._meta.sources || [];
 
   return (
-    <section id="mercado" className="mx-auto max-w-[1280px] scroll-mt-24 px-6 pt-20 pb-10">
+    <section id="mercado" className="mx-auto max-w-[1280px] scroll-mt-24 px-4 pt-12 pb-8 sm:px-6 sm:pt-20 sm:pb-10">
       <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-fg-0 sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-fg-0 sm:text-4xl lg:text-5xl">
             Edge vs mercado
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-fg-2">

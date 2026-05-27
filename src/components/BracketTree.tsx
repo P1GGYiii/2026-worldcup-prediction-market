@@ -75,14 +75,14 @@ export function BracketTree({ result }: Props) {
     locale === 'es' ? team.name_es : team.name_en;
 
   return (
-    <section className="mx-auto max-w-[1440px] px-6 py-20">
+    <section className="mx-auto max-w-[1440px] px-4 py-12 sm:px-6 sm:py-20">
       <header className="mb-8">
-        <h2 className="font-display text-4xl font-bold tracking-tight text-fg-0 sm:text-5xl">{t('title')}</h2>
+        <h2 className="font-display text-3xl font-bold tracking-tight text-fg-0 sm:text-4xl lg:text-5xl">{t('title')}</h2>
         <p className="mt-2 text-sm text-fg-2">{t('subtitle')}</p>
         <p className="mt-1 text-xs text-fg-3">{t('hover_hint')}</p>
       </header>
 
-      <div ref={containerRef} className="overflow-x-auto">
+      <div ref={containerRef} className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
         <div className="grid min-w-[1100px] grid-cols-6 gap-3">
           {stages.map((stage) => (
             <div key={stage.key} className="flex flex-col">

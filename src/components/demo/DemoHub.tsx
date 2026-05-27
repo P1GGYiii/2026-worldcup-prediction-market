@@ -47,7 +47,7 @@ export function DemoHub() {
   const progress = state.total > 0 ? state.completed / state.total : 0;
 
   return (
-    <article className="relative mx-auto max-w-[1280px] px-6 pt-32 pb-14">
+    <article className="relative mx-auto max-w-[1280px] px-4 pt-28 pb-10 sm:px-6 sm:pt-32 sm:pb-14">
       <Link
         href="/"
         className="mb-8 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-fg-3 transition-colors hover:text-fg-1"
@@ -61,22 +61,22 @@ export function DemoHub() {
           <Sparkles className="h-3 w-3" />
           {t('badge')}
         </div>
-        <h1 className="mt-5 font-display text-5xl font-bold tracking-tight text-fg-0 sm:text-6xl">
+        <h1 className="mt-4 font-display text-3xl font-bold tracking-tight text-fg-0 sm:mt-5 sm:text-4xl lg:text-5xl xl:text-6xl">
           {t('title')}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-fg-1">{t('subtitle')}</p>
+        <p className="mt-3 max-w-2xl text-base text-fg-1 sm:mt-4 sm:text-lg">{t('subtitle')}</p>
       </header>
 
       {/* Wallet bar */}
-      <div className="mb-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-bg-1/50 p-4">
+      <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-border bg-bg-1/50 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-fg-3">{t('wallet')}</p>
-          <p className="font-mono text-3xl font-bold text-gold">
+          <p className="font-mono text-2xl font-bold text-gold sm:text-3xl">
             ${wallet.wallet.balance.toFixed(2)}
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
           {loading && (
             <div className="flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-xs text-fg-2">
               <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -89,7 +89,7 @@ export function DemoHub() {
                 type="button"
                 onClick={() => run(DEMO_SIMS)}
                 disabled={loading}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-xs text-fg-2 hover:text-fg-0 disabled:opacity-40"
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-border px-3 py-2 text-xs text-fg-2 hover:text-fg-0 disabled:opacity-40 sm:w-auto"
               >
                 <RefreshCw className="h-3.5 w-3.5" />
                 {t('refresh_prices')}
@@ -98,7 +98,7 @@ export function DemoHub() {
                 type="button"
                 onClick={handleSettle}
                 disabled={wallet.wallet.positions.filter((p) => !p.settled).length === 0}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-violet-500/40 bg-violet-500/10 px-3 py-2 text-xs text-violet-200 hover:bg-violet-500/20 disabled:opacity-40"
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-violet-500/40 bg-violet-500/10 px-3 py-2 text-xs text-violet-200 hover:bg-violet-500/20 disabled:opacity-40 sm:w-auto"
               >
                 {t('settle')}
               </button>
@@ -107,7 +107,7 @@ export function DemoHub() {
           <button
             type="button"
             onClick={wallet.resetWallet}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-xs text-fg-2 hover:text-fg-0"
+            className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-border px-3 py-2 text-xs text-fg-2 hover:text-fg-0 sm:w-auto"
           >
             <RotateCcw className="h-3.5 w-3.5" />
             {t('reset_wallet')}
@@ -129,14 +129,14 @@ export function DemoHub() {
 
       {/* Tabs */}
       {result && (
-      <div className="mb-6 flex gap-1 rounded-xl border border-border bg-bg-1/30 p-1">
+      <div className="mb-6 flex gap-1 overflow-x-auto rounded-xl border border-border bg-bg-1/30 p-1 scrollbar-none sm:overflow-visible">
         {(['markets', 'tickets', 'portfolio'] as const).map((id) => (
           <button
             key={id}
             type="button"
             onClick={() => setTab(id)}
             className={cn(
-              'flex-1 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors',
+              'shrink-0 rounded-lg px-3 py-2 text-xs font-medium transition-colors sm:flex-1 sm:px-4 sm:py-2.5 sm:text-sm',
               tab === id ? 'bg-gold text-bg-0 shadow-glow-gold' : 'text-fg-2 hover:text-fg-0',
             )}
           >

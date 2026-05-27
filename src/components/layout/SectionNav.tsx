@@ -23,8 +23,6 @@ export function SectionNav() {
       .filter((el): el is HTMLElement => el !== null);
     if (els.length === 0) return;
 
-    // Use a viewport band ~25% from top so the active id flips as the section
-    // crosses the band, not when its top exits the viewport entirely.
     const obs = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -48,25 +46,27 @@ export function SectionNav() {
   return (
     <nav
       aria-label="Secciones"
-      className="sticky top-20 z-30 mx-auto mt-2 max-w-[1280px] px-6"
+      className="sticky top-[4.5rem] z-30 mx-auto mt-2 max-w-[1280px] px-4 sm:top-20 sm:px-6"
     >
-      <div className="mx-auto flex w-fit items-center gap-1 rounded-full border border-border bg-bg-0/70 p-1 font-mono text-[11px] uppercase tracking-[0.15em] shadow-card backdrop-blur-xl">
-        {SECTIONS.map((s) => (
-          <a
-            key={s.id}
-            href={`#${s.id}`}
-            onClick={handle(s.id)}
-            aria-current={active === s.id ? 'true' : undefined}
-            className={cn(
-              'rounded-full px-3 py-1.5 transition-colors',
-              active === s.id
-                ? 'bg-gold/15 text-gold'
-                : 'text-fg-2 hover:text-fg-0',
-            )}
-          >
-            {s.label}
-          </a>
-        ))}
+      <div className="-mx-4 overflow-x-auto px-4 scrollbar-none sm:mx-0 sm:px-0">
+        <div className="mx-auto flex w-max min-w-full items-center gap-1 rounded-full border border-border bg-bg-0/70 p-1 font-mono text-[10px] uppercase tracking-[0.12em] shadow-card backdrop-blur-xl sm:w-fit sm:min-w-0 sm:text-[11px] sm:tracking-[0.15em]">
+          {SECTIONS.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              onClick={handle(s.id)}
+              aria-current={active === s.id ? 'true' : undefined}
+              className={cn(
+                'shrink-0 rounded-full px-2.5 py-1.5 transition-colors sm:px-3',
+                active === s.id
+                  ? 'bg-gold/15 text-gold'
+                  : 'text-fg-2 hover:text-fg-0',
+              )}
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
       </div>
     </nav>
   );

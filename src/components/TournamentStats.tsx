@@ -101,9 +101,9 @@ export function TournamentStats({ result }: Props) {
   const teamFlag = (id: string | undefined) => teamById.get(id ?? '')?.flag ?? '';
 
   return (
-    <section className="mx-auto max-w-[1280px] px-6 py-20">
+    <section className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 sm:py-20">
       <header className="mb-8">
-        <h2 className="font-display text-4xl font-bold tracking-tight text-fg-0 sm:text-5xl">
+        <h2 className="font-display text-3xl font-bold tracking-tight text-fg-0 sm:text-4xl lg:text-5xl">
           Stats del torneo
         </h2>
         <p className="mt-2 text-sm text-fg-2">
@@ -202,7 +202,7 @@ function StatCard({
   return (
     <article className={cn('rounded-2xl border bg-gradient-to-br to-transparent p-5', colors[tone])}>
       <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-fg-3">{label}</div>
-      <div className={cn('mt-2 font-display text-4xl font-bold tabular', valColor[tone])}>{value}</div>
+      <div className={cn('mt-2 font-display text-3xl font-bold tabular sm:text-4xl', valColor[tone])}>{value}</div>
       <div className="mt-2 flex items-center gap-2">
         {flagA && <Flag code={flagA} size={16} />}
         {flagB && <Flag code={flagB} size={16} />}

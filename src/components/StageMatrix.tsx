@@ -89,10 +89,10 @@ export function StageMatrix({ result }: Props) {
   ];
 
   return (
-    <section className="mx-auto max-w-[1280px] px-6 py-20">
+    <section className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 sm:py-20">
       <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-fg-0 sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-fg-0 sm:text-4xl lg:text-5xl">
             {t('title')}
           </h2>
           <p className="mt-2 text-sm text-fg-2">{t('subtitle')}</p>

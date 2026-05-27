@@ -51,7 +51,7 @@ export function TicketsTab({ listings, result, wallet }: Props) {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+              <div className="mt-4 grid grid-cols-1 gap-2 text-center text-xs min-[420px]:grid-cols-3">
                 <div className="rounded-lg bg-bg-0/50 py-2">
                   <p className="text-fg-3">{t('face_value')}</p>
                   <p className="font-mono font-medium text-fg-1">${listing.faceValue}</p>
@@ -66,7 +66,7 @@ export function TicketsTab({ listings, result, wallet }: Props) {
                 </div>
               </div>
 
-              <div className="mt-4 flex items-center justify-between gap-2">
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <span className="text-xs text-fg-3">
                   {listing.available} {t('available')}
                 </span>
@@ -74,7 +74,7 @@ export function TicketsTab({ listings, result, wallet }: Props) {
                   type="button"
                   disabled={!canBuy}
                   onClick={() => wallet.buyTicket(listing)}
-                  className="rounded-lg bg-gold px-4 py-2 text-sm font-medium text-bg-0 disabled:opacity-40"
+                  className="w-full rounded-lg bg-gold px-4 py-2 text-sm font-medium text-bg-0 disabled:opacity-40 sm:w-auto"
                 >
                   {t('buy_ticket')}
                 </button>

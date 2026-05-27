@@ -67,7 +67,7 @@ export function PredictionDelta({ result }: Props) {
   if (!movers) return null;
 
   return (
-    <section className="mx-auto max-w-[1280px] px-6 py-20">
+    <section className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 sm:py-20">
       <header className="mb-6">
         <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-fg-3">
           Tras el último partido

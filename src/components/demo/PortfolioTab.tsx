@@ -48,7 +48,7 @@ export function PortfolioTab({ markets, listings, result, wallet }: Props) {
               const m = markets.find((x) => x.id === p.marketId);
               return (
                 <li key={p.id} className="rounded-xl border border-border/60 bg-bg-1/30 px-3 py-2 text-sm">
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex min-w-0 items-start gap-2.5 sm:items-center">
                     {m && (
                       <DemoTeamFlags
                         result={result}
@@ -57,11 +57,13 @@ export function PortfolioTab({ markets, listings, result, wallet }: Props) {
                         layout={m.type === 'h2h' ? 'versus' : 'stack'}
                       />
                     )}
-                    <span className="text-fg-1">{m?.title ?? p.marketId}</span>
+                    <div className="min-w-0 flex-1">
+                      <span className="block truncate text-fg-1">{m?.title ?? p.marketId}</span>
+                      <span className="font-mono text-xs text-fg-3">
+                        {p.shares.toFixed(1)} {p.side === 'no' ? t('side_no') : t('side_yes')} @ {(p.avgPrice * 100).toFixed(1)}¢
+                      </span>
+                    </div>
                   </div>
-                  <span className="ml-2 font-mono text-xs text-fg-3">
-                    {p.shares.toFixed(1)} {p.side === 'no' ? t('side_no') : t('side_yes')} @ {(p.avgPrice * 100).toFixed(1)}¢
-                  </span>
                 </li>
               );
             })}
