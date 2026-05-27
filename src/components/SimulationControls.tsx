@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { Play, RotateCcw } from 'lucide-react';
 import { cn, formatNum } from '@/lib/utils';
 import type { SimState } from '@/hooks/useSimulation';
 
@@ -32,64 +33,73 @@ export function SimulationControls({ state, onRun }: Props) {
       : null;
 
   return (
-    <div className="space-y-4">
-      <div className="text-xs uppercase tracking-[0.18em] text-fg-2 font-mono">{tc('label')}</div>
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-5">
+      <div className="min-w-0 flex-1">
+        <div className="text-xs uppercase tracking-[0.18em] text-fg-2 font-mono">{tc('label')}</div>
 
-      <div className="flex flex-wrap gap-2">
-        {OPTIONS.map((n) => {
-          const active = selected === n;
-          return (
-            <button
-              key={n}
-              disabled={isRunning}
-              onClick={() => setSelected(n)}
-              className={cn(
-                'rounded-full border px-4 py-1.5 font-mono text-xs tracking-wider transition-all',
-                active
-                  ? 'border-gold/60 bg-gold/15 text-gold shadow-[0_0_24px_-8px_oklch(0.80_0.18_75/0.6)]'
-                  : 'border-border bg-bg-1/40 text-fg-2 hover:border-border-strong hover:text-fg-1',
-                isRunning && 'opacity-50',
-              )}
-            >
-              {n >= 1000 ? `${n / 1000}K` : n}
-            </button>
-          );
-        })}
+        <div className="mt-2 flex flex-wrap gap-2">
+          {OPTIONS.map((n) => {
+            const active = selected === n;
+            return (
+              <button
+                key={n}
+                disabled={isRunning}
+                onClick={() => setSelected(n)}
+                className={cn(
+                  'rounded-full border px-4 py-1.5 font-mono text-xs tracking-wider transition-all',
+                  active
+                    ? 'border-gold/40 bg-bg-1/50 text-fg-1'
+                    : 'border-border bg-bg-1/30 text-fg-2 hover:border-border-strong hover:text-fg-1',
+                  isRunning && 'opacity-50',
+                )}
+              >
+                {n >= 1000 ? `${n / 1000}K` : n}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      <div className="relative w-full max-w-md">
-        {/* Ambient halo — a separate radial-gradient layer so the falloff is
-            elliptical (Gaussian-like), not a rectangle outline like box-shadow
-            would produce no matter how blurred. Pulses opacity, not shape. */}
+      <div className="relative w-full shrink-0 sm:w-auto sm:min-w-[13rem] lg:min-w-[15rem]">
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/2 -z-10 motion-safe:animate-[halo-pulse_4s_ease-in-out_infinite]"
+          className="pointer-events-none absolute left-1/2 top-1/2 -z-10 motion-safe:animate-[halo-pulse_4s_ease-in-out_infinite] opacity-90"
           style={{
-            width: '180%',
-            height: '420%',
+            width: '200%',
+            height: '480%',
             transform: 'translate(-50%, -50%)',
             background:
-              'radial-gradient(ellipse 50% 35% at 50% 50%, oklch(0.76 0.13 180 / 0.55), oklch(0.76 0.13 180 / 0.15) 35%, transparent 65%)',
-            filter: 'blur(28px)',
+              'radial-gradient(ellipse 55% 40% at 50% 50%, oklch(0.88 0.11 180 / 0.55), oklch(0.76 0.13 180 / 0.25) 45%, transparent 70%)',
+            filter: 'blur(36px)',
           }}
         />
 
-      <button
-        onClick={() => onRun(selected)}
-        disabled={isRunning}
-        className={cn(
-          'group relative h-16 w-full overflow-hidden rounded-2xl text-base font-medium tracking-wide transition-transform',
-          'border border-gold/40',
-          'bg-gradient-to-b from-gold to-gold-lo text-bg-0',
-          'shadow-[0_1px_0_0_oklch(1_0_0/0.35)_inset]',
-          'hover:scale-[1.02] active:scale-[0.99]',
-          isRunning && 'hover:scale-100',
-        )}
-      >
+        <button
+          onClick={() => onRun(selected)}
+          disabled={isRunning}
+          className={cn(
+            'group relative h-14 w-full overflow-hidden rounded-xl sm:h-16 sm:rounded-2xl',
+            'border transition-all duration-200',
+            'hover:scale-[1.03] active:scale-[0.98]',
+            isRunning
+              ? 'border-gold/40 bg-bg-2/95 text-fg-0 shadow-[inset_0_1px_0_oklch(1_0_0/0.06)] hover:scale-100'
+              : cn(
+                  'border-gold-hi/50 bg-gradient-to-b from-gold-hi via-gold to-gold-lo',
+                  'text-bg-0 shadow-glow-gold',
+                  'hover:border-gold-hi hover:from-[oklch(0.92_0.12_180)] hover:via-gold-hi hover:to-gold',
+                ),
+          )}
+        >
+          {!isRunning && (
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent"
+            />
+          )}
         {/* Progress fill */}
         {isRunning && (
           <span
-            className="absolute inset-0 origin-left bg-gradient-to-r from-emerald/40 via-emerald/30 to-gold/30"
+            className="absolute inset-0 origin-left bg-gradient-to-r from-gold/50 via-gold-hi/40 to-gold/20"
             style={{ transform: `scaleX(${pct / 100})`, transition: 'transform 200ms linear' }}
           />
         )}
@@ -107,41 +117,33 @@ export function SimulationControls({ state, onRun }: Props) {
           />
         )}
 
-        {/* Animated beam border */}
-        <span className="pointer-events-none absolute -inset-px rounded-2xl">
-          <span
-            className="absolute inset-0 rounded-2xl"
-            style={{
-              background:
-                'conic-gradient(from 0deg, transparent 0%, oklch(1 0 0 / 0.5) 8%, transparent 18%)',
-              filter: 'blur(2px)',
-              maskImage:
-                'linear-gradient(black, black) content-box, linear-gradient(black, black)',
-              WebkitMaskComposite: 'xor',
-              maskComposite: 'exclude',
-              padding: 1,
-              animation: 'spin-slow 4s linear infinite',
-            }}
-          />
-        </span>
-
-        <span className="relative z-10 flex items-center justify-center gap-3">
+        <span className="relative z-10 flex items-center justify-center gap-2.5 px-4">
           {isRunning ? (
             <>
-              <span className="font-mono tabular-nums">
+              <span className="font-mono text-sm font-semibold tabular-nums sm:text-base">
                 {formatNum(state.completed)} / {formatNum(state.total)}
               </span>
               {remaining !== null && (
-                <span className="font-mono text-xs opacity-70">· {remaining}s</span>
+                <span className="font-mono text-xs text-fg-2">· {remaining}s</span>
               )}
             </>
           ) : isDone ? (
-            <span>{t('cta_finished')}</span>
+            <>
+              <RotateCcw className="h-5 w-5 shrink-0" aria-hidden />
+              <span className="font-display text-lg font-bold uppercase tracking-[0.06em] sm:text-xl">
+                {t('cta_finished')}
+              </span>
+            </>
           ) : (
-            <span className="font-display text-xl uppercase tracking-[0.04em]">{t('cta_simulate')}</span>
+            <>
+              <Play className="h-5 w-5 shrink-0 fill-bg-0/80" aria-hidden />
+              <span className="font-display text-lg font-bold uppercase tracking-[0.06em] sm:text-xl">
+                {t('cta_simulate')}
+              </span>
+            </>
           )}
         </span>
-      </button>
+        </button>
       </div>
     </div>
   );

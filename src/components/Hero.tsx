@@ -2,11 +2,11 @@
 
 import { useEffect, useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
 import { gsap } from 'gsap';
 import { SimulationControls } from './SimulationControls';
 import { MeshGradient } from './hero/MeshGradient';
 import { HeroGallery } from './hero/HeroGallery';
+import { HeroDemoPromo } from './hero/HeroDemoPromo';
 import type { SimState } from '@/hooks/useSimulation';
 
 interface HeroProps {
@@ -75,14 +75,9 @@ export function Hero({ state, onRun }: HeroProps) {
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-fg-1 sm:text-lg">{t('subtitle')}</p>
 
-          <Link
-            href="/demo"
-            className="mt-4 inline-flex items-center text-sm font-medium text-gold transition-colors hover:text-gold-hi"
-          >
-            {t('demo_link')}
-          </Link>
+          <HeroDemoPromo />
 
-          <p className="mt-3 max-w-xl text-sm text-fg-2">
+          <p className="mt-4 max-w-xl text-sm text-fg-2">
             {t('contact_hint')}{' '}
             <span className="font-medium text-gold">{t('contact_brand')}</span>
           </p>
