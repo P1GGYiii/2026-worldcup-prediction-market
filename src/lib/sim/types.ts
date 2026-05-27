@@ -20,12 +20,12 @@ export interface MatchResult {
   goals_home: number;
   goals_away: number;
   winner: number;     // team index that advances (winner via PK if drawn in knockout)
-  drawn: boolean;     // true if regular-time draw (knockout — penalties decided it)
+  drawn: boolean;     // true if regular-time draw (knockout - penalties decided it)
 }
 
 /**
  * Furthest knockout round a team participated in. Bronze-medal status is tracked
- * separately via `TournamentResult.thirdPlace` — it doesn't bump the stage value
+ * separately via `TournamentResult.thirdPlace` - it doesn't bump the stage value
  * because a 3rd-place finisher still topped out at SF (they lost there, then
  * won the 3rd-place playoff).
  */
@@ -64,7 +64,7 @@ export interface TournamentResult {
  * `count` of a knockout entry divided by N is the probability of that
  * specific matchup occurring at that slot. Sum of counts across all
  * matchups for a single slot equals N (every sim plays that slot once,
- * unless deeper bracket dependencies — irrelevant here).
+ * unless deeper bracket dependencies - irrelevant here).
  */
 export interface MatchAggregate {
   slotId: string;
@@ -94,7 +94,7 @@ export interface MatchAggregateSerialized extends Omit<MatchAggregate, 'scoreHis
 /**
  * One captured-in-full simulation. The engine samples ~1 every (N / SAMPLE_SIZE)
  * sims and stores the complete match list so the UI can let users browse
- * actual tournaments — not just aggregates. Memory cost is ~2KB per sample.
+ * actual tournaments - not just aggregates. Memory cost is ~2KB per sample.
  */
 export interface SampleSim {
   /** Index of this sim within the full run (0..N-1). */

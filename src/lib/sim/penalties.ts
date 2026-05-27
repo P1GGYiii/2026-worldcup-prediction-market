@@ -2,7 +2,7 @@
  * Penalty shoot-out outcome model (Tier 1 #3).
  *
  * When a knockout match ends 0-0 in regulation, the previous engine flipped a
- * fair coin. This is wrong — historical data shows clear per-team patterns
+ * fair coin. This is wrong - historical data shows clear per-team patterns
  * (Germany ~83% in WC shootouts, England ~30%, etc.) but the small samples
  * also forbid trusting raw rates blindly. We use an Empirical Bayes shrinkage:
  *
@@ -15,11 +15,11 @@
  *
  *   P(A wins shootout) = rate(A) / (rate(A) + rate(B))
  *
- * No cap — let the data speak. Hosts, GK quality, recency are NOT modeled in
+ * No cap - let the data speak. Hosts, GK quality, recency are NOT modeled in
  * v1 (deferred to Tier 1.5 if backtest justifies the complexity).
  *
  * For backtest honesty, callers can pass a `cutoffYear` so the rate only
- * includes shootouts strictly before that year — preventing look-ahead bias
+ * includes shootouts strictly before that year - preventing look-ahead bias
  * when scoring historical WCs.
  */
 

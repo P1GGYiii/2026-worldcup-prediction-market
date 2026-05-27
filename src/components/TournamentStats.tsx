@@ -94,7 +94,7 @@ export function TournamentStats({ result }: Props) {
   }, [result, teamById]);
 
   const teamName = (id: string | undefined) => {
-    if (!id) return '—';
+    if (!id) return '-';
     const t = teamById.get(id);
     return t ? (locale === 'es' ? t.name_es : t.name_en) : id;
   };
@@ -120,7 +120,7 @@ export function TournamentStats({ result }: Props) {
         />
         <StatCard
           label="Partido con más goles esperado"
-          value={data.maxGoalsFixture ? `${data.maxGoalsFixture.goals.toFixed(2)}` : '—'}
+          value={data.maxGoalsFixture ? `${data.maxGoalsFixture.goals.toFixed(2)}` : '-'}
           sub={data.maxGoalsFixture
             ? `${teamName(data.maxGoalsFixture.home)} vs ${teamName(data.maxGoalsFixture.away)}`
             : ''}
@@ -130,7 +130,7 @@ export function TournamentStats({ result }: Props) {
         />
         <StatCard
           label="Final más probable"
-          value={data.topFinal ? `${(data.topFinal.count / result.numSimulations * 100).toFixed(1)}%` : '—'}
+          value={data.topFinal ? `${(data.topFinal.count / result.numSimulations * 100).toFixed(1)}%` : '-'}
           sub={data.topFinal
             ? `${teamName(data.topFinal.home)} vs ${teamName(data.topFinal.away)}`
             : ''}
@@ -140,21 +140,21 @@ export function TournamentStats({ result }: Props) {
         />
         <StatCard
           label="Top goleador esperado"
-          value={data.topPlayer ? data.topPlayer.goals.toFixed(2) : '—'}
+          value={data.topPlayer ? data.topPlayer.goals.toFixed(2) : '-'}
           sub={data.topPlayer ? `${data.topPlayer.name} · ${data.topPlayer.teamId}` : ''}
           tone="gold"
           flagA={data.topPlayer ? teamFlag(data.topPlayer.teamId) : ''}
         />
         <StatCard
           label="Cenicienta más probable"
-          value={data.cinderella ? `${(data.cinderella.qf * 100).toFixed(1)}%` : '—'}
+          value={data.cinderella ? `${(data.cinderella.qf * 100).toFixed(1)}%` : '-'}
           sub={data.cinderella ? `${teamName(data.cinderella.team.id)} llega a Cuartos` : ''}
           tone="emerald"
           flagA={teamFlag(data.cinderella?.team.id)}
         />
         <StatCard
           label="Defensa más sólida"
-          value={data.lowestGA ? data.lowestGA.ga.toFixed(2) : '—'}
+          value={data.lowestGA ? data.lowestGA.ga.toFixed(2) : '-'}
           sub={data.lowestGA ? `${teamName(data.lowestGA.team.id)} · GC promedio por torneo` : ''}
           tone="violet"
           flagA={teamFlag(data.lowestGA?.team.id)}

@@ -24,7 +24,7 @@ export function buildDemoMarkets(result: SerializedResult, locale: 'es' | 'en' =
   const N = result.numSimulations;
   const markets: DemoMarket[] = [];
 
-  // Outright winner — top 12 by champion probability.
+  // Outright winner - top 12 by champion probability.
   const winnerCandidates = result.teams
     .map((t, i) => ({ id: t.id, prob: result.stageCounts.champion[i] / N }))
     .sort((a, b) => b.prob - a.prob)
@@ -41,7 +41,7 @@ export function buildDemoMarkets(result: SerializedResult, locale: 'es' | 'en' =
     });
   }
 
-  // Group winner — favorite per group (highest P(1st)).
+  // Group winner - favorite per group (highest P(1st)).
   for (const [letter, teamIds] of Object.entries(GROUPS)) {
     let bestId = teamIds[0];
     let bestProb = 0;
@@ -65,7 +65,7 @@ export function buildDemoMarkets(result: SerializedResult, locale: 'es' | 'en' =
     });
   }
 
-  // Head-to-head — top fixtures by frequency in sims.
+  // Head-to-head - top fixtures by frequency in sims.
   const fixtureRows: Array<{
     key: string;
     homeId: string;
@@ -229,5 +229,5 @@ export function settlementLabel(sample: SampleSim, teams: SerializedResult['team
   const champ = teams[sample.champion];
   if (!champ) return `Sim #${sample.simIdx}`;
   const name = locale === 'es' ? champ.name_es : champ.name_en;
-  return locale === 'es' ? `Sim #${sample.simIdx} — campeón: ${name}` : `Sim #${sample.simIdx} — champion: ${name}`;
+  return locale === 'es' ? `Sim #${sample.simIdx} - campeón: ${name}` : `Sim #${sample.simIdx} - champion: ${name}`;
 }

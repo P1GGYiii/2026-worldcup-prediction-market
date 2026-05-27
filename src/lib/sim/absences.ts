@@ -41,14 +41,14 @@ export interface AbsenceWeights {
 /**
  * Default weights from the calibration sweep run 2026-05-17 on WC 2014/18/22.
  * Sweep result: ALL combos regressed Brier on the affected subset (n=14).
- * Same outcome pattern as Tier 1 #1 (host bonus) — historical signal too
+ * Same outcome pattern as Tier 1 #1 (host bonus) - historical signal too
  * sparse, with FRA 2022 winning DESPITE Benzema/Pogba/Kanté absences
  * dominating the small sample.
  *
  * Choice: value-dominant (β=0.8, γ=0.2, α=0). β=1.0 was the best individual
  * cell but ignoring position is theoretically wrong (a top-rated GK is more
  * critical than a same-value striker with a backup). α=0 since "qualifier
- * minutes" was the worst signal in the sweep — many key players rotate in
+ * minutes" was the worst signal in the sweep - many key players rotate in
  * qualifiers without being less critical at the tournament.
  *
  * Magnitude unchanged: per-player penalty up to -80, team cap -150. The
@@ -79,12 +79,12 @@ const TEAM_PENALTY_CAP = 150;  // no team can lose more than 150 ELO from absenc
 /**
  * Engine-side toggle. When false, `absenceAdjustment` in match.ts returns 0,
  * effectively disabling the absences penalty in the simulator. UI lookups
- * (currentAbsences) IGNORE this flag — the absences list keeps rendering so
+ * (currentAbsences) IGNORE this flag - the absences list keeps rendering so
  * users can see the data even when running the "no-injuries" scenario.
  *
  * Used by the worker to run two passes per Monte Carlo: with absences (default)
  * and without (counterfactual showing what we'd predict if every flagged
- * injury were fake/precautionary — a real concern in the pre-tournament window).
+ * injury were fake/precautionary - a real concern in the pre-tournament window).
  */
 let _engineAbsencesEnabled = true;
 export function setEngineAbsencesEnabled(v: boolean): void {

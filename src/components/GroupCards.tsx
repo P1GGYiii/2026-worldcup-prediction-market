@@ -23,7 +23,7 @@ export function GroupCards({ result }: Props) {
    * track explicit 1st/2nd/3rd-advancing/eliminated buckets in the aggregate,
    * but we can derive a useful approximation: P(qualify direct) ≈ stageCounts.r32
    * minus a heuristic correction. To keep it honest, we display:
-   *   - P(advance to R32) — the rigorous number we have
+   *   - P(advance to R32) - the rigorous number we have
    *   - P(eliminated in group) = 1 − P(advance)
    * The "direct vs best 3rd" split is shown as a smaller gradient hint based on
    * an estimate: roughly 24/32 advance directly across all groups, 8/32 as best 3rds.

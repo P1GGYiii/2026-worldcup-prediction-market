@@ -20,7 +20,7 @@ export function formatNum(n: number): string {
  * the Wilson bounds rather than Wald (p ± 1.96·SE) because Wilson stays valid
  * at p=0 and p=1 (Wald collapses to a zero-width band there) and is the
  * standard choice for proportions. For p far from the boundaries and large n
- * the two coincide to four decimals — Wilson costs us nothing.
+ * the two coincide to four decimals - Wilson costs us nothing.
  *
  * Reference: Wilson 1927; Brown, Cai & DasGupta 2001 "Interval Estimation for
  * a Binomial Proportion" recommends Wilson for n ≥ ~40.

@@ -8,12 +8,12 @@ import snapshotsData from '@/data/snapshots.json';
 import type { SerializedResult } from '@/lib/sim/worker';
 
 /**
- * Tier 1.5 — diff view.
+ * Tier 1.5 - diff view.
  *
  * Reads src/data/snapshots.json (populated by scripts/snapshot-run.ts on the
  * tournament cron) and renders the top movers between the two most recent
  * snapshots. If there are <2 snapshots, the section hides itself. The Monte
- * Carlo run in the browser is independent of these snapshots — this purely
+ * Carlo run in the browser is independent of these snapshots - this purely
  * visualizes deltas captured by the server-side cron.
  */
 

@@ -25,7 +25,7 @@ import { liveSuspensions } from './state';
  *
  * Sweep on WCs 2014/2018/2022 (n=192) selected (α=0.2, lookback=1y) as
  * the empirical optimum, improving accuracy +1.6pp with no Brier
- * regression. Effect size is small — direction is the signal.
+ * regression. Effect size is small - direction is the signal.
  */
 export const RECENT_ALPHA = 0.20;
 const RECENT_CAP_ELO = 150;
@@ -39,7 +39,7 @@ export function recentFormAdjustment(team: Team): number {
 /**
  * Per-team ELO penalty from documented current absences (Tier 1 #4a).
  * Stage-aware: a player marked "applies_from_stage: sf" only penalizes
- * SF onwards. Currently uses DEFAULT_ABSENCE_WEIGHTS — to be replaced by
+ * SF onwards. Currently uses DEFAULT_ABSENCE_WEIGHTS - to be replaced by
  * calibration sweep result (Tier 1 #4a calibration).
  */
 export function absenceAdjustment(team: Team, stage: Stage = 'group'): number {
@@ -64,7 +64,7 @@ export function effectiveElo(team: Team, stage: Stage = 'group'): number {
  * Simplified rule: host team gets +100 in any of its matches; non-host opponent gets 0.
  * In knockout, all matches are effectively neutral (no host bonus).
  *
- * The bonus value was empirically sweeped (Tier 1 #1) — the current +100 is
+ * The bonus value was empirically sweeped (Tier 1 #1) - the current +100 is
  * neither helpful nor harmful on the WC 2014/2018/2022 backtest set (n=28
  * host-involving matches, within noise). Kept at 100 pending more data.
  */
@@ -77,7 +77,7 @@ export function hostBonus(team: Team, isKnockout: boolean): number {
  * Post-extra-time fatigue penalty (Tier 1 #5).
  * A team that won its previous knockout match in extra time / penalties played
  * ~30 min more than a rival who won in regulation. We multiply that team's λ
- * by FATIGUE_LAMBDA_FACTOR in their next match. Magnitude conservative — feel
+ * by FATIGUE_LAMBDA_FACTOR in their next match. Magnitude conservative - feel
  * free to recalibrate against backtest data once carryover is wired there.
  */
 export const FATIGUE_LAMBDA_FACTOR = 0.92;

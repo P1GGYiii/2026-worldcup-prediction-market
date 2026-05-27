@@ -13,7 +13,7 @@ export interface TeamStanding {
 }
 
 /**
- * Round-robin pair order — first index is "home", second is "away" within the group.
+ * Round-robin pair order - first index is "home", second is "away" within the group.
  * Slot index 0..5 maps to these pairs (used as part of fixture slot IDs).
  */
 export const GROUP_PAIRS: ReadonlyArray<readonly [number, number]> = [

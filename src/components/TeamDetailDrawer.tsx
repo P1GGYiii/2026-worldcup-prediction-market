@@ -16,7 +16,7 @@ import type { SerializedResult } from '@/lib/sim/worker';
 
 interface Props {
   result: SerializedResult;
-  /** Same Monte Carlo run with the absences penalty disabled — for the counterfactual view. */
+  /** Same Monte Carlo run with the absences penalty disabled - for the counterfactual view. */
   resultNoAbsences?: SerializedResult | null;
 }
 
@@ -36,7 +36,7 @@ export function TeamDetailDrawer({ result, resultNoAbsences }: Props) {
     const N = result.numSimulations;
     const stages = result.stageCounts;
 
-    // Derive per-outcome counts. stageCounts are cumulative — convert to disjoint.
+    // Derive per-outcome counts. stageCounts are cumulative - convert to disjoint.
     const champ = stages.champion[i];
     const final = stages.final[i];
     const sf    = stages.sf[i];
@@ -254,7 +254,7 @@ export function TeamDetailDrawer({ result, resultNoAbsences }: Props) {
                       />
                     </div>
                     <p className="mt-2 text-[10px] text-fg-3 leading-relaxed">
-                      Muchas lesiones de pre-mundial son precautorias o de manejo de cargas — los clubes
+                      Muchas lesiones de pre-mundial son precautorias o de manejo de cargas - los clubes
                       cuidan a los jugadores. Esta vista muestra qué predeciría el modelo si <em>ninguna</em>{' '}
                       de las lesiones flagged fuera real.
                     </p>
@@ -321,7 +321,7 @@ export function TeamDetailDrawer({ result, resultNoAbsences }: Props) {
 }
 
 function findGroup(teamId: string): string | null {
-  // Lazy import — small file, accessed only on drawer open.
+  // Lazy import - small file, accessed only on drawer open.
   // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
   const groupsData = require('@/data/groups.json') as { groups: Record<string, string[]> };
   for (const [letter, ids] of Object.entries(groupsData.groups)) {

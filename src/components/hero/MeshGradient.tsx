@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Lightweight animated mesh gradient — two oklch blobs that drift slowly,
+ * Lightweight animated mesh gradient - two oklch blobs that drift slowly,
  * with mouse-parallax. Pure CSS animation, no WebGL. Renders behind the hero.
  */
 export function MeshGradient() {

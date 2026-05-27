@@ -92,7 +92,7 @@ export function buildTicketListings(result: SerializedResult, locale: 'es' | 'en
   listings.push(
     makeListing(result, locale, {
       id: 'ticket-final-cat1',
-      matchLabel: locale === 'es' ? 'Final — Copa del Mundo 2026' : 'Final — FIFA World Cup 2026',
+      matchLabel: locale === 'es' ? 'Final - Copa del Mundo 2026' : 'Final - FIFA World Cup 2026',
       stage: 'final',
       category: 'Category 1',
       teamIds: [],
@@ -100,7 +100,7 @@ export function buildTicketListings(result: SerializedResult, locale: 'es' | 'en
     }),
     makeListing(result, locale, {
       id: 'ticket-final-cat2',
-      matchLabel: locale === 'es' ? 'Final — Copa del Mundo 2026' : 'Final — FIFA World Cup 2026',
+      matchLabel: locale === 'es' ? 'Final - Copa del Mundo 2026' : 'Final - FIFA World Cup 2026',
       stage: 'final',
       category: 'Category 2',
       teamIds: [],
@@ -158,8 +158,8 @@ export function buildTicketListings(result: SerializedResult, locale: 'es' | 'en
       makeListing(result, locale, {
         id: `ticket-group-${letter}`,
         matchLabel: locale === 'es'
-          ? `Grupo ${letter} — partido destacado`
-          : `Group ${letter} — featured match`,
+          ? `Grupo ${letter} - partido destacado`
+          : `Group ${letter} - featured match`,
         stage: 'group',
         category: 'General admission',
         teamIds: [fav],

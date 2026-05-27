@@ -141,7 +141,7 @@ export function MatchDetailDrawer({ result }: Props) {
 
                 <p className="text-[10px] text-fg-3 leading-relaxed">
                   Probabilidades calculadas con el modelo ELO + Poisson sobre {result.numSimulations.toLocaleString()} simulaciones.
-                  Los anotadores y los córners/tarjetas son <strong>aproximaciones</strong> basadas en goal-share manual y promedios históricos —
+                  Los anotadores y los córners/tarjetas son <strong>aproximaciones</strong> basadas en goal-share manual y promedios históricos -
                   ver <a className="underline decoration-gold/40 underline-offset-2" href="/methodology">metodología</a>.
                 </p>
               </div>

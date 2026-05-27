@@ -5,7 +5,7 @@
  *
  *  - A clean SVG line-art FIFA-style trophy at the center.
  *  - A faint rotating conic gradient ring behind it (slow, ambient).
- *  - Concentric ELO-level rings with tabular numbers — ties the visual
+ *  - Concentric ELO-level rings with tabular numbers - ties the visual
  *    back to the model's substance.
  *  - No WebGL, no wheel-event hijacking, no ugly geometry.
  */
@@ -32,7 +32,7 @@ export function TrophySigil() {
         }}
       />
 
-      {/* concentric tick rings — ELO levels (2100, 1900, 1700, 1500) */}
+      {/* concentric tick rings - ELO levels (2100, 1900, 1700, 1500) */}
       {[
         { r: 0.84, label: '2100' },
         { r: 0.70, label: '1900' },

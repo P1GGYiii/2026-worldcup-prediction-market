@@ -9,7 +9,7 @@ export type WorkerInbound =
 
 /**
  * Progress messages tag which scenario is currently being computed so the
- * loading bar can show "Pasada 1/2 — con lesiones · 47%" etc. The `done`
+ * loading bar can show "Pasada 1/2 - con lesiones · 47%" etc. The `done`
  * message carries BOTH results.
  */
 export type WorkerOutbound =
@@ -23,7 +23,7 @@ export type WorkerOutbound =
  * mark them transferable to avoid a copy of large buffers.
  *
  * For readability on the receiving side, we serialize counts as plain arrays
- * — the data is small (48 teams × a handful of fields) and the legibility
+ * - the data is small (48 teams × a handful of fields) and the legibility
  * win is bigger than the perf cost.
  */
 export interface SerializedResult {
@@ -109,7 +109,7 @@ self.onmessage = (e: MessageEvent<WorkerInbound>) => {
       });
 
       // Pass 2: counterfactual without absences. Same seed so the only delta
-      // comes from the absence penalty — easier to interpret the difference.
+      // comes from the absence penalty - easier to interpret the difference.
       setEngineAbsencesEnabled(false);
       const noAbs = runSimulations({
         numSimulations: msg.numSimulations,

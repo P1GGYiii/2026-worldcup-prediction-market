@@ -5,7 +5,7 @@
       "github.com/openfootball/worldcup.json  (regulation-time match results)"
     ],
     "fetched_at": "2026-05-18T01:10:28.924Z",
-    "note": "Backtest dataset for WC 2014/2018/2022. ELO is end-of-prior-year. Scores are regulation time (90 min), so finals decided in extra time / penalties appear as draws — match the model output."
+    "note": "Backtest dataset for WC 2014/2018/2022. ELO is end-of-prior-year. Scores are regulation time (90 min), so finals decided in extra time / penalties appear as draws - match the model output."
   },
   "tournaments": [
     {

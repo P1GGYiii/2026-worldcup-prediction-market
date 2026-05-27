@@ -1,5 +1,5 @@
 /**
- * xoshiro128** PRNG — fast, high-quality, well-distributed.
+ * xoshiro128** PRNG - fast, high-quality, well-distributed.
  * About 2× faster than Math.random() in V8 and produces better-distributed
  * floats across simulations than the default LCG-style PRNG.
  *

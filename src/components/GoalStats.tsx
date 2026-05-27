@@ -135,7 +135,7 @@ export function GoalStats({ result }: Props) {
       <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
         <div className="rounded-2xl border border-border glass p-6">
           <h3 className="text-xs uppercase tracking-[0.18em] text-fg-3 font-mono mb-4">
-            Goals per tournament — density
+            Goals per tournament - density
           </h3>
           <svg ref={svgRef} className="h-[200px] w-full" />
         </div>
@@ -185,7 +185,7 @@ export function GoalStats({ result }: Props) {
             ))}
           </ol>
           <p className="mt-3 text-[10px] text-fg-3">
-            Distribución multinomial sobre los goles de cada equipo. No modela lesiones, forma o suplencias —
+            Distribución multinomial sobre los goles de cada equipo. No modela lesiones, forma o suplencias -
             ver <a className="underline decoration-gold/40 underline-offset-2" href="/methodology">metodología</a>.
           </p>
         </div>

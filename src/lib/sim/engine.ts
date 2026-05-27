@@ -59,7 +59,7 @@ export function runSimulations(opts: RunOptions): AggregateResult {
   // Snapshot every k-th sim into result.sampleSims. For N < SAMPLE_SIM_TARGET we
   // capture every sim; for larger N we space them out evenly.
   const sampleEvery = Math.max(1, Math.floor(N / SAMPLE_SIM_TARGET));
-  // currentSampleMatches lives across the call to simulateTournament — we
+  // currentSampleMatches lives across the call to simulateTournament - we
   // populate it via the upsertFixture wrapper below.
   let currentSampleMatches: SampleSim['matches'] | null = null;
 

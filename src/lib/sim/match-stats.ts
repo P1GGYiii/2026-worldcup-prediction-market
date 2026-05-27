@@ -26,7 +26,7 @@ export interface MatchStats {
   scoreProb: Float64Array;
   /** Top N scorelines, sorted by probability. */
   topScores: Array<{ home: number; away: number; prob: number }>;
-  /** Estimated corners and yellow cards (very rough — see methodology). */
+  /** Estimated corners and yellow cards (very rough - see methodology). */
   cornersHome: number;
   cornersAway: number;
   yellowsHome: number;

@@ -1,11 +1,12 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Flag } from '@/components/Flag';
 import { cn } from '@/lib/utils';
 import type { DemoTicketListing } from '@/lib/demo/types';
 import type { SerializedResult } from '@/lib/sim/worker';
 import type { useDemoWallet } from '@/hooks/useDemoWallet';
+import { listingTeamIds } from '@/lib/demo/flags';
+import { DemoTeamFlags } from './DemoTeamFlags';
 
 type Wallet = ReturnType<typeof useDemoWallet>;
 
@@ -13,10 +14,6 @@ interface Props {
   listings: DemoTicketListing[];
   result: SerializedResult;
   wallet: Wallet;
-}
-
-function teamFlag(result: SerializedResult, teamId: string): string | null {
-  return result.teams.find((t) => t.id === teamId)?.flag ?? null;
 }
 
 export function TicketsTab({ listings, result, wallet }: Props) {
@@ -37,21 +34,21 @@ export function TicketsTab({ listings, result, wallet }: Props) {
               className="rounded-2xl border border-border bg-bg-1/40 p-4"
             >
               <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-fg-3">
-                    {listing.category} · {listing.stage.toUpperCase()}
-                  </p>
-                  <h3 className="mt-1 text-sm font-medium text-fg-0">{listing.matchLabel}</h3>
-                  <p className="mt-1 text-xs text-fg-3">{listing.venue}</p>
-                </div>
-                {listing.teamIds.length > 0 && (
-                  <div className="flex -space-x-1">
-                    {listing.teamIds.slice(0, 2).map((id) => {
-                      const flag = teamFlag(result, id);
-                      return flag ? <Flag key={id} code={flag} size={22} /> : null;
-                    })}
+                <div className="flex min-w-0 flex-1 items-start gap-3">
+                  <DemoTeamFlags
+                    result={result}
+                    teamIds={listingTeamIds(listing)}
+                    size={30}
+                    layout={listing.teamIds.length >= 2 ? 'versus' : 'stack'}
+                  />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-fg-3">
+                      {listing.category} · {listing.stage.toUpperCase()}
+                    </p>
+                    <h3 className="mt-1 text-sm font-medium text-fg-0">{listing.matchLabel}</h3>
+                    <p className="mt-1 text-xs text-fg-3">{listing.venue}</p>
                   </div>
-                )}
+                </div>
               </div>
 
               <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">

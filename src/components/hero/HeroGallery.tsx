@@ -159,7 +159,7 @@ export function HeroGallery() {
       />
 
       <div className="grid grid-cols-12 gap-3 sm:gap-4">
-        {/* trophy — full width, large */}
+        {/* trophy - full width, large */}
         <figure
           className={cn(
             'gallery-hero relative col-span-12 overflow-hidden rounded-2xl',
@@ -193,7 +193,7 @@ export function HeroGallery() {
           </div>
         </figure>
 
-        {/* companion row — 3 + 6 + 3 grid, fixed heights, aligned */}
+        {/* companion row - 3 + 6 + 3 grid, fixed heights, aligned */}
         {FLOATS.map((photo) => (
           <FloatCard
             key={photo.src}

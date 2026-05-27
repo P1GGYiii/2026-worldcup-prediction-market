@@ -41,7 +41,7 @@ export interface DemoTicketListing {
   askPrice: number;
   fairPrice: number;
   teamIds: string[];
-  /** Synthetic inventory — demo only. */
+  /** Synthetic inventory - demo only. */
   available: number;
 }
 

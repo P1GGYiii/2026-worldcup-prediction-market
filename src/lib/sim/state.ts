@@ -1,5 +1,5 @@
 /**
- * Tier 1.5 — live tournament state.
+ * Tier 1.5 - live tournament state.
  *
  * Loaded from src/data/tournament_state.json. Until kickoff (2026-06-11) the
  * file is empty and every helper returns null/empty so the engine runs as a
@@ -29,7 +29,7 @@ export interface LiveResult {
   ga: number;
   status: 'completed' | 'scheduled';
   kickoff_iso?: string;
-  /** ESPN event id — kept so the cards scraper can resolve summary endpoint. */
+  /** ESPN event id - kept so the cards scraper can resolve summary endpoint. */
   espn_event_id?: string;
   /** Knockout: true if 90' ended drawn and went to extra time. */
   went_to_et?: boolean;
@@ -97,7 +97,7 @@ export function liveSuspensions(teamId: string): Absence[] {
     .map((s) => ({
       player: s.player,
       position: s.position,
-      // We don't have qualifier minutes on the fly — α=0 by default so this is moot.
+      // We don't have qualifier minutes on the fly - α=0 by default so this is moot.
       minutes_qual: 0,
       market_value_mil: s.market_value_mil,
       reason: s.reason,

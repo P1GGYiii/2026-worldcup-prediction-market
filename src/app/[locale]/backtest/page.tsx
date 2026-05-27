@@ -9,7 +9,7 @@ export const dynamic = 'force-static';
 export default async function BacktestPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  // Baseline (legacy, no recent-form blend) and current model (with blend) — so
+  // Baseline (legacy, no recent-form blend) and current model (with blend) - so
   // we can show the user what the merged Tier 1 #2 actually changes.
   const baseline = runBacktest({ recentAlpha: 0 });
   const r = runBacktest({ recentAlpha: 0.2, recentLookbackYears: 1 });
@@ -131,7 +131,7 @@ export default async function BacktestPage({ params }: { params: Promise<{ local
       <Section title="Calibración">
         <p className="mb-4 text-sm text-fg-2">
           Cuando el modelo dice <span className="text-fg-1">"X% de probabilidad"</span>, ¿la frecuencia
-          observada coincide? La diagonal punteada es la calibración perfecta — cuanto más cerca, mejor.
+          observada coincide? La diagonal punteada es la calibración perfecta - cuanto más cerca, mejor.
         </p>
         <CalibrationPlot buckets={r.calibration} />
       </Section>
@@ -154,7 +154,7 @@ export default async function BacktestPage({ params }: { params: Promise<{ local
             pero <strong className="text-fg-1">accuracy +1.6 puntos</strong> (3 partidos más correctos de 192).
           </p>
           <p>
-            <strong className="text-fg-1">Lookback de 3 años empeora claramente</strong> — a esa distancia el equipo
+            <strong className="text-fg-1">Lookback de 3 años empeora claramente</strong> - a esa distancia el equipo
             cambió de lineup y la "tendencia" mete ruido. Lookbacks 1, 2, 4, 5 funcionan parecido. Que el
             mínimo esté en 1y confirma que el ELO actual ya integra los últimos 12 meses con buen peso.
           </p>
@@ -219,7 +219,7 @@ P(A gana) = rate(A) / (rate(A) + rate(B))`}
           El modelo actual le da <span className="text-fg-1 font-medium">+100 ELO</span> al equipo
           anfitrión solo en fase de grupos. Probamos varios valores (0 a 220) y dos políticas
           (solo grupos vs grupos + KO) para ver cuál minimiza Brier. Los <span className="text-fg-1">28
-          partidos donde uno de los equipos es anfitrión</span> son los que cambian — el resto del dataset
+          partidos donde uno de los equipos es anfitrión</span> son los que cambian - el resto del dataset
           se mueve solo por efecto de redondeo.
         </p>
         <SweepChart points={sweep} />
@@ -232,7 +232,7 @@ P(A gana) = rate(A) / (rate(A) + rate(B))`}
           </p>
           <p>
             <span className="text-fg-1">Pero</span> con n=28 partidos el error estándar de Brier es
-            ~0.09 — todos los valores del sweep están dentro del ruido. Direccionalmente sugiere
+            ~0.09 - todos los valores del sweep están dentro del ruido. Direccionalmente sugiere
             "menos bonus" pero no es estadísticamente decisivo. Los 3 hosts del set (BRA-2014, RUS-2018,
             QAT-2022) eran o ya-favoritos o demasiado débiles para que el bonus genérico ayudara.
           </p>
@@ -244,16 +244,16 @@ P(A gana) = rate(A) / (rate(A) + rate(B))`}
         </div>
       </Section>
 
-      <Section title="Peores predicciones — el modelo no vio venir">
+      <Section title="Peores predicciones - el modelo no vio venir">
         <MissList matches={r.worstMisses} kind="miss" />
         <p className="mt-3 text-xs leading-relaxed text-fg-3">
           Estos son los batacazos históricos. El modelo les asignó probabilidad muy baja y igual ocurrieron.
-          La frecuencia con la que pasan vs lo que predijimos es donde está la mayor deuda — el Tier 1
+          La frecuencia con la que pasan vs lo que predijimos es donde está la mayor deuda - el Tier 1
           (peso al último año, lesiones, host bonus reforzado) ataca exactamente esto.
         </p>
       </Section>
 
-      <Section title="Mejores predicciones — donde el ELO se impone">
+      <Section title="Mejores predicciones - donde el ELO se impone">
         <MissList matches={r.bestCalls} kind="call" />
       </Section>
 
@@ -278,11 +278,11 @@ P(A gana) = rate(A) / (rate(A) + rate(B))`}
           <Bullet>
             <strong>Por qué backtest sobre el regulation-time</strong>: nuestro modelo Poisson predice goles
             en 90 minutos. Los partidos definidos en alargue/penales se cuentan como empate al final del
-            tiempo regular — que es exactamente lo que el modelo predice.
+            tiempo regular - que es exactamente lo que el modelo predice.
           </Bullet>
           <Bullet>
             <strong>Lo que NO incluye este backtest</strong>: predicciones a nivel torneo (probabilidad de
-            campeón) — requiere correr el bracket de 32 equipos. Lo agregamos en Tier 1.5 cuando esté
+            campeón) - requiere correr el bracket de 32 equipos. Lo agregamos en Tier 1.5 cuando esté
             implementado el formato viejo del Mundial.
           </Bullet>
         </ul>

@@ -1,6 +1,6 @@
 /**
  * Goal-distribution among players. We don't model players in the match
- * simulation — this is a multinomial sampler that takes a team's goal-share
+ * simulation - this is a multinomial sampler that takes a team's goal-share
  * table and the number of goals scored in a given match, and returns goals
  * per player. Aggregated across simulations it gives expected goals per
  * player.
@@ -20,7 +20,7 @@ export interface ScorerEntry {
 
 interface PrecomputedTeam {
   names: string[];
-  /** cumulative shares — last entry should be ≈ 1.0 */
+  /** cumulative shares - last entry should be ≈ 1.0 */
   cum: number[];
 }
 
@@ -66,7 +66,7 @@ function sampleScorer(teamId: string, rng: XoshiroRNG): string | undefined {
 
 /**
  * Distribute G goals from team `teamId` among its scorers. Each goal is an
- * independent multinomial draw — this means a single match where a team
+ * independent multinomial draw - this means a single match where a team
  * scores 5 can plausibly have one player scoring multiple. Accumulator
  * (a Map from "TEAMID|PlayerName" → totalGoals) is mutated.
  */

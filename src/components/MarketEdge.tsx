@@ -106,7 +106,7 @@ export function MarketEdge({ result }: Props) {
       {loading ? (
         <SkeletonTable />
       ) : err || rows.length === 0 ? (
-        <EmptyState message={err || 'No hay odds disponibles. Probá refrescar — el cache es de 5 min.'} />
+        <EmptyState message={err || 'No hay odds disponibles. Probá refrescar - el cache es de 5 min.'} />
       ) : (
         <div className="overflow-x-auto rounded-2xl border border-border glass">
           <table className="min-w-full">
@@ -169,7 +169,7 @@ export function MarketEdge({ result }: Props) {
                           {r.bestBook}
                         </span>
                       ) : (
-                        <span className="font-mono text-[10px] text-fg-3">—</span>
+                        <span className="font-mono text-[10px] text-fg-3">-</span>
                       )}
                     </td>
                   </tr>
@@ -194,9 +194,9 @@ function BookCells({ book }: { book: PivotRow['byBook'][Book] }) {
   if (!book) {
     return (
       <>
-        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3 border-l border-border/40">—</td>
-        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3">—</td>
-        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3">—</td>
+        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3 border-l border-border/40">-</td>
+        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3">-</td>
+        <td className="px-3 py-2 text-right font-mono text-xs text-fg-3">-</td>
       </>
     );
   }

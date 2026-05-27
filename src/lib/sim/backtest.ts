@@ -5,7 +5,7 @@
  * computes per-match predicted probabilities under the current model
  * (ELO + Poisson + host bonus) and aggregates calibration metrics.
  *
- * We score MATCHES, not full tournaments — running the full bracket would
+ * We score MATCHES, not full tournaments - running the full bracket would
  * require a 32-team engine variant. The match predictor is the atomic
  * operation of the simulator, so its calibration is what matters first.
  *
@@ -37,7 +37,7 @@ import {
 } from './absences';
 import backtestData from '@/data/backtest.json';
 
-const MAX_GOALS = 8;  // P(>8 goals at λ=3) ≈ 0.001 — negligible
+const MAX_GOALS = 8;  // P(>8 goals at λ=3) ≈ 0.001 - negligible
 
 type Stage = 'group' | 'r16' | 'qf' | 'sf' | '3rd' | 'final';
 
@@ -67,7 +67,7 @@ interface BacktestFile {
   tournaments: RawTournament[];
 }
 
-/** Poisson PMF — small λ regime, no overflow concerns at k ≤ 8. */
+/** Poisson PMF - small λ regime, no overflow concerns at k ≤ 8. */
 function poissonPMF(k: number, lambda: number): number {
   // P(k; λ) = e^(-λ) * λ^k / k!
   let logP = -lambda + k * Math.log(lambda);
@@ -159,9 +159,9 @@ export interface BacktestResult {
   overall: Aggregate;
   perStage: Record<Stage, Aggregate>;
   calibration: CalibrationBucket[];
-  /** Largest model misses — predicted very low for what actually happened. */
+  /** Largest model misses - predicted very low for what actually happened. */
   worstMisses: ScoredMatch[];
-  /** Best calls — model assigned high probability to actual outcome. */
+  /** Best calls - model assigned high probability to actual outcome. */
   bestCalls: ScoredMatch[];
   scored: ScoredMatch[];
 }
@@ -344,14 +344,14 @@ export function runBacktest(options: BacktestOptions = {}): BacktestResult {
  * Sweep the host-bonus value to find the empirical optimum on the backtest set.
  *
  * Returns two metric series for each bonus value:
- *   - `overall`: Brier / accuracy across all 192 matches (diluted — only ~22
+ *   - `overall`: Brier / accuracy across all 192 matches (diluted - only ~22
  *     matches actually involve a host team across the 3 WCs).
  *   - `hostOnly`: same metrics restricted to matches where one team is the
  *     host nation. This is where the bonus actually changes predictions, so
  *     the effect size is much bigger and easier to read.
  *
  * Two flavors per bonus value:
- *   - `applyInKO=false` (current engine rule — group only)
+ *   - `applyInKO=false` (current engine rule - group only)
  *   - `applyInKO=true`  (proposed: also boost in knockout)
  */
 export interface SweepPoint {
@@ -366,7 +366,7 @@ const HOST_IDS = new Set<string>();
 /**
  * 2-D sweep for the recent-form blend.
  * For each (alpha, lookbackYears) we report the overall Brier across all
- * 192 matches — every match is potentially affected (unlike the host sweep
+ * 192 matches - every match is potentially affected (unlike the host sweep
  * which only moved 28 host-involving matches).
  */
 export interface RecentFormSweepCell {
@@ -393,7 +393,7 @@ export function runRecentFormSweep(
  * Evaluate the penalty model against the actual shoot-outs in the backtest
  * dataset. For each match where regulation ended in a draw and PKs were
  * taken, we compute `shootoutWinProb(home, away, cutoffYear=tournamentYear)`
- * (so the historical rates EXCLUDE the very shootouts we're predicting —
+ * (so the historical rates EXCLUDE the very shootouts we're predicting -
  * no look-ahead) and compare against the actual penalty winner.
  *
  * Returns: per-match prediction + aggregate accuracy + Brier score vs 50/50
@@ -483,7 +483,7 @@ export function runPenaltyEvaluation(): PenaltyEvalSummary {
  *     documented absence at that stage. This is the calibration signal.
  *
  * The affected set is small (~10-15 matches across WC 2014/18/22 with our
- * current historical seed). Interpret with care — n is low.
+ * current historical seed). Interpret with care - n is low.
  */
 export interface AbsenceSweepCell {
   alpha: number;

@@ -3,8 +3,8 @@
  *
  *   λ_A = clamp( BASE + ALPHA · (ELO_A − ELO_B + home_bonus_A) / 100,  MIN, MAX )
  *
- * BASE = 1.30 — mean goals per team in recent World Cup matches.
- * ALPHA = 0.18 — sensitivity to ELO gap (calibrated against historical scoring).
+ * BASE = 1.30 - mean goals per team in recent World Cup matches.
+ * ALPHA = 0.18 - sensitivity to ELO gap (calibrated against historical scoring).
  *
  * Sampling: Knuth's algorithm for λ < 30 (no real match exceeds that),
  * O(λ) expected steps, fast and allocation-free.

@@ -3,17 +3,21 @@
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import type { DemoMarket, DemoTicketListing } from '@/lib/demo/types';
+import type { SerializedResult } from '@/lib/sim/worker';
 import type { useDemoWallet } from '@/hooks/useDemoWallet';
+import { listingTeamIds, marketTeamIds } from '@/lib/demo/flags';
+import { DemoTeamFlags } from './DemoTeamFlags';
 
 type Wallet = ReturnType<typeof useDemoWallet>;
 
 interface Props {
   markets: DemoMarket[];
   listings: DemoTicketListing[];
+  result: SerializedResult;
   wallet: Wallet;
 }
 
-export function PortfolioTab({ markets, listings, wallet }: Props) {
+export function PortfolioTab({ markets, listings, result, wallet }: Props) {
   const t = useTranslations('demo');
   const { posValue, ticketValue, total } = wallet.portfolioValue(markets, listings);
   const settled = wallet.wallet.positions.filter((p) => p.settled);
@@ -44,7 +48,17 @@ export function PortfolioTab({ markets, listings, wallet }: Props) {
               const m = markets.find((x) => x.id === p.marketId);
               return (
                 <li key={p.id} className="rounded-xl border border-border/60 bg-bg-1/30 px-3 py-2 text-sm">
-                  <span className="text-fg-1">{m?.title ?? p.marketId}</span>
+                  <div className="flex items-center gap-2.5">
+                    {m && (
+                      <DemoTeamFlags
+                        result={result}
+                        teamIds={marketTeamIds(m)}
+                        size={22}
+                        layout={m.type === 'h2h' ? 'versus' : 'stack'}
+                      />
+                    )}
+                    <span className="text-fg-1">{m?.title ?? p.marketId}</span>
+                  </div>
                   <span className="ml-2 font-mono text-xs text-fg-3">
                     {p.shares.toFixed(1)} YES @ {(p.avgPrice * 100).toFixed(1)}¢
                   </span>
@@ -62,7 +76,17 @@ export function PortfolioTab({ markets, listings, wallet }: Props) {
                     won ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-rose-500/20 bg-rose-500/5',
                   )}
                 >
-                  <span className="text-fg-1">{m?.title ?? p.marketId}</span>
+                  <div className="flex items-center gap-2.5">
+                    {m && (
+                      <DemoTeamFlags
+                        result={result}
+                        teamIds={marketTeamIds(m)}
+                        size={22}
+                        layout={m.type === 'h2h' ? 'versus' : 'stack'}
+                      />
+                    )}
+                    <span className="text-fg-1">{m?.title ?? p.marketId}</span>
+                  </div>
                   <span className={cn('ml-2 font-mono text-xs', won ? 'text-emerald-400' : 'text-rose-400')}>
                     {won ? t('won') : t('lost')} · ${(p.payout ?? 0).toFixed(2)}
                   </span>
@@ -83,7 +107,17 @@ export function PortfolioTab({ markets, listings, wallet }: Props) {
               const l = listings.find((x) => x.id === h.listingId);
               return (
                 <li key={h.id} className="rounded-xl border border-border/60 bg-bg-1/30 px-3 py-2 text-sm">
-                  <span className="text-fg-1">{l?.matchLabel ?? h.listingId}</span>
+                  <div className="flex items-center gap-2.5">
+                    {l && (
+                      <DemoTeamFlags
+                        result={result}
+                        teamIds={listingTeamIds(l)}
+                        size={22}
+                        layout={l.teamIds.length >= 2 ? 'versus' : 'stack'}
+                      />
+                    )}
+                    <span className="text-fg-1">{l?.matchLabel ?? h.listingId}</span>
+                  </div>
                   <span className="ml-2 font-mono text-xs text-fg-3">
                     ×{h.quantity} · paid ${h.avgPrice}
                   </span>

@@ -9,7 +9,7 @@
  *                   bookmaker's margin (vig).
  *
  *   fair_prob      = implied_prob / sum(implied_probs across all market outcomes)
- *                   the de-vigged probability — what the market "really" thinks
+ *                   the de-vigged probability - what the market "really" thinks
  *                   after subtracting the margin proportionally.
  *
  *   edge           = our_prob - fair_prob

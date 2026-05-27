@@ -4,16 +4,20 @@ import { useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { cn, formatPct } from '@/lib/utils';
 import type { DemoMarket } from '@/lib/demo/types';
+import type { SerializedResult } from '@/lib/sim/worker';
 import type { useDemoWallet } from '@/hooks/useDemoWallet';
+import { marketTeamIds } from '@/lib/demo/flags';
+import { DemoTeamFlags } from './DemoTeamFlags';
 
 type Wallet = ReturnType<typeof useDemoWallet>;
 
 interface Props {
   markets: DemoMarket[];
+  result: SerializedResult;
   wallet: Wallet;
 }
 
-export function MarketsTab({ markets, wallet }: Props) {
+export function MarketsTab({ markets, result, wallet }: Props) {
   const t = useTranslations('demo');
   const [filter, setFilter] = useState<'all' | DemoMarket['type']>('all');
   const [amounts, setAmounts] = useState<Record<string, string>>({});
@@ -55,11 +59,19 @@ export function MarketsTab({ markets, wallet }: Props) {
               className="rounded-2xl border border-border bg-bg-1/40 p-4 transition-colors hover:border-gold/20"
             >
               <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-fg-3">
-                    {market.subtitle}
-                  </p>
-                  <h3 className="mt-1 text-sm font-medium text-fg-0">{market.title}</h3>
+                <div className="flex min-w-0 flex-1 items-start gap-3">
+                  <DemoTeamFlags
+                    result={result}
+                    teamIds={marketTeamIds(market)}
+                    size={30}
+                    layout={market.type === 'h2h' ? 'versus' : 'stack'}
+                  />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-fg-3">
+                      {market.subtitle}
+                    </p>
+                    <h3 className="mt-1 text-sm font-medium text-fg-0">{market.title}</h3>
+                  </div>
                 </div>
                 <div className="text-right">
                   <p className="font-mono text-lg font-semibold text-gold">
@@ -117,7 +129,17 @@ export function MarketsTab({ markets, wallet }: Props) {
                   key={pos.id}
                   className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border/60 bg-bg-0/40 px-3 py-2 text-sm"
                 >
-                  <span className="text-fg-1">{market.title}</span>
+                  <div className="flex min-w-0 items-center gap-2.5">
+                    {market && (
+                      <DemoTeamFlags
+                        result={result}
+                        teamIds={marketTeamIds(market)}
+                        size={22}
+                        layout={market.type === 'h2h' ? 'versus' : 'stack'}
+                      />
+                    )}
+                    <span className="text-fg-1">{market.title}</span>
+                  </div>
                   <div className="flex items-center gap-3">
                     <span className="font-mono text-xs text-fg-2">
                       {pos.shares.toFixed(1)} @ {(pos.avgPrice * 100).toFixed(1)}¢

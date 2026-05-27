@@ -9,7 +9,7 @@ export interface SimState {
   status: SimStatus;
   completed: number;
   total: number;
-  /** Primary result (with absences applied — the model's headline view). */
+  /** Primary result (with absences applied - the model's headline view). */
   result: SerializedResult | null;
   /** Counterfactual: same seed, same N, but with absences disabled. */
   resultNoAbsences: SerializedResult | null;

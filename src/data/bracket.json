@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "2026 FIFA World Cup official knockout bracket",
-    "note": "R32 slots reference group positions (A1=Group A winner, B2=Group B runner-up) and '3rd' slots reference the best third-placed teams from a subset of groups. The 8 best 3rds are ranked and assigned to slots in order — a simplification of FIFA Annex C (495 cases) used by most simulators."
+    "note": "R32 slots reference group positions (A1=Group A winner, B2=Group B runner-up) and '3rd' slots reference the best third-placed teams from a subset of groups. The 8 best 3rds are ranked and assigned to slots in order - a simplification of FIFA Annex C (495 cases) used by most simulators."
   },
   "r32": [
     { "id": 73, "home": "A2", "away": "B2" },

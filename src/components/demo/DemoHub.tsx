@@ -153,10 +153,10 @@ export function DemoHub() {
         </div>
       ) : (
         <>
-          {tab === 'markets' && <MarketsTab markets={markets} wallet={wallet} />}
+          {tab === 'markets' && <MarketsTab markets={markets} result={result} wallet={wallet} />}
           {tab === 'tickets' && <TicketsTab listings={listings} result={result} wallet={wallet} />}
           {tab === 'portfolio' && (
-            <PortfolioTab markets={markets} listings={listings} wallet={wallet} />
+            <PortfolioTab markets={markets} listings={listings} result={result} wallet={wallet} />
           )}
         </>
       )}

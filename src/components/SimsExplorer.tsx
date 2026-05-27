@@ -106,7 +106,7 @@ export function SimsExplorer({ teamIdx, result }: Props) {
   }, [paths]);
 
   // Full-N counts per outcome. Computed from the aggregate stageCounts so the
-  // displayed numbers add up to numSimulations (e.g. 100k) — the sample of
+  // displayed numbers add up to numSimulations (e.g. 100k) - the sample of
   // 300 stored trajectories is only used to populate the inline detail list.
   const fullCounts = useMemo<Record<Outcome, number>>(() => {
     const sc = result.stageCounts;
@@ -124,7 +124,7 @@ export function SimsExplorer({ teamIdx, result }: Props) {
       runnerUp: reachedFinal - champion,
       third,
       fourth: reachedSF - reachedFinal - third,
-      sf: 0, // every SF participant ends as 3rd or 4th — there is no "lost in SF" bucket
+      sf: 0, // every SF participant ends as 3rd or 4th - there is no "lost in SF" bucket
       qf: reachedQF - reachedSF,
       r16: reachedR16 - reachedQF,
       r32: reachedR32 - reachedR16,
@@ -178,7 +178,7 @@ export function SimsExplorer({ teamIdx, result }: Props) {
                 <span className="font-mono text-[10px] tabular text-fg-3">{formatPct(pct, 1)}</span>
               </div>
               <div className="mt-0.5 font-mono text-[9px] tabular text-fg-3">
-                {sample > 0 ? `${sample} muestra` : '—'}
+                {sample > 0 ? `${sample} muestra` : '-'}
               </div>
               <div className="absolute inset-x-0 bottom-0 h-0.5 bg-bg-2/50">
                 <div
@@ -261,7 +261,7 @@ export function SimsExplorer({ teamIdx, result }: Props) {
       )}
 
       <p className="mt-3 text-[10px] text-fg-3 leading-relaxed">
-        Los conteos arriba (Campeón, Subcampeón, ...) son sobre las {result.numSimulations.toLocaleString()} simulaciones completas — suman {result.numSimulations.toLocaleString()}. Para que puedas inspeccionar trayectorias sin gastar 200 MB de memoria, el motor guarda solo {paths.length} torneos completos como ejemplo (uno cada {Math.max(1, Math.round(result.numSimulations / paths.length))} sims) — esos son los que se listan debajo.
+        Los conteos arriba (Campeón, Subcampeón, ...) son sobre las {result.numSimulations.toLocaleString()} simulaciones completas - suman {result.numSimulations.toLocaleString()}. Para que puedas inspeccionar trayectorias sin gastar 200 MB de memoria, el motor guarda solo {paths.length} torneos completos como ejemplo (uno cada {Math.max(1, Math.round(result.numSimulations / paths.length))} sims) - esos son los que se listan debajo.
       </p>
     </section>
   );

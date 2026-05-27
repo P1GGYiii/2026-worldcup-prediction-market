@@ -79,7 +79,7 @@ export function TeamAbsencesPanel({ teamId }: { teamId: string }) {
   );
 }
 
-/** Compact inline badge for headers / match cards — shows just the total. */
+/** Compact inline badge for headers / match cards - shows just the total. */
 export function AbsenceBadge({ teamId, className = '' }: { teamId: string; className?: string }) {
   const total = useMemo(() => {
     const absences = currentAbsences(teamId);

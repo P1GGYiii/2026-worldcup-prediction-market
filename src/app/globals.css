@@ -7,7 +7,7 @@
  *   #042320  surface 2     card body
  *   #02403b  surface 3     border / divider
  *   #027268  brand dark    dark teal
- *   #25a091  brand mid     (previous primary — muted)
+ *   #25a091  brand mid     (previous primary - muted)
  *   #45e0cc  brand bright  primary accent (lifted for UI contrast on dark bg)
  *
  * The legacy --color-gold token is preserved as an ALIAS to the brand teal so
@@ -95,7 +95,7 @@ a[href] {
   cursor: pointer;
 }
 
-/* SVG turbulence noise overlay — pinned to body, very subtle */
+/* SVG turbulence noise overlay - pinned to body, very subtle */
 body::before {
   content: "";
   position: fixed;

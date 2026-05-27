@@ -173,7 +173,7 @@ export function StageMatrix({ result }: Props) {
                       onMouseLeave={() => setHoverCol(null)}
                     >
                       <span className={cn(v > 0.05 ? 'text-fg-0' : 'text-fg-2')}>
-                        {v > 0.0005 ? formatPct(v, 1) : '—'}
+                        {v > 0.0005 ? formatPct(v, 1) : '-'}
                       </span>
                     </td>
                   );

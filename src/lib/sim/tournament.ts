@@ -182,7 +182,7 @@ export function simulateTournament(
 
       // Tier 1.5: short-circuit if this match has already been played in real
       // life. Only honor the state entry when both teams match the resolved
-      // bracket slot — otherwise the engine has computed a counterfactual
+      // bracket slot - otherwise the engine has computed a counterfactual
       // bracket (e.g. third-place placement differed) and the live result
       // doesn't apply.
       const live = getKnockoutResult(m.id);
@@ -202,7 +202,7 @@ export function simulateTournament(
         } else if (ga > gh) {
           winnerIdx = awayIdx;
         } else {
-          // Drawn at 90' / ET with no pk_winner field — should not occur for a
+          // Drawn at 90' / ET with no pk_winner field - should not occur for a
           // completed knockout, but fall back to higher-ELO winner deterministically.
           winnerIdx = teams[homeIdx].elo >= teams[awayIdx].elo ? homeIdx : awayIdx;
         }
@@ -238,7 +238,7 @@ export function simulateTournament(
   runRound(BRACKET.qf,  'qf',  'sf',   'qf');
   runRound(BRACKET.sf,  'sf',  'final','sf');
 
-  // 3rd place playoff (losers of SF). Both teams stay at stageReached='sf' —
+  // 3rd place playoff (losers of SF). Both teams stay at stageReached='sf' -
   // winning bronze doesn't bump the stage. Bronze is tracked via thirdPlace below.
   const playSpecial = (m: BracketSlot, fixtureStage: '3rd' | 'final'): void => {
     const homeIdx = resolveSlot(m.home, m.id, 'home');

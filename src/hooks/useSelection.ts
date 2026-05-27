@@ -9,7 +9,7 @@ import { create } from 'zustand';
  */
 interface SelectionState {
   selectedTeamId: string | null;
-  /** Fixture key — the same key used in AggregateResult.fixtures map. */
+  /** Fixture key - the same key used in AggregateResult.fixtures map. */
   selectedFixtureKey: string | null;
 
   openTeam: (teamId: string) => void;

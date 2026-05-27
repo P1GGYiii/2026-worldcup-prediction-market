@@ -47,7 +47,7 @@ interface Props {
  * The estimate is closed-form: we use the (P_current, P_no_absences) pair
  * already computed by the worker's two MC passes to fit a per-team linear
  * dP/dELO. Then for any hypothetical penalty we extrapolate. The result is
- * an approximation — exact only at the two calibration points — but it's
+ * an approximation - exact only at the two calibration points - but it's
  * instant (no extra worker pass) and the direction / order of magnitude are
  * faithful for small to moderate scenarios.
  */
@@ -73,7 +73,7 @@ export function ScenarioPanel({
   const dELO = 0 - currentElo;
   // Guard against zero-absence teams: fall back to a conservative slope from
   // the average MC sensitivity. For a top-10 contender, +100 ELO ≈ +5pp champ
-  // prob — we use 0.0005 per ELO point as the default.
+  // prob - we use 0.0005 per ELO point as the default.
   const slope = dELO > 1 ? dP / dELO : 0.0005;
 
   // Row list: always include every currently-injured player so the baseline
@@ -235,7 +235,7 @@ export function ScenarioPanel({
 
       <p className="mt-2 text-[10px] text-fg-3 leading-relaxed">
         Aproximación lineal calibrada con la corrida con/sin lesiones del simulador. El cambio direccional es fiable pero el magnitud es estimación
-        — para el valor exacto, recargá la simulación con la nueva configuración.
+        - para el valor exacto, recargá la simulación con la nueva configuración.
       </p>
     </section>
   );

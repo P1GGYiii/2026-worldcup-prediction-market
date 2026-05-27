@@ -29,12 +29,12 @@ function toTeamId(name: string): string | undefined {
 }
 
 // ---------------------------------------------------------------------------
-// Polymarket — public gamma API, no auth needed.
+// Polymarket - public gamma API, no auth needed.
 // The 2026 World Cup winner lives at event `2026-fifa-world-cup-winner-595`
 // (the `-595` suffix is the event ID; Polymarket slugs include the ID).
 // The event nests ~60 binary YES/NO markets, one per team, each with a
 // `groupItemTitle` matching the team name. We use the orderbook midpoint
-// (bestBid+bestAsk)/2 when available — it's more current than lastTradePrice
+// (bestBid+bestAsk)/2 when available - it's more current than lastTradePrice
 // for low-liquidity longshot markets.
 // ---------------------------------------------------------------------------
 async function fromPolymarket(): Promise<MarketOdds[]> {
@@ -87,7 +87,7 @@ async function fromPolymarket(): Promise<MarketOdds[]> {
           const yesIdx = outcomes.findIndex((o) => /^yes$/i.test(o));
           if (yesIdx >= 0 && Number.isFinite(prices[yesIdx])) price = prices[yesIdx];
         } catch {
-          // fall through — no price
+          // fall through - no price
         }
       }
       if (price === null || !Number.isFinite(price) || price <= 0 || price >= 1) continue;
@@ -112,7 +112,7 @@ async function fromPolymarket(): Promise<MarketOdds[]> {
 }
 
 // ---------------------------------------------------------------------------
-// Kalshi — public elections API, no auth needed for read-only market data.
+// Kalshi - public elections API, no auth needed for read-only market data.
 // The 2026 Men's World Cup winner lives at event KXMENWORLDCUP-26 with one
 // binary YES/NO market per team. We use the bid/ask midpoint as the implied
 // probability (the last_price field lags illiquid markets).
@@ -188,7 +188,7 @@ export async function GET() {
       sources,
       fetched_at: new Date().toISOString(),
       note: odds.length === 0
-        ? 'No odds available right now — both upstream sources returned empty or failed.'
+        ? 'No odds available right now - both upstream sources returned empty or failed.'
         : `Aggregated ${odds.length} odds across ${sources.length} source(s).`,
     },
     odds,
