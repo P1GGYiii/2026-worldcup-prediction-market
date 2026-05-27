@@ -10,7 +10,11 @@
     "nav_demo": "Mercados y entradas",
     "nav_about": "Acerca",
     "lang_es": "ES",
-    "lang_en": "EN"
+    "lang_en": "EN",
+    "dev_label": "Desarrollador",
+    "dev_hint": "¿Preguntas sobre esta demo? Escribime directo.",
+    "dev_telegram": "Telegram",
+    "dev_x": "X / Twitter"
   },
   "hero": {
     "eyebrow": "OUTLINERS · ANALÍTICA DEPORTIVA CUANTITATIVA",
@@ -103,6 +107,7 @@
   },
   "footer": {
     "credits": "Datos ELO: eloratings.net · Sorteo: FIFA",
+    "made_by": "Hecho por",
     "methodology_link": "Ver metodología",
     "share": "Compartir"
   },

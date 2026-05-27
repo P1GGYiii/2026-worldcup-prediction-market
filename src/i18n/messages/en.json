@@ -10,7 +10,11 @@
     "nav_demo": "Markets & Tickets",
     "nav_about": "About",
     "lang_es": "ES",
-    "lang_en": "EN"
+    "lang_en": "EN",
+    "dev_label": "Developer",
+    "dev_hint": "Questions about this demo? Reach out directly.",
+    "dev_telegram": "Telegram",
+    "dev_x": "X / Twitter"
   },
   "hero": {
     "eyebrow": "OUTLINERS · SPORTS QUANT ANALYTICS",
@@ -103,6 +107,7 @@
   },
   "footer": {
     "credits": "ELO data: eloratings.net · Draw: FIFA",
+    "made_by": "Made by",
     "methodology_link": "See methodology",
     "share": "Share"
   },
