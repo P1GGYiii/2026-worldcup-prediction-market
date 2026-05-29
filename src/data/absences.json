@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-05-28T12:23:23.499Z",
+    "current_updated_at": "2026-05-29T12:12:50.624Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -119,10 +119,17 @@
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
+        "player": "Gonzalo Montiel",
+        "position": "FB",
+        "minutes_qual": 0,
+        "market_value_mil": 4.5,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
         "player": "Nico Paz",
         "position": "AM",
         "minutes_qual": 0,
-        "market_value_mil": 65,
+        "market_value_mil": 80,
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
@@ -163,7 +170,7 @@
         "player": "Romelu Lukaku",
         "position": "ATT",
         "minutes_qual": 0,
-        "market_value_mil": 12,
+        "market_value_mil": 6,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -255,7 +262,7 @@
         "player": "Odilon Kossounou",
         "position": "CB",
         "minutes_qual": 0,
-        "market_value_mil": 18,
+        "market_value_mil": 15,
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
@@ -434,7 +441,7 @@
         "player": "Leo Østigård",
         "position": "CB",
         "minutes_qual": 0,
-        "market_value_mil": 10,
+        "market_value_mil": 13,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -464,17 +471,10 @@
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
-        "player": "Ramón Sosa",
-        "position": "AM",
-        "minutes_qual": 0,
-        "market_value_mil": 10,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
         "player": "Antonio Sanabria",
         "position": "ATT",
         "minutes_qual": 0,
-        "market_value_mil": 2,
+        "market_value_mil": 1.8,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
