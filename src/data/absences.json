@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-05-31T10:55:48.235Z",
+    "current_updated_at": "2026-06-01T14:55:35.658Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -87,22 +87,7 @@
     }
   },
   "current": {
-    "ALG": [
-      {
-        "player": "Luca Zidane",
-        "position": "GK",
-        "minutes_qual": 0,
-        "market_value_mil": 1,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Anthony Mandréa",
-        "position": "GK",
-        "minutes_qual": 0,
-        "market_value_mil": 0.35,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "ALG": [],
     "ARG": [
       {
         "player": "Cristian Romero",
@@ -133,22 +118,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "AUS": [
-      {
-        "player": "Aiden O'Neill",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 3,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Patrick Yazbek",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 3.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "AUS": [],
     "AUT": [
       {
         "player": "Patrick Wimmer",
@@ -197,7 +167,7 @@
         "player": "Moïse Bombito",
         "position": "CB",
         "minutes_qual": 0,
-        "market_value_mil": 8,
+        "market_value_mil": 7,
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
@@ -222,10 +192,10 @@
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
-        "player": "Promise David",
-        "position": "ATT",
+        "player": "Marcelo Flores",
+        "position": "WG",
         "minutes_qual": 0,
-        "market_value_mil": 17,
+        "market_value_mil": 4.5,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -251,7 +221,7 @@
         "player": "Deiver Machado",
         "position": "FB",
         "minutes_qual": 0,
-        "market_value_mil": 2,
+        "market_value_mil": 1.8,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -292,15 +262,7 @@
     ],
     "ECU": [],
     "EGY": [],
-    "ENG": [
-      {
-        "player": "Tino Livramento",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 40,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "ENG": [],
     "ESP": [],
     "FRA": [],
     "GER": [
@@ -324,13 +286,6 @@
     ],
     "IRN": [
       {
-        "player": "Milad Mohammadi",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 0.9,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
         "player": "Alireza Jahanbakhsh",
         "position": "WG",
         "minutes_qual": 0,
@@ -347,15 +302,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "JOR": [
-      {
-        "player": "Ali Olwan",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 0.8,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "JOR": [],
     "JPN": [
       {
         "player": "Yuito Suzuki",
@@ -378,15 +325,7 @@
     "MAR": [],
     "MEX": [],
     "NED": [],
-    "NOR": [
-      {
-        "player": "Leo Østigård",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 13,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "NOR": [],
     "NZL": [],
     "PAN": [],
     "PAR": [
@@ -402,13 +341,6 @@
         "position": "CM",
         "minutes_qual": 0,
         "market_value_mil": 6,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Antonio Sanabria",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 1.8,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -433,15 +365,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "SUI": [
-      {
-        "player": "Noah Okafor",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 18,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "SUI": [],
     "SWE": [
       {
         "player": "Gabriel Gudmundsson",
@@ -453,6 +377,27 @@
     ],
     "TUN": [],
     "TUR": [
+      {
+        "player": "Ahmetcan Kaplan",
+        "position": "CB",
+        "minutes_qual": 0,
+        "market_value_mil": 7,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Ferdi Kadıoğlu",
+        "position": "FB",
+        "minutes_qual": 0,
+        "market_value_mil": 30,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Mustafa Eskihellaç",
+        "position": "FB",
+        "minutes_qual": 0,
+        "market_value_mil": 4,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
       {
         "player": "Kenan Yıldız",
         "position": "WG",
@@ -498,13 +443,6 @@
         "reason": "Injured (flagged by transfermarkt)"
       },
       {
-        "player": "José Luis Rodríguez",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 1.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
         "player": "Giorgian de Arrascaeta",
         "position": "AM",
         "minutes_qual": 0,
@@ -520,28 +458,6 @@
       }
     ],
     "USA": [],
-    "UZB": [
-      {
-        "player": "Bekhruz Karimov",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 0.35,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Jaloliddin Masharipov",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 1,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Khusayin Norchaev",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 0.75,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ]
+    "UZB": []
   }
 }
