@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-06-04T11:48:16.590Z",
+    "current_updated_at": "2026-06-05T12:00:23.810Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -200,15 +200,7 @@
       }
     ],
     "CUW": [],
-    "CZE": [
-      {
-        "player": "David Zima",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 7,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "CZE": [],
     "ECU": [],
     "EGY": [],
     "ENG": [],
@@ -234,15 +226,7 @@
       }
     ],
     "IRN": [],
-    "IRQ": [
-      {
-        "player": "Youssef Amyn",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 0.55,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "IRQ": [],
     "JOR": [],
     "JPN": [
       {
@@ -253,15 +237,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "KOR": [
-      {
-        "player": "In-beom Hwang",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 7,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "KOR": [],
     "KSA": [
       {
         "player": "Nawaf Al-Aqidi",
