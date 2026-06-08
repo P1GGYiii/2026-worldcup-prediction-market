@@ -4,7 +4,9 @@
 
 ## Contact
 
-Built by **[Dexorynlabs](https://t.me/dexoryn777)** · **Dexoryn** — questions about this demo, the simulator, or integrating similar analytics? [Telegram](https://t.me/dexoryn777) · [X @dexoryn](https://x.com/dexoryn)
+Want to collaborate or build something? Contact me.
+
+**Telegram:** [t.me/dexoryn](https://t.me/dexoryn) | **Discord:** `dexoryn_` | **X:** [@dexoryn](https://x.com/dexoryn)
 
 **Live demo:** [worldcup2026-prediction-market.vercel.app](https://worldcup2026-prediction-market.vercel.app/) · English (default) · Spanish [`/es`](https://worldcup2026-prediction-market.vercel.app/es)
 
@@ -66,7 +68,7 @@ Full write-up of ELO expectancy, Poisson goals, knockout penalties (Bayesian shr
 ### UI highlights
 
 - Hero: **“Who will win the 2026 World Cup?”** with live sim controls
-- Header **developer contact card** (Dexoryn · Telegram · X) on every page
+- Header **developer contact card** (Dexoryn · Telegram · Discord · X) on every page
 - Footer credits + **Made by Dexorynlabs** with social links
 
 ---
@@ -167,7 +169,7 @@ src/
 ├── lib/
 │   ├── sim/                engine · tournament · group · knockout · absences · worker
 │   ├── demo/               markets · tickets · cache · flags
-│   ├── social.ts           Telegram & X URLs (header + footer)
+│   ├── social.ts           Telegram, Discord & X URLs (header + footer)
 │   └── confetti.ts         Shared celebration effect
 ├── data/                   teams.json · groups.json · bracket.json · absences · odds
 └── scripts/                ELO scrape · odds fetch · backtest data · eval sweeps
@@ -199,8 +201,9 @@ public/
 
 ## Credits & contact
 
-**Dexoryn** · [Dexorynlabs](https://t.me/dexoryn777)  
-[Telegram](https://t.me/dexoryn777) · [X @dexoryn](https://x.com/dexoryn)
+Want to collaborate or build something? Contact me.
+
+**Telegram:** [t.me/dexoryn](https://t.me/dexoryn) | **Discord:** `dexoryn_` | **X:** [@dexoryn](https://x.com/dexoryn)
 
 **Data & references**  
 ELO ratings — [eloratings.net](https://www.eloratings.net/)  
