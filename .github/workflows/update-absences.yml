@@ -37,10 +37,12 @@ jobs:
         run: |
           git config user.name 'mundial2026-bot'
           git config user.email 'bot@users.noreply.github.com'
-          if [[ -n "$(git status --porcelain src/data/absences.json)" ]]; then
-            git add src/data/absences.json
+          if [[ -n "$(git status --porcelain src/data/)" ]]; then
+            git add src/data/absences.json src/data/squads.json
             git commit -m "chore(absences): daily refresh $(date -u +%Y-%m-%d)"
+            git fetch origin main
+            git rebase origin/main
             git push
           else
-            echo 'No changes to absences.json — skipping commit.'
+            echo 'No changes — skipping commit.'
           fi

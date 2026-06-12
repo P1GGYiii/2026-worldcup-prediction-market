@@ -76,6 +76,8 @@ jobs:
           if [[ -n "$CHANGED" ]]; then
             git add src/data/tournament_state.json src/data/snapshots.json
             git commit -m "chore(live): tournament update $(date -u +%Y-%m-%dT%H:%MZ)"
+            git fetch origin main
+            git rebase origin/main
             git push
           else
             echo 'No changes — skipping commit.'
