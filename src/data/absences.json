@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-06-12T12:16:15.564Z",
+    "current_updated_at": "2026-06-13T11:14:15.139Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -100,32 +100,9 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "BIH": [
-      {
-        "player": "Ivan Šunjić",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 2,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Haris Tabakovic",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 3.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "BIH": [],
     "BRA": [],
-    "CAN": [
-      {
-        "player": "Alphonso Davies",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 40,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "CAN": [],
     "CIV": [
       {
         "player": "Evan Ndicka",
@@ -152,50 +129,7 @@
     "IRN": [],
     "IRQ": [],
     "JOR": [],
-    "JPN": [
-      {
-        "player": "Koki Machida",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 10,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Wataru Endo",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 12,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Sho Inagaki",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 0.75,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Koki Kumasaka",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 0.125,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Kaoru Mitoma",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 45,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Takumi Minamino",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 15,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "JPN": [],
     "KOR": [
       {
         "player": "Tae-hyeon Kim",
@@ -221,13 +155,6 @@
         "minutes_qual": 0,
         "market_value_mil": 12,
         "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Noussair Mazraoui",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 18,
-        "reason": "Injured (flagged by transfermarkt)"
       }
     ],
     "MEX": [],
@@ -236,7 +163,49 @@
         "player": "Bart Verbruggen",
         "position": "GK",
         "minutes_qual": 0,
-        "market_value_mil": 40,
+        "market_value_mil": 25,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Matthijs de Ligt",
+        "position": "CB",
+        "minutes_qual": 0,
+        "market_value_mil": 45,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Stefan de Vrij",
+        "position": "CB",
+        "minutes_qual": 0,
+        "market_value_mil": 7,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Jurriën Timber",
+        "position": "FB",
+        "minutes_qual": 0,
+        "market_value_mil": 45,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Jerdy Schouten",
+        "position": "DM",
+        "minutes_qual": 0,
+        "market_value_mil": 32,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Xavi Simons",
+        "position": "AM",
+        "minutes_qual": 0,
+        "market_value_mil": 80,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Emmanuel Emegha",
+        "position": "ATT",
+        "minutes_qual": 0,
+        "market_value_mil": 15,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -272,13 +241,6 @@
         "minutes_qual": 0,
         "market_value_mil": 0.9,
         "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Damián Bobadilla",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 6,
-        "reason": "Injured (flagged by transfermarkt)"
       }
     ],
     "POR": [],
@@ -297,15 +259,7 @@
     "SUI": [],
     "SWE": [],
     "TUN": [],
-    "TUR": [
-      {
-        "player": "Kenan Yıldız",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 75,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "TUR": [],
     "URU": [
       {
         "player": "Giorgian de Arrascaeta",
