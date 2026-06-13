@@ -96,7 +96,7 @@ const ELO2_TO_ID: Record<string, string> = {
   SE: 'SWE', CA: 'CAN', CZ: 'CZE', BA: 'BIH', GH: 'GHA', QA: 'QAT',
   SA: 'KSA', ZA: 'RSA', CD: 'COD', UZ: 'UZB', JO: 'JOR', IQ: 'IRQ',
   CV: 'CPV', CW: 'CUW', NZ: 'NZL', PA: 'PAN', HT: 'HAI',
-  EN: 'ENG', WA: 'WAL', SC: 'SCO', NI: 'NIR',
+  EN: 'ENG', WA: 'WAL', SQ: 'SCO', NI: 'NIR',
 };
 
 interface TeamsFile {

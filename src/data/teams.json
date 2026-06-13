@@ -2,7 +2,7 @@
   "_meta": {
     "source": "Scraped from https://www.eloratings.net/World.tsv + https://www.eloratings.net/2024.tsv",
     "note": "ELO values are approximations of public ratings; the scrape-elo script will overwrite them with live values.",
-    "fetched_at": "2026-06-12T14:33:58.713Z"
+    "fetched_at": "2026-06-13T16:11:22.764Z"
   },
   "teams": [
     {
@@ -154,7 +154,7 @@
       "name_en": "United States",
       "name_es": "Estados Unidos",
       "flag": "us",
-      "elo": 1726,
+      "elo": 1780,
       "is_host": true,
       "elo_1y_ago": 1758
     },
@@ -217,7 +217,7 @@
       "name_en": "Paraguay",
       "name_es": "Paraguay",
       "flag": "py",
-      "elo": 1834,
+      "elo": 1780,
       "is_host": false,
       "elo_1y_ago": 1775
     },
@@ -289,16 +289,16 @@
       "name_en": "Scotland",
       "name_es": "Escocia",
       "flag": "gb-sct",
-      "elo": 853,
+      "elo": 1782,
       "is_host": false,
-      "elo_1y_ago": 859
+      "elo_1y_ago": 1759
     },
     {
       "id": "CAN",
       "name_en": "Canada",
       "name_es": "Canadá",
       "flag": "ca",
-      "elo": 1788,
+      "elo": 1767,
       "is_host": true,
       "elo_1y_ago": 1784
     },
@@ -316,7 +316,7 @@
       "name_en": "Bosnia & Herzegovina",
       "name_es": "Bosnia y Herzegovina",
       "flag": "ba",
-      "elo": 1595,
+      "elo": 1616,
       "is_host": false,
       "elo_1y_ago": 1485
     },
