@@ -3526,7 +3526,7 @@
       }
     },
     {
-      "id": "2026-06-12T08:59:00.656Z",
+      "id": "2026-06-12T08:39:34.445Z",
       "trigger": "After KOR 2-1 CZE (A:1)",
       "decided_matches": 2,
       "num_simulations": 50000,
@@ -3966,7 +3966,7 @@
       }
     },
     {
-      "id": "2026-06-12T12:21:28.711Z",
+      "id": "2026-06-12T12:27:07.981Z",
       "trigger": "After KOR 2-1 CZE (A:1)",
       "decided_matches": 2,
       "num_simulations": 50000,
@@ -4406,7 +4406,7 @@
       }
     },
     {
-      "id": "2026-06-12T16:20:49.762Z",
+      "id": "2026-06-12T16:26:46.971Z",
       "trigger": "After KOR 2-1 CZE (A:1)",
       "decided_matches": 2,
       "num_simulations": 50000,
@@ -4846,7 +4846,7 @@
       }
     },
     {
-      "id": "2026-06-12T19:06:39.682Z",
+      "id": "2026-06-12T19:17:16.920Z",
       "trigger": "After KOR 2-1 CZE (A:1)",
       "decided_matches": 2,
       "num_simulations": 50000,
@@ -5286,7 +5286,7 @@
       }
     },
     {
-      "id": "2026-06-12T21:47:53.975Z",
+      "id": "2026-06-12T21:58:55.537Z",
       "trigger": "After CAN 1-1 BIH (B:0)",
       "decided_matches": 3,
       "num_simulations": 50000,
@@ -5726,7 +5726,7 @@
       }
     },
     {
-      "id": "2026-06-12T23:18:59.790Z",
+      "id": "2026-06-12T23:26:58.701Z",
       "trigger": "After CAN 1-1 BIH (B:0)",
       "decided_matches": 3,
       "num_simulations": 50000,
@@ -6166,7 +6166,7 @@
       }
     },
     {
-      "id": "2026-06-13T03:57:49.801Z",
+      "id": "2026-06-13T04:43:26.569Z",
       "trigger": "After USA 4-1 PAR (D:0)",
       "decided_matches": 4,
       "num_simulations": 50000,
