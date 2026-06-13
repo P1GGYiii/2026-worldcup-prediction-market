@@ -15,6 +15,7 @@ coverage/
 
 # Editor / agent state
 .claude/
+.omo/
 
 # TypeScript incremental build cache
 *.tsbuildinfo

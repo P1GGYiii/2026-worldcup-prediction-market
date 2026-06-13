@@ -1,6 +1,6 @@
 import type { Team } from './types';
 import { HOST_BONUS } from './elo';
-import { lambdaFor, samplePoisson } from './goals';
+import { lambdaFor, sampleScoreDC } from './goals';
 import type { XoshiroRNG } from './rng';
 import {
   currentAbsences,
@@ -100,8 +100,5 @@ export function sampleScore(
   let lambdaB = lambdaFor(eloB, eloA, bonusB);
   if (fatigueA) lambdaA *= FATIGUE_LAMBDA_FACTOR;
   if (fatigueB) lambdaB *= FATIGUE_LAMBDA_FACTOR;
-  return {
-    ga: samplePoisson(lambdaA, rng),
-    gb: samplePoisson(lambdaB, rng),
-  };
+  return sampleScoreDC(lambdaA, lambdaB, rng);
 }

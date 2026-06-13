@@ -1,8 +1,2765 @@
 {
   "_meta": {
-    "sources": [],
-    "fetched_at": "2026-05-17",
-    "note": "Empty file - odds aún no han sido recolectadas. Corré 'npm run fetch-odds' con ODDS_API_KEY o POLYMARKET_SLUG configurados para poblarlo."
+    "sources": [
+      "The Odds API"
+    ],
+    "fetched_at": "2026-06-12T07:29:23.919Z",
+    "note": "Aggregated 306 odds entries from 1 source(s)."
   },
-  "odds": []
+  "odds": [
+    {
+      "market": "winner",
+      "team_id": "ESP",
+      "book": "draftkings",
+      "decimal_odds": 5.5,
+      "implied_prob": 0.18181818181818182,
+      "fair_prob": 0.15500085659498772,
+      "fetched_at": "2026-06-12T07:29:23.915Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "FRA",
+      "book": "draftkings",
+      "decimal_odds": 5.75,
+      "implied_prob": 0.17391304347826086,
+      "fair_prob": 0.14826168891694474,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ENG",
+      "book": "draftkings",
+      "decimal_odds": 8.5,
+      "implied_prob": 0.11764705882352941,
+      "fair_prob": 0.1002946719144038,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "POR",
+      "book": "draftkings",
+      "decimal_odds": 9,
+      "implied_prob": 0.1111111111111111,
+      "fair_prob": 0.09472274569693692,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BRA",
+      "book": "draftkings",
+      "decimal_odds": 10.5,
+      "implied_prob": 0.09523809523809523,
+      "fair_prob": 0.0811909248830888,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ARG",
+      "book": "draftkings",
+      "decimal_odds": 11,
+      "implied_prob": 0.09090909090909091,
+      "fair_prob": 0.07750042829749386,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GER",
+      "book": "draftkings",
+      "decimal_odds": 15,
+      "implied_prob": 0.06666666666666667,
+      "fair_prob": 0.05683364741816216,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NED",
+      "book": "draftkings",
+      "decimal_odds": 21,
+      "implied_prob": 0.047619047619047616,
+      "fair_prob": 0.0405954624415444,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NOR",
+      "book": "draftkings",
+      "decimal_odds": 31,
+      "implied_prob": 0.03225806451612903,
+      "fair_prob": 0.027500151976530076,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BEL",
+      "book": "draftkings",
+      "decimal_odds": 41,
+      "implied_prob": 0.024390243902439025,
+      "fair_prob": 0.020792797835912986,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COL",
+      "book": "draftkings",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.016715778652400634,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MAR",
+      "book": "draftkings",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.016715778652400634,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MEX",
+      "book": "draftkings",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.016715778652400634,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JPN",
+      "book": "draftkings",
+      "decimal_odds": 61,
+      "implied_prob": 0.01639344262295082,
+      "fair_prob": 0.013975487070039875,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "USA",
+      "book": "draftkings",
+      "decimal_odds": 61,
+      "implied_prob": 0.01639344262295082,
+      "fair_prob": 0.013975487070039875,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SUI",
+      "book": "draftkings",
+      "decimal_odds": 66,
+      "implied_prob": 0.015151515151515152,
+      "fair_prob": 0.01291673804958231,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "URU",
+      "book": "draftkings",
+      "decimal_odds": 66,
+      "implied_prob": 0.015151515151515152,
+      "fair_prob": 0.01291673804958231,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ECU",
+      "book": "draftkings",
+      "decimal_odds": 81,
+      "implied_prob": 0.012345679012345678,
+      "fair_prob": 0.010524749521881881,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUR",
+      "book": "draftkings",
+      "decimal_odds": 91,
+      "implied_prob": 0.01098901098901099,
+      "fair_prob": 0.0093681836403564,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CRO",
+      "book": "draftkings",
+      "decimal_odds": 91,
+      "implied_prob": 0.01098901098901099,
+      "fair_prob": 0.0093681836403564,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SEN",
+      "book": "draftkings",
+      "decimal_odds": 91,
+      "implied_prob": 0.01098901098901099,
+      "fair_prob": 0.0093681836403564,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SWE",
+      "book": "draftkings",
+      "decimal_odds": 121,
+      "implied_prob": 0.008264462809917356,
+      "fair_prob": 0.00704549348159035,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUT",
+      "book": "draftkings",
+      "decimal_odds": 151,
+      "implied_prob": 0.006622516556291391,
+      "fair_prob": 0.005645726564718095,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KOR",
+      "book": "draftkings",
+      "decimal_odds": 201,
+      "implied_prob": 0.004975124378109453,
+      "fair_prob": 0.004241316971504638,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SCO",
+      "book": "draftkings",
+      "decimal_odds": 201,
+      "implied_prob": 0.004975124378109453,
+      "fair_prob": 0.004241316971504638,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CAN",
+      "book": "draftkings",
+      "decimal_odds": 201,
+      "implied_prob": 0.004975124378109453,
+      "fair_prob": 0.004241316971504638,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CIV",
+      "book": "draftkings",
+      "decimal_odds": 251,
+      "implied_prob": 0.00398406374501992,
+      "fair_prob": 0.0033964331126391726,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GHA",
+      "book": "draftkings",
+      "decimal_odds": 301,
+      "implied_prob": 0.0033222591362126247,
+      "fair_prob": 0.002832241565689144,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "EGY",
+      "book": "draftkings",
+      "decimal_odds": 301,
+      "implied_prob": 0.0033222591362126247,
+      "fair_prob": 0.002832241565689144,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAR",
+      "book": "draftkings",
+      "decimal_odds": 301,
+      "implied_prob": 0.0033222591362126247,
+      "fair_prob": 0.002832241565689144,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ALG",
+      "book": "draftkings",
+      "decimal_odds": 351,
+      "implied_prob": 0.002849002849002849,
+      "fair_prob": 0.002428788351203511,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUN",
+      "book": "draftkings",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0017016062101246154,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BIH",
+      "book": "draftkings",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0017016062101246154,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CZE",
+      "book": "draftkings",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0017016062101246154,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUS",
+      "book": "draftkings",
+      "decimal_odds": 601,
+      "implied_prob": 0.0016638935108153079,
+      "fair_prob": 0.0014184770570256778,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRN",
+      "book": "draftkings",
+      "decimal_odds": 701,
+      "implied_prob": 0.0014265335235378032,
+      "fair_prob": 0.0012161265496040405,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COD",
+      "book": "draftkings",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0008516530582142181,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CPV",
+      "book": "draftkings",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0008516530582142181,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KSA",
+      "book": "draftkings",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0008516530582142181,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAN",
+      "book": "draftkings",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0008516530582142181,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "UZB",
+      "book": "draftkings",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005679578356245385,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "RSA",
+      "book": "draftkings",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005679578356245385,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "QAT",
+      "book": "draftkings",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005679578356245385,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NZL",
+      "book": "draftkings",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005679578356245385,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRQ",
+      "book": "draftkings",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005679578356245385,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "HAI",
+      "book": "draftkings",
+      "decimal_odds": 2501,
+      "implied_prob": 0.00039984006397441024,
+      "fair_prob": 0.0003408655382936555,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CUW",
+      "book": "draftkings",
+      "decimal_odds": 2501,
+      "implied_prob": 0.00039984006397441024,
+      "fair_prob": 0.0003408655382936555,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JOR",
+      "book": "draftkings",
+      "decimal_odds": 2501,
+      "implied_prob": 0.00039984006397441024,
+      "fair_prob": 0.0003408655382936555,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "FRA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 5.9,
+      "implied_prob": 0.1694915254237288,
+      "fair_prob": 0.162466282528276,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ESP",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 5.9,
+      "implied_prob": 0.1694915254237288,
+      "fair_prob": 0.162466282528276,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ENG",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 9.4,
+      "implied_prob": 0.10638297872340426,
+      "fair_prob": 0.10197351775710942,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "POR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 9.8,
+      "implied_prob": 0.1020408163265306,
+      "fair_prob": 0.09781133335886004,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BRA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 11,
+      "implied_prob": 0.09090909090909091,
+      "fair_prob": 0.08714100608334804,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ARG",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 12,
+      "implied_prob": 0.08333333333333333,
+      "fair_prob": 0.07987925557640237,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GER",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 18,
+      "implied_prob": 0.05555555555555555,
+      "fair_prob": 0.05325283705093491,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NED",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 21,
+      "implied_prob": 0.047619047619047616,
+      "fair_prob": 0.045645288900801356,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NOR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 40,
+      "implied_prob": 0.025,
+      "fair_prob": 0.023963776672920715,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BEL",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 46,
+      "implied_prob": 0.021739130434782608,
+      "fair_prob": 0.020838066672104968,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MAR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 60,
+      "implied_prob": 0.016666666666666666,
+      "fair_prob": 0.015975851115280475,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COL",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 65,
+      "implied_prob": 0.015384615384615385,
+      "fair_prob": 0.014746939491028132,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MEX",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 65,
+      "implied_prob": 0.015384615384615385,
+      "fair_prob": 0.014746939491028132,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JPN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 75,
+      "implied_prob": 0.013333333333333334,
+      "fair_prob": 0.01278068089222438,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "USA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 85,
+      "implied_prob": 0.011764705882352941,
+      "fair_prob": 0.0112770713754921,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SUI",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 90,
+      "implied_prob": 0.011111111111111112,
+      "fair_prob": 0.010650567410186983,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "URU",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 100,
+      "implied_prob": 0.01,
+      "fair_prob": 0.009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ECU",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 100,
+      "implied_prob": 0.01,
+      "fair_prob": 0.009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 100,
+      "implied_prob": 0.01,
+      "fair_prob": 0.009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SEN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 130,
+      "implied_prob": 0.007692307692307693,
+      "fair_prob": 0.007373469745514066,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CRO",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 140,
+      "implied_prob": 0.007142857142857143,
+      "fair_prob": 0.006846793335120204,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUT",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 260,
+      "implied_prob": 0.0038461538461538464,
+      "fair_prob": 0.003686734872757033,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SWE",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 280,
+      "implied_prob": 0.0035714285714285713,
+      "fair_prob": 0.003423396667560102,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CIV",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 310,
+      "implied_prob": 0.0032258064516129032,
+      "fair_prob": 0.0030921002158607372,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KOR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 340,
+      "implied_prob": 0.0029411764705882353,
+      "fair_prob": 0.002819267843873025,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SCO",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 380,
+      "implied_prob": 0.002631578947368421,
+      "fair_prob": 0.0025225028076758644,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUS",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 420,
+      "implied_prob": 0.002380952380952381,
+      "fair_prob": 0.002282264445040068,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CAN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 420,
+      "implied_prob": 0.002380952380952381,
+      "fair_prob": 0.002282264445040068,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ALG",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 630,
+      "implied_prob": 0.0015873015873015873,
+      "fair_prob": 0.0015215096300267119,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 660,
+      "implied_prob": 0.0015151515151515152,
+      "fair_prob": 0.001452350101389134,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "EGY",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 720,
+      "implied_prob": 0.001388888888888889,
+      "fair_prob": 0.0013313209262733729,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CZE",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 750,
+      "implied_prob": 0.0013333333333333333,
+      "fair_prob": 0.0012780680892224379,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BIH",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 830,
+      "implied_prob": 0.0012048192771084338,
+      "fair_prob": 0.0011548808035142513,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GHA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 840,
+      "implied_prob": 0.0011904761904761906,
+      "fair_prob": 0.001141132222520034,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JOR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "UZB",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NZL",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "QAT",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KSA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CPV",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "RSA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CUW",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COD",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "HAI",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRQ",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.918Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585510669168285,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "FRA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 6,
+      "implied_prob": 0.16666666666666666,
+      "fair_prob": 0.1678209249294934,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ESP",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 6,
+      "implied_prob": 0.16666666666666666,
+      "fair_prob": 0.1678209249294934,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ENG",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 9.6,
+      "implied_prob": 0.10416666666666667,
+      "fair_prob": 0.10488807808093338,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "POR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 10,
+      "implied_prob": 0.1,
+      "fair_prob": 0.10069255495769605,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BRA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 11.5,
+      "implied_prob": 0.08695652173913043,
+      "fair_prob": 0.08755874344147482,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ARG",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 12.5,
+      "implied_prob": 0.08,
+      "fair_prob": 0.08055404396615684,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GER",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 18.5,
+      "implied_prob": 0.05405405405405406,
+      "fair_prob": 0.05442840808524111,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NED",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 22,
+      "implied_prob": 0.045454545454545456,
+      "fair_prob": 0.04576934316258911,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NOR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 42,
+      "implied_prob": 0.023809523809523808,
+      "fair_prob": 0.023974417847070485,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BEL",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 48,
+      "implied_prob": 0.020833333333333332,
+      "fair_prob": 0.020977615616186676,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MAR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 65,
+      "implied_prob": 0.015384615384615385,
+      "fair_prob": 0.015491162301184008,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COL",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 70,
+      "implied_prob": 0.014285714285714285,
+      "fair_prob": 0.014384650708242292,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MEX",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 70,
+      "implied_prob": 0.014285714285714285,
+      "fair_prob": 0.014384650708242292,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JPN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 80,
+      "implied_prob": 0.0125,
+      "fair_prob": 0.012586569369712006,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "USA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 90,
+      "implied_prob": 0.011111111111111112,
+      "fair_prob": 0.011188061661966228,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SUI",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 95,
+      "implied_prob": 0.010526315789473684,
+      "fair_prob": 0.010599216311336425,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "URU",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 110,
+      "implied_prob": 0.00909090909090909,
+      "fair_prob": 0.009153868632517822,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ECU",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 110,
+      "implied_prob": 0.00909090909090909,
+      "fair_prob": 0.009153868632517822,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 110,
+      "implied_prob": 0.00909090909090909,
+      "fair_prob": 0.009153868632517822,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SEN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 140,
+      "implied_prob": 0.007142857142857143,
+      "fair_prob": 0.007192325354121146,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CRO",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 150,
+      "implied_prob": 0.006666666666666667,
+      "fair_prob": 0.006712836997179737,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUT",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 270,
+      "implied_prob": 0.003703703703703704,
+      "fair_prob": 0.003729353887322076,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SWE",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 290,
+      "implied_prob": 0.0034482758620689655,
+      "fair_prob": 0.00347215706750676,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CIV",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 320,
+      "implied_prob": 0.003125,
+      "fair_prob": 0.0031466423424280016,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SCO",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 390,
+      "implied_prob": 0.002564102564102564,
+      "fair_prob": 0.002581860383530668,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUS",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 450,
+      "implied_prob": 0.0022222222222222222,
+      "fair_prob": 0.0022376123323932452,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CAN",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 460,
+      "implied_prob": 0.002173913043478261,
+      "fair_prob": 0.0021889685860368704,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KOR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 500,
+      "implied_prob": 0.002,
+      "fair_prob": 0.002013851099153921,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAR",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 700,
+      "implied_prob": 0.0014285714285714286,
+      "fair_prob": 0.0014384650708242292,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "EGY",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 750,
+      "implied_prob": 0.0013333333333333333,
+      "fair_prob": 0.0013425673994359472,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BIH",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 850,
+      "implied_prob": 0.001176470588235294,
+      "fair_prob": 0.0011846182936199534,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GHA",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 860,
+      "implied_prob": 0.0011627906976744186,
+      "fair_prob": 0.001170843662298791,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ALG",
+      "book": "betfair_ex_eu",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0010069255495769604,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "FRA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 5.9,
+      "implied_prob": 0.1694915254237288,
+      "fair_prob": 0.1624622956259,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ESP",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 5.9,
+      "implied_prob": 0.1694915254237288,
+      "fair_prob": 0.1624622956259,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ENG",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 9.4,
+      "implied_prob": 0.10638297872340426,
+      "fair_prob": 0.10197101533966065,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "POR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 9.8,
+      "implied_prob": 0.1020408163265306,
+      "fair_prob": 0.09780893308089898,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BRA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 11,
+      "implied_prob": 0.09090909090909091,
+      "fair_prob": 0.08713886765389182,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ARG",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 12,
+      "implied_prob": 0.08333333333333333,
+      "fair_prob": 0.07987729534940084,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GER",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 18,
+      "implied_prob": 0.05555555555555555,
+      "fair_prob": 0.05325153023293389,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NED",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 21,
+      "implied_prob": 0.047619047619047616,
+      "fair_prob": 0.045644168771086194,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NOR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 40,
+      "implied_prob": 0.025,
+      "fair_prob": 0.023963188604820253,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BEL",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 46,
+      "implied_prob": 0.021739130434782608,
+      "fair_prob": 0.02083755530853935,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MAR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 60,
+      "implied_prob": 0.016666666666666666,
+      "fair_prob": 0.01597545906988017,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COL",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 65,
+      "implied_prob": 0.015384615384615385,
+      "fair_prob": 0.01474657760296631,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MEX",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 65,
+      "implied_prob": 0.015384615384615385,
+      "fair_prob": 0.01474657760296631,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JPN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 75,
+      "implied_prob": 0.013333333333333334,
+      "fair_prob": 0.012780367255904135,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "USA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 85,
+      "implied_prob": 0.011764705882352941,
+      "fair_prob": 0.011276794637562471,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SUI",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 90,
+      "implied_prob": 0.011111111111111112,
+      "fair_prob": 0.01065030604658678,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "URU",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 100,
+      "implied_prob": 0.01,
+      "fair_prob": 0.0095852754419281,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ECU",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 100,
+      "implied_prob": 0.01,
+      "fair_prob": 0.0095852754419281,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 100,
+      "implied_prob": 0.01,
+      "fair_prob": 0.0095852754419281,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SEN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 130,
+      "implied_prob": 0.007692307692307693,
+      "fair_prob": 0.007373288801483155,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CRO",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 140,
+      "implied_prob": 0.007142857142857143,
+      "fair_prob": 0.006846625315662929,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUT",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 260,
+      "implied_prob": 0.0038461538461538464,
+      "fair_prob": 0.0036866444007415777,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SWE",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 280,
+      "implied_prob": 0.0035714285714285713,
+      "fair_prob": 0.0034233126578314646,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CIV",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 310,
+      "implied_prob": 0.0032258064516129032,
+      "fair_prob": 0.003092024336105839,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KOR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 340,
+      "implied_prob": 0.0029411764705882353,
+      "fair_prob": 0.002819198659390618,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SCO",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 380,
+      "implied_prob": 0.002631578947368421,
+      "fair_prob": 0.0025224409057705527,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUS",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 420,
+      "implied_prob": 0.002380952380952381,
+      "fair_prob": 0.00228220843855431,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CAN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 420,
+      "implied_prob": 0.002380952380952381,
+      "fair_prob": 0.00228220843855431,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ALG",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 620,
+      "implied_prob": 0.0016129032258064516,
+      "fair_prob": 0.0015460121680529195,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 660,
+      "implied_prob": 0.0015151515151515152,
+      "fair_prob": 0.0014523144608981971,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "EGY",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 720,
+      "implied_prob": 0.001388888888888889,
+      "fair_prob": 0.0013312882558233474,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CZE",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 750,
+      "implied_prob": 0.0013333333333333333,
+      "fair_prob": 0.0012780367255904135,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BIH",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 830,
+      "implied_prob": 0.0012048192771084338,
+      "fair_prob": 0.001154852462882904,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GHA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 840,
+      "implied_prob": 0.0011904761904761906,
+      "fair_prob": 0.001141104219277155,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JOR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "UZB",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NZL",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "QAT",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KSA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CPV",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "RSA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CUW",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COD",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "HAI",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRQ",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0009585275441928101,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "FRA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 6,
+      "implied_prob": 0.16666666666666666,
+      "fair_prob": 0.1678209249294934,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ESP",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 6,
+      "implied_prob": 0.16666666666666666,
+      "fair_prob": 0.1678209249294934,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ENG",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 9.6,
+      "implied_prob": 0.10416666666666667,
+      "fair_prob": 0.10488807808093338,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "POR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 10,
+      "implied_prob": 0.1,
+      "fair_prob": 0.10069255495769605,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BRA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 11.5,
+      "implied_prob": 0.08695652173913043,
+      "fair_prob": 0.08755874344147482,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ARG",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 12.5,
+      "implied_prob": 0.08,
+      "fair_prob": 0.08055404396615684,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GER",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 18.5,
+      "implied_prob": 0.05405405405405406,
+      "fair_prob": 0.05442840808524111,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NED",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 22,
+      "implied_prob": 0.045454545454545456,
+      "fair_prob": 0.04576934316258911,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NOR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 42,
+      "implied_prob": 0.023809523809523808,
+      "fair_prob": 0.023974417847070485,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BEL",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 48,
+      "implied_prob": 0.020833333333333332,
+      "fair_prob": 0.020977615616186676,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MAR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 65,
+      "implied_prob": 0.015384615384615385,
+      "fair_prob": 0.015491162301184008,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COL",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 70,
+      "implied_prob": 0.014285714285714285,
+      "fair_prob": 0.014384650708242292,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MEX",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 70,
+      "implied_prob": 0.014285714285714285,
+      "fair_prob": 0.014384650708242292,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JPN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 80,
+      "implied_prob": 0.0125,
+      "fair_prob": 0.012586569369712006,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "USA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 90,
+      "implied_prob": 0.011111111111111112,
+      "fair_prob": 0.011188061661966228,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SUI",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 95,
+      "implied_prob": 0.010526315789473684,
+      "fair_prob": 0.010599216311336425,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "URU",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 110,
+      "implied_prob": 0.00909090909090909,
+      "fair_prob": 0.009153868632517822,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ECU",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 110,
+      "implied_prob": 0.00909090909090909,
+      "fair_prob": 0.009153868632517822,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 110,
+      "implied_prob": 0.00909090909090909,
+      "fair_prob": 0.009153868632517822,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SEN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 140,
+      "implied_prob": 0.007142857142857143,
+      "fair_prob": 0.007192325354121146,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CRO",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 150,
+      "implied_prob": 0.006666666666666667,
+      "fair_prob": 0.006712836997179737,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUT",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 270,
+      "implied_prob": 0.003703703703703704,
+      "fair_prob": 0.003729353887322076,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SWE",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 290,
+      "implied_prob": 0.0034482758620689655,
+      "fair_prob": 0.00347215706750676,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CIV",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 320,
+      "implied_prob": 0.003125,
+      "fair_prob": 0.0031466423424280016,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SCO",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 390,
+      "implied_prob": 0.002564102564102564,
+      "fair_prob": 0.002581860383530668,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUS",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 450,
+      "implied_prob": 0.0022222222222222222,
+      "fair_prob": 0.0022376123323932452,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CAN",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 460,
+      "implied_prob": 0.002173913043478261,
+      "fair_prob": 0.0021889685860368704,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KOR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 500,
+      "implied_prob": 0.002,
+      "fair_prob": 0.002013851099153921,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAR",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 700,
+      "implied_prob": 0.0014285714285714286,
+      "fair_prob": 0.0014384650708242292,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "EGY",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 750,
+      "implied_prob": 0.0013333333333333333,
+      "fair_prob": 0.0013425673994359472,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BIH",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 850,
+      "implied_prob": 0.001176470588235294,
+      "fair_prob": 0.0011846182936199534,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GHA",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 860,
+      "implied_prob": 0.0011627906976744186,
+      "fair_prob": 0.001170843662298791,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ALG",
+      "book": "betfair_ex_uk",
+      "decimal_odds": 1000,
+      "implied_prob": 0.001,
+      "fair_prob": 0.0010069255495769604,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "FRA",
+      "book": "betrivers",
+      "decimal_odds": 5.5,
+      "implied_prob": 0.18181818181818182,
+      "fair_prob": 0.14533507887685282,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ESP",
+      "book": "betrivers",
+      "decimal_odds": 5.5,
+      "implied_prob": 0.18181818181818182,
+      "fair_prob": 0.14533507887685282,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ENG",
+      "book": "betrivers",
+      "decimal_odds": 8,
+      "implied_prob": 0.125,
+      "fair_prob": 0.0999178667278363,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "POR",
+      "book": "betrivers",
+      "decimal_odds": 8,
+      "implied_prob": 0.125,
+      "fair_prob": 0.0999178667278363,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ARG",
+      "book": "betrivers",
+      "decimal_odds": 10,
+      "implied_prob": 0.1,
+      "fair_prob": 0.07993429338226905,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BRA",
+      "book": "betrivers",
+      "decimal_odds": 10,
+      "implied_prob": 0.1,
+      "fair_prob": 0.07993429338226905,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GER",
+      "book": "betrivers",
+      "decimal_odds": 15,
+      "implied_prob": 0.06666666666666667,
+      "fair_prob": 0.053289528921512695,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NED",
+      "book": "betrivers",
+      "decimal_odds": 19,
+      "implied_prob": 0.05263157894736842,
+      "fair_prob": 0.042070680727510024,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NOR",
+      "book": "betrivers",
+      "decimal_odds": 26,
+      "implied_prob": 0.038461538461538464,
+      "fair_prob": 0.030743958993180404,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BEL",
+      "book": "betrivers",
+      "decimal_odds": 34,
+      "implied_prob": 0.029411764705882353,
+      "fair_prob": 0.023510086288902658,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COL",
+      "book": "betrivers",
+      "decimal_odds": 34,
+      "implied_prob": 0.029411764705882353,
+      "fair_prob": 0.023510086288902658,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JPN",
+      "book": "betrivers",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.01567339085926844,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MEX",
+      "book": "betrivers",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.01567339085926844,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MAR",
+      "book": "betrivers",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.01567339085926844,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "USA",
+      "book": "betrivers",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.01567339085926844,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SUI",
+      "book": "betrivers",
+      "decimal_odds": 67,
+      "implied_prob": 0.014925373134328358,
+      "fair_prob": 0.011930491549592394,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CRO",
+      "book": "betrivers",
+      "decimal_odds": 81,
+      "implied_prob": 0.012345679012345678,
+      "fair_prob": 0.00986843128176161,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ECU",
+      "book": "betrivers",
+      "decimal_odds": 81,
+      "implied_prob": 0.012345679012345678,
+      "fair_prob": 0.00986843128176161,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "URU",
+      "book": "betrivers",
+      "decimal_odds": 81,
+      "implied_prob": 0.012345679012345678,
+      "fair_prob": 0.00986843128176161,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CAN",
+      "book": "betrivers",
+      "decimal_odds": 101,
+      "implied_prob": 0.009900990099009901,
+      "fair_prob": 0.007914286473491985,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SEN",
+      "book": "betrivers",
+      "decimal_odds": 101,
+      "implied_prob": 0.009900990099009901,
+      "fair_prob": 0.007914286473491985,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUR",
+      "book": "betrivers",
+      "decimal_odds": 101,
+      "implied_prob": 0.009900990099009901,
+      "fair_prob": 0.007914286473491985,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAR",
+      "book": "betrivers",
+      "decimal_odds": 126,
+      "implied_prob": 0.007936507936507936,
+      "fair_prob": 0.00634399153827532,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUT",
+      "book": "betrivers",
+      "decimal_odds": 151,
+      "implied_prob": 0.006622516556291391,
+      "fair_prob": 0.005293661813395301,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SWE",
+      "book": "betrivers",
+      "decimal_odds": 151,
+      "implied_prob": 0.006622516556291391,
+      "fair_prob": 0.005293661813395301,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SCO",
+      "book": "betrivers",
+      "decimal_odds": 251,
+      "implied_prob": 0.00398406374501992,
+      "fair_prob": 0.003184633202480838,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KOR",
+      "book": "betrivers",
+      "decimal_odds": 251,
+      "implied_prob": 0.00398406374501992,
+      "fair_prob": 0.003184633202480838,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BIH",
+      "book": "betrivers",
+      "decimal_odds": 251,
+      "implied_prob": 0.00398406374501992,
+      "fair_prob": 0.003184633202480838,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "EGY",
+      "book": "betrivers",
+      "decimal_odds": 301,
+      "implied_prob": 0.0033222591362126247,
+      "fair_prob": 0.0026556243648594366,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CIV",
+      "book": "betrivers",
+      "decimal_odds": 301,
+      "implied_prob": 0.0033222591362126247,
+      "fair_prob": 0.0026556243648594366,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ALG",
+      "book": "betrivers",
+      "decimal_odds": 401,
+      "implied_prob": 0.0024937655860349127,
+      "fair_prob": 0.001993373899807208,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GHA",
+      "book": "betrivers",
+      "decimal_odds": 401,
+      "implied_prob": 0.0024937655860349127,
+      "fair_prob": 0.001993373899807208,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CZE",
+      "book": "betrivers",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0015954948778896015,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRN",
+      "book": "betrivers",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0015954948778896015,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUN",
+      "book": "betrivers",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0015954948778896015,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUS",
+      "book": "betrivers",
+      "decimal_odds": 601,
+      "implied_prob": 0.0016638935108153079,
+      "fair_prob": 0.0013300215205036448,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COD",
+      "book": "betrivers",
+      "decimal_odds": 751,
+      "implied_prob": 0.0013315579227696406,
+      "fair_prob": 0.0010643714165415319,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "QAT",
+      "book": "betrivers",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0007985443894332572,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KSA",
+      "book": "betrivers",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0007985443894332572,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NZL",
+      "book": "betrivers",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005325402623735446,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAN",
+      "book": "betrivers",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005325402623735446,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "RSA",
+      "book": "betrivers",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005325402623735446,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRQ",
+      "book": "betrivers",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005325402623735446,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CPV",
+      "book": "betrivers",
+      "decimal_odds": 2001,
+      "implied_prob": 0.0004997501249375312,
+      "fair_prob": 0.0003994717310458223,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CUW",
+      "book": "betrivers",
+      "decimal_odds": 2001,
+      "implied_prob": 0.0004997501249375312,
+      "fair_prob": 0.0003994717310458223,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "UZB",
+      "book": "betrivers",
+      "decimal_odds": 2001,
+      "implied_prob": 0.0004997501249375312,
+      "fair_prob": 0.0003994717310458223,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "HAI",
+      "book": "betrivers",
+      "decimal_odds": 2501,
+      "implied_prob": 0.00039984006397441024,
+      "fair_prob": 0.0003196093297971573,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JOR",
+      "book": "betrivers",
+      "decimal_odds": 2501,
+      "implied_prob": 0.00039984006397441024,
+      "fair_prob": 0.0003196093297971573,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ESP",
+      "book": "williamhill",
+      "decimal_odds": 5.5,
+      "implied_prob": 0.18181818181818182,
+      "fair_prob": 0.14103685125863305,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "FRA",
+      "book": "williamhill",
+      "decimal_odds": 5.5,
+      "implied_prob": 0.18181818181818182,
+      "fair_prob": 0.14103685125863305,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ENG",
+      "book": "williamhill",
+      "decimal_odds": 7,
+      "implied_prob": 0.14285714285714285,
+      "fair_prob": 0.11081466884606882,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "POR",
+      "book": "williamhill",
+      "decimal_odds": 8,
+      "implied_prob": 0.125,
+      "fair_prob": 0.09696283524031021,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ARG",
+      "book": "williamhill",
+      "decimal_odds": 10,
+      "implied_prob": 0.1,
+      "fair_prob": 0.07757026819224817,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BRA",
+      "book": "williamhill",
+      "decimal_odds": 10,
+      "implied_prob": 0.1,
+      "fair_prob": 0.07757026819224817,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GER",
+      "book": "williamhill",
+      "decimal_odds": 15,
+      "implied_prob": 0.06666666666666667,
+      "fair_prob": 0.05171351212816545,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NED",
+      "book": "williamhill",
+      "decimal_odds": 19,
+      "implied_prob": 0.05263157894736842,
+      "fair_prob": 0.04082645694328851,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BEL",
+      "book": "williamhill",
+      "decimal_odds": 29,
+      "implied_prob": 0.034482758620689655,
+      "fair_prob": 0.026748368342154542,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NOR",
+      "book": "williamhill",
+      "decimal_odds": 29,
+      "implied_prob": 0.034482758620689655,
+      "fair_prob": 0.026748368342154542,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COL",
+      "book": "williamhill",
+      "decimal_odds": 41,
+      "implied_prob": 0.024390243902439025,
+      "fair_prob": 0.018919577607865407,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MAR",
+      "book": "williamhill",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.015209856508283956,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JPN",
+      "book": "williamhill",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.015209856508283956,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "MEX",
+      "book": "williamhill",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.015209856508283956,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SUI",
+      "book": "williamhill",
+      "decimal_odds": 51,
+      "implied_prob": 0.0196078431372549,
+      "fair_prob": 0.015209856508283956,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "URU",
+      "book": "williamhill",
+      "decimal_odds": 67,
+      "implied_prob": 0.014925373134328358,
+      "fair_prob": 0.011577651968992264,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "USA",
+      "book": "williamhill",
+      "decimal_odds": 67,
+      "implied_prob": 0.014925373134328358,
+      "fair_prob": 0.011577651968992264,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CRO",
+      "book": "williamhill",
+      "decimal_odds": 81,
+      "implied_prob": 0.012345679012345678,
+      "fair_prob": 0.009576576320030637,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ECU",
+      "book": "williamhill",
+      "decimal_odds": 81,
+      "implied_prob": 0.012345679012345678,
+      "fair_prob": 0.009576576320030637,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SWE",
+      "book": "williamhill",
+      "decimal_odds": 81,
+      "implied_prob": 0.012345679012345678,
+      "fair_prob": 0.009576576320030637,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUR",
+      "book": "williamhill",
+      "decimal_odds": 81,
+      "implied_prob": 0.012345679012345678,
+      "fair_prob": 0.009576576320030637,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SEN",
+      "book": "williamhill",
+      "decimal_odds": 101,
+      "implied_prob": 0.009900990099009901,
+      "fair_prob": 0.007680224573489918,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUT",
+      "book": "williamhill",
+      "decimal_odds": 101,
+      "implied_prob": 0.009900990099009901,
+      "fair_prob": 0.007680224573489918,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CAN",
+      "book": "williamhill",
+      "decimal_odds": 151,
+      "implied_prob": 0.006622516556291391,
+      "fair_prob": 0.00513710385379127,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAR",
+      "book": "williamhill",
+      "decimal_odds": 151,
+      "implied_prob": 0.006622516556291391,
+      "fair_prob": 0.00513710385379127,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CIV",
+      "book": "williamhill",
+      "decimal_odds": 151,
+      "implied_prob": 0.006622516556291391,
+      "fair_prob": 0.00513710385379127,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "SCO",
+      "book": "williamhill",
+      "decimal_odds": 151,
+      "implied_prob": 0.006622516556291391,
+      "fair_prob": 0.00513710385379127,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "BIH",
+      "book": "williamhill",
+      "decimal_odds": 201,
+      "implied_prob": 0.004975124378109453,
+      "fair_prob": 0.003859217322997421,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KOR",
+      "book": "williamhill",
+      "decimal_odds": 251,
+      "implied_prob": 0.00398406374501992,
+      "fair_prob": 0.0030904489319620787,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "GHA",
+      "book": "williamhill",
+      "decimal_odds": 251,
+      "implied_prob": 0.00398406374501992,
+      "fair_prob": 0.0030904489319620787,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "EGY",
+      "book": "williamhill",
+      "decimal_odds": 301,
+      "implied_prob": 0.0033222591362126247,
+      "fair_prob": 0.0025770853220016005,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CZE",
+      "book": "williamhill",
+      "decimal_odds": 301,
+      "implied_prob": 0.0033222591362126247,
+      "fair_prob": 0.0025770853220016005,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "ALG",
+      "book": "williamhill",
+      "decimal_odds": 301,
+      "implied_prob": 0.0033222591362126247,
+      "fair_prob": 0.0025770853220016005,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "AUS",
+      "book": "williamhill",
+      "decimal_odds": 401,
+      "implied_prob": 0.0024937655860349127,
+      "fair_prob": 0.001934420653173271,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "RSA",
+      "book": "williamhill",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0015483087463522588,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "TUN",
+      "book": "williamhill",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0015483087463522588,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRN",
+      "book": "williamhill",
+      "decimal_odds": 501,
+      "implied_prob": 0.001996007984031936,
+      "fair_prob": 0.0015483087463522588,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "COD",
+      "book": "williamhill",
+      "decimal_odds": 751,
+      "implied_prob": 0.0013315579227696406,
+      "fair_prob": 0.001032893051827539,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "QAT",
+      "book": "williamhill",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0007749277541683134,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "KSA",
+      "book": "williamhill",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0007749277541683134,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "HAI",
+      "book": "williamhill",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0007749277541683134,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "IRQ",
+      "book": "williamhill",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0007749277541683134,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CPV",
+      "book": "williamhill",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0007749277541683134,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "PAN",
+      "book": "williamhill",
+      "decimal_odds": 1001,
+      "implied_prob": 0.000999000999000999,
+      "fair_prob": 0.0007749277541683134,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "NZL",
+      "book": "williamhill",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005167905942188419,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "UZB",
+      "book": "williamhill",
+      "decimal_odds": 1501,
+      "implied_prob": 0.0006662225183211193,
+      "fair_prob": 0.0005167905942188419,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "CUW",
+      "book": "williamhill",
+      "decimal_odds": 2001,
+      "implied_prob": 0.0004997501249375312,
+      "fair_prob": 0.0003876575122051383,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    },
+    {
+      "market": "winner",
+      "team_id": "JOR",
+      "book": "williamhill",
+      "decimal_odds": 2001,
+      "implied_prob": 0.0004997501249375312,
+      "fair_prob": 0.0003876575122051383,
+      "fetched_at": "2026-06-12T07:29:23.919Z"
+    }
+  ]
 }

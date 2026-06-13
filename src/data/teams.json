@@ -2,7 +2,7 @@
   "_meta": {
     "source": "Scraped from https://www.eloratings.net/World.tsv + https://www.eloratings.net/2024.tsv",
     "note": "ELO values are approximations of public ratings; the scrape-elo script will overwrite them with live values.",
-    "fetched_at": "2026-05-17T23:55:48.212Z"
+    "fetched_at": "2026-06-12T14:33:58.713Z"
   },
   "teams": [
     {
@@ -10,7 +10,7 @@
       "name_en": "Spain",
       "name_es": "España",
       "flag": "es",
-      "elo": 2165,
+      "elo": 2157,
       "is_host": false,
       "elo_1y_ago": 2178
     },
@@ -19,7 +19,7 @@
       "name_en": "Argentina",
       "name_es": "Argentina",
       "flag": "ar",
-      "elo": 2113,
+      "elo": 2115,
       "is_host": false,
       "elo_1y_ago": 2108
     },
@@ -28,7 +28,7 @@
       "name_en": "France",
       "name_es": "Francia",
       "flag": "fr",
-      "elo": 2081,
+      "elo": 2063,
       "is_host": false,
       "elo_1y_ago": 2055
     },
@@ -37,7 +37,7 @@
       "name_en": "Brazil",
       "name_es": "Brasil",
       "flag": "br",
-      "elo": 1984,
+      "elo": 1991,
       "is_host": false,
       "elo_1y_ago": 1996
     },
@@ -46,7 +46,7 @@
       "name_en": "Portugal",
       "name_es": "Portugal",
       "flag": "pt",
-      "elo": 1984,
+      "elo": 1989,
       "is_host": false,
       "elo_1y_ago": 1993
     },
@@ -55,7 +55,7 @@
       "name_en": "England",
       "name_es": "Inglaterra",
       "flag": "gb-eng",
-      "elo": 2020,
+      "elo": 2024,
       "is_host": false,
       "elo_1y_ago": 2006
     },
@@ -64,7 +64,7 @@
       "name_en": "Netherlands",
       "name_es": "Países Bajos",
       "flag": "nl",
-      "elo": 1961,
+      "elo": 1948,
       "is_host": false,
       "elo_1y_ago": 1938
     },
@@ -73,16 +73,16 @@
       "name_en": "Belgium",
       "name_es": "Bélgica",
       "flag": "be",
-      "elo": 1866,
+      "elo": 1894,
       "is_host": false,
-      "elo_1y_ago": 1850
+      "elo_1y_ago": 1851
     },
     {
       "id": "GER",
       "name_en": "Germany",
       "name_es": "Alemania",
       "flag": "de",
-      "elo": 1923,
+      "elo": 1932,
       "is_host": false,
       "elo_1y_ago": 1971
     },
@@ -91,7 +91,7 @@
       "name_en": "Croatia",
       "name_es": "Croacia",
       "flag": "hr",
-      "elo": 1930,
+      "elo": 1912,
       "is_host": false,
       "elo_1y_ago": 1886
     },
@@ -100,7 +100,7 @@
       "name_en": "Colombia",
       "name_es": "Colombia",
       "flag": "co",
-      "elo": 1975,
+      "elo": 1982,
       "is_host": false,
       "elo_1y_ago": 1977
     },
@@ -118,7 +118,7 @@
       "name_en": "Morocco",
       "name_es": "Marruecos",
       "flag": "ma",
-      "elo": 1821,
+      "elo": 1827,
       "is_host": false,
       "elo_1y_ago": 1802
     },
@@ -127,7 +127,7 @@
       "name_en": "Switzerland",
       "name_es": "Suiza",
       "flag": "ch",
-      "elo": 1889,
+      "elo": 1891,
       "is_host": false,
       "elo_1y_ago": 1814
     },
@@ -136,7 +136,7 @@
       "name_en": "Senegal",
       "name_es": "Senegal",
       "flag": "sn",
-      "elo": 1878,
+      "elo": 1860,
       "is_host": false,
       "elo_1y_ago": 1771
     },
@@ -145,7 +145,7 @@
       "name_en": "Japan",
       "name_es": "Japón",
       "flag": "jp",
-      "elo": 1904,
+      "elo": 1906,
       "is_host": false,
       "elo_1y_ago": 1889
     },
@@ -154,7 +154,7 @@
       "name_en": "United States",
       "name_es": "Estados Unidos",
       "flag": "us",
-      "elo": 1721,
+      "elo": 1726,
       "is_host": true,
       "elo_1y_ago": 1758
     },
@@ -163,7 +163,7 @@
       "name_en": "Mexico",
       "name_es": "México",
       "flag": "mx",
-      "elo": 1858,
+      "elo": 1881,
       "is_host": true,
       "elo_1y_ago": 1769
     },
@@ -172,16 +172,16 @@
       "name_en": "Ecuador",
       "name_es": "Ecuador",
       "flag": "ec",
-      "elo": 1933,
+      "elo": 1938,
       "is_host": false,
-      "elo_1y_ago": 1910
+      "elo_1y_ago": 1909
     },
     {
       "id": "KOR",
       "name_en": "South Korea",
       "name_es": "Corea del Sur",
       "flag": "kr",
-      "elo": 1752,
+      "elo": 1786,
       "is_host": false,
       "elo_1y_ago": 1774
     },
@@ -190,7 +190,7 @@
       "name_en": "Iran",
       "name_es": "Irán",
       "flag": "ir",
-      "elo": 1760,
+      "elo": 1772,
       "is_host": false,
       "elo_1y_ago": 1838
     },
@@ -199,16 +199,16 @@
       "name_en": "Australia",
       "name_es": "Australia",
       "flag": "au",
-      "elo": 1783,
+      "elo": 1777,
       "is_host": false,
-      "elo_1y_ago": 1719
+      "elo_1y_ago": 1718
     },
     {
       "id": "EGY",
       "name_en": "Egypt",
       "name_es": "Egipto",
       "flag": "eg",
-      "elo": 1689,
+      "elo": 1696,
       "is_host": false,
       "elo_1y_ago": 1657
     },
@@ -217,7 +217,7 @@
       "name_en": "Paraguay",
       "name_es": "Paraguay",
       "flag": "py",
-      "elo": 1833,
+      "elo": 1834,
       "is_host": false,
       "elo_1y_ago": 1775
     },
@@ -226,7 +226,7 @@
       "name_en": "Algeria",
       "name_es": "Argelia",
       "flag": "dz",
-      "elo": 1743,
+      "elo": 1772,
       "is_host": false,
       "elo_1y_ago": 1685
     },
@@ -235,7 +235,7 @@
       "name_en": "Austria",
       "name_es": "Austria",
       "flag": "at",
-      "elo": 1827,
+      "elo": 1830,
       "is_host": false,
       "elo_1y_ago": 1871
     },
@@ -244,7 +244,7 @@
       "name_en": "Turkey",
       "name_es": "Turquía",
       "flag": "tr",
-      "elo": 1902,
+      "elo": 1911,
       "is_host": false,
       "elo_1y_ago": 1774
     },
@@ -253,7 +253,7 @@
       "name_en": "Côte d'Ivoire",
       "name_es": "Costa de Marfil",
       "flag": "ci",
-      "elo": 1676,
+      "elo": 1695,
       "is_host": false,
       "elo_1y_ago": 1579
     },
@@ -262,7 +262,7 @@
       "name_en": "Tunisia",
       "name_es": "Túnez",
       "flag": "tn",
-      "elo": 1636,
+      "elo": 1628,
       "is_host": false,
       "elo_1y_ago": 1598
     },
@@ -271,7 +271,7 @@
       "name_en": "Norway",
       "name_es": "Noruega",
       "flag": "no",
-      "elo": 1912,
+      "elo": 1914,
       "is_host": false,
       "elo_1y_ago": 1806
     },
@@ -280,7 +280,7 @@
       "name_en": "Sweden",
       "name_es": "Suecia",
       "flag": "se",
-      "elo": 1719,
+      "elo": 1712,
       "is_host": false,
       "elo_1y_ago": 1744
     },
@@ -298,7 +298,7 @@
       "name_en": "Canada",
       "name_es": "Canadá",
       "flag": "ca",
-      "elo": 1784,
+      "elo": 1788,
       "is_host": true,
       "elo_1y_ago": 1784
     },
@@ -307,16 +307,16 @@
       "name_en": "Czech Republic",
       "name_es": "República Checa",
       "flag": "cz",
-      "elo": 1726,
+      "elo": 1712,
       "is_host": false,
-      "elo_1y_ago": 1753
+      "elo_1y_ago": 1754
     },
     {
       "id": "BIH",
       "name_en": "Bosnia & Herzegovina",
       "name_es": "Bosnia y Herzegovina",
       "flag": "ba",
-      "elo": 1594,
+      "elo": 1595,
       "is_host": false,
       "elo_1y_ago": 1485
     },
@@ -325,7 +325,7 @@
       "name_en": "Ghana",
       "name_es": "Ghana",
       "flag": "gh",
-      "elo": 1505,
+      "elo": 1510,
       "is_host": false,
       "elo_1y_ago": 1429
     },
@@ -334,7 +334,7 @@
       "name_en": "Qatar",
       "name_es": "Catar",
       "flag": "qa",
-      "elo": 1425,
+      "elo": 1421,
       "is_host": false,
       "elo_1y_ago": 1524
     },
@@ -343,7 +343,7 @@
       "name_en": "Saudi Arabia",
       "name_es": "Arabia Saudita",
       "flag": "sa",
-      "elo": 1568,
+      "elo": 1576,
       "is_host": false,
       "elo_1y_ago": 1536
     },
@@ -352,7 +352,7 @@
       "name_en": "South Africa",
       "name_es": "Sudáfrica",
       "flag": "za",
-      "elo": 1524,
+      "elo": 1511,
       "is_host": false,
       "elo_1y_ago": 1576
     },
@@ -361,7 +361,7 @@
       "name_en": "DR Congo",
       "name_es": "RD del Congo",
       "flag": "cd",
-      "elo": 1655,
+      "elo": 1652,
       "is_host": false,
       "elo_1y_ago": 1540
     },
@@ -370,7 +370,7 @@
       "name_en": "Uzbekistan",
       "name_es": "Uzbekistán",
       "flag": "uz",
-      "elo": 1727,
+      "elo": 1714,
       "is_host": false,
       "elo_1y_ago": 1684
     },
@@ -379,7 +379,7 @@
       "name_en": "Jordan",
       "name_es": "Jordania",
       "flag": "jo",
-      "elo": 1690,
+      "elo": 1680,
       "is_host": false,
       "elo_1y_ago": 1617
     },
@@ -397,7 +397,7 @@
       "name_en": "Cabo Verde",
       "name_es": "Cabo Verde",
       "flag": "cv",
-      "elo": 1549,
+      "elo": 1578,
       "is_host": false,
       "elo_1y_ago": 1472
     },
@@ -406,7 +406,7 @@
       "name_en": "Curaçao",
       "name_es": "Curazao",
       "flag": "cw",
-      "elo": 1436,
+      "elo": 1434,
       "is_host": false,
       "elo_1y_ago": 1335
     },
@@ -415,7 +415,7 @@
       "name_en": "New Zealand",
       "name_es": "Nueva Zelanda",
       "flag": "nz",
-      "elo": 1585,
+      "elo": 1562,
       "is_host": false,
       "elo_1y_ago": 1583
     },
@@ -424,7 +424,7 @@
       "name_en": "Panama",
       "name_es": "Panamá",
       "flag": "pa",
-      "elo": 1737,
+      "elo": 1730,
       "is_host": false,
       "elo_1y_ago": 1726
     },
@@ -433,7 +433,7 @@
       "name_en": "Haiti",
       "name_es": "Haití",
       "flag": "ht",
-      "elo": 1532,
+      "elo": 1548,
       "is_host": false,
       "elo_1y_ago": 1538
     }

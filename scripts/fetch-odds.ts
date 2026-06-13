@@ -31,11 +31,12 @@ function toTeamId(name: string): string | undefined {
     if (t.name_en.toLowerCase() === norm) return t.id;
     if (t.name_es.toLowerCase() === norm) return t.id;
     // alias common spellings
-    if (norm.includes('united states') && t.id === 'USA') return 'USA';
+    if ((norm === 'usa' || norm.includes('united states')) && t.id === 'USA') return 'USA';
     if (norm.includes('south korea') && t.id === 'KOR') return 'KOR';
     if (norm.includes('ivory coast') && t.id === 'CIV') return 'CIV';
     if (norm.includes('curacao') && t.id === 'CUW') return 'CUW';
     if ((norm === 'czechia' || norm === 'czech republic') && t.id === 'CZE') return 'CZE';
+    if ((norm === 'cape verde' || norm === 'cabo verde') && t.id === 'CPV') return 'CPV';
   }
   return undefined;
 }
