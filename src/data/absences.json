@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-06-15T15:14:17.512Z",
+    "current_updated_at": "2026-06-16T13:29:22.396Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -122,15 +122,7 @@
     ],
     "COD": [],
     "COL": [],
-    "CPV": [
-      {
-        "player": "Bruno Varela",
-        "position": "GK",
-        "minutes_qual": 0,
-        "market_value_mil": 4,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "CPV": [],
     "CRO": [],
     "CUW": [],
     "CZE": [],
@@ -138,19 +130,19 @@
     "EGY": [],
     "ENG": [],
     "ESP": [],
-    "FRA": [],
-    "GER": [],
-    "GHA": [],
-    "HAI": [],
-    "IRN": [
+    "FRA": [
       {
-        "player": "Roozbeh Cheshmi",
-        "position": "DM",
+        "player": "Hugo Ekitiké",
+        "position": "ATT",
         "minutes_qual": 0,
-        "market_value_mil": 0.45,
+        "market_value_mil": 40,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
+    "GER": [],
+    "GHA": [],
+    "HAI": [],
+    "IRN": [],
     "IRQ": [],
     "JOR": [],
     "JPN": [],
@@ -167,7 +159,15 @@
     "MAR": [],
     "MEX": [],
     "NED": [],
-    "NOR": [],
+    "NOR": [
+      {
+        "player": "Mathias Dyngeland",
+        "position": "GK",
+        "minutes_qual": 0,
+        "market_value_mil": 1,
+        "reason": "Injured (flagged by transfermarkt)"
+      }
+    ],
     "NZL": [],
     "PAN": [
       {
@@ -194,31 +194,10 @@
     ],
     "PAR": [
       {
-        "player": "Aldo Pérez",
-        "position": "GK",
-        "minutes_qual": 0,
-        "market_value_mil": 0.2,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Alexis Duarte",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 3,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
         "player": "Fabián Balbuena",
         "position": "CB",
         "minutes_qual": 0,
-        "market_value_mil": 2.8,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Blas Riveros",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 0.8,
+        "market_value_mil": 0.9,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -240,6 +219,13 @@
     "TUN": [],
     "TUR": [],
     "URU": [
+      {
+        "player": "Ronald Araujo",
+        "position": "CB",
+        "minutes_qual": 0,
+        "market_value_mil": 20,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
       {
         "player": "Giorgian de Arrascaeta",
         "position": "AM",
