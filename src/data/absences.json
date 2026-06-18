@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-06-17T12:51:30.917Z",
+    "current_updated_at": "2026-06-18T12:23:11.891Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -89,57 +89,7 @@
   "current": {
     "ALG": [],
     "ARG": [],
-    "AUS": [
-      {
-        "player": "Kasey Bos",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 0.15,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Lewis Miller",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 0.8,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Patrick Yazbek",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 2,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Daniel Arzani",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 0.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Nick D'Agostino",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 0.8,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Kusini Yengi",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 0.7,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Noah Botic",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 0.35,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "AUS": [],
     "AUT": [],
     "BEL": [
       {
@@ -204,92 +154,12 @@
     "ESP": [],
     "FRA": [],
     "GER": [],
-    "GHA": [
-      {
-        "player": "Mohammed Salisu",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 15,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Stephan Ambrosius",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 0.8,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Mohammed Kudus",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 50,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "GHA": [],
     "HAI": [],
     "IRN": [],
     "IRQ": [],
-    "JOR": [
-      {
-        "player": "Adham Al-Quraishi",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 0,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Yazan Al-Naimat",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 1.6,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Ibrahim Sabra",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 0,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
-    "JPN": [
-      {
-        "player": "Koki Machida",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 10,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Wataru Endo",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 12,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Sho Inagaki",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 0.75,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Kaoru Mitoma",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 45,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Takumi Minamino",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 15,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "JOR": [],
+    "JPN": [],
     "KOR": [
       {
         "player": "Tae-hyeon Kim",
@@ -305,36 +175,7 @@
     "NED": [],
     "NOR": [],
     "NZL": [],
-    "PAN": [
-      {
-        "player": "Luis Mejía",
-        "position": "GK",
-        "minutes_qual": 0,
-        "market_value_mil": 0.4,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Marcos De León",
-        "position": "GK",
-        "minutes_qual": 0,
-        "market_value_mil": 0.1,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Aníbal Godoy",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 0.2,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Adalberto Carrasquilla",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 4.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "PAN": [],
     "PAR": [
       {
         "player": "Fabián Balbuena",
@@ -348,16 +189,23 @@
     "QAT": [],
     "RSA": [],
     "SCO": [],
-    "SEN": [
+    "SEN": [],
+    "SUI": [
       {
-        "player": "Layousse Samb",
-        "position": "FB",
+        "player": "Stefan Gartenmann",
+        "position": "CB",
         "minutes_qual": 0,
-        "market_value_mil": 0,
+        "market_value_mil": 1.2,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Joël Monteiro",
+        "position": "CM",
+        "minutes_qual": 0,
+        "market_value_mil": 7,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "SUI": [],
     "SWE": [],
     "TUN": [],
     "TUR": [],
@@ -377,78 +225,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "USA": [
-      {
-        "player": "Zack Steffen",
-        "position": "GK",
-        "minutes_qual": 0,
-        "market_value_mil": 2,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Cameron Carter-Vickers",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 14,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "DeJuan Jones",
-        "position": "FB",
-        "minutes_qual": 0,
-        "market_value_mil": 3.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Tanner Tessmann",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 6,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "James Sands",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 3,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Emeka Eneli",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 1.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Johnny Cardoso",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 20,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Quinn Sullivan",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 4.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Diego Luna",
-        "position": "CM",
-        "minutes_qual": 0,
-        "market_value_mil": 6,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
-      {
-        "player": "Patrick Agyemang",
-        "position": "ATT",
-        "minutes_qual": 0,
-        "market_value_mil": 2.5,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "USA": [],
     "UZB": []
   }
 }
