@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-06-20T11:15:27.003Z",
+    "updated_at": "2026-06-21T11:44:40.372Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -644,7 +644,8 @@
       {
         "player": "Jérémy Doku",
         "position": "WG",
-        "market_value_mil": 75
+        "market_value_mil": 75,
+        "injured": true
       },
       {
         "player": "Leandro Trossard",
@@ -899,7 +900,8 @@
       {
         "player": "Raphinha",
         "position": "WG",
-        "market_value_mil": 70
+        "market_value_mil": 70,
+        "injured": true
       },
       {
         "player": "Gabriel Martinelli",
@@ -1463,19 +1465,25 @@
     ],
     "CPV": [
       {
-        "player": "CJ dos Santos",
+        "player": "Bruno Varela",
         "position": "GK",
-        "market_value_mil": 1
+        "market_value_mil": 4,
+        "injured": true
       },
       {
         "player": "Márcio Rosa",
         "position": "GK",
-        "market_value_mil": 0.35
+        "market_value_mil": 0.1
       },
       {
         "player": "Vozinha",
         "position": "GK",
         "market_value_mil": 0.05
+      },
+      {
+        "player": "Henrique Tavares",
+        "position": "GK",
+        "market_value_mil": null
       },
       {
         "player": "Logan Costa",
@@ -1485,12 +1493,22 @@
       {
         "player": "Diney Borges",
         "position": "CB",
-        "market_value_mil": 0.9
+        "market_value_mil": 1
+      },
+      {
+        "player": "Ricardo Santos",
+        "position": "CB",
+        "market_value_mil": 0.6
+      },
+      {
+        "player": "Yuran Fernandes",
+        "position": "CB",
+        "market_value_mil": 0.4
       },
       {
         "player": "Kelvin Pires",
         "position": "CB",
-        "market_value_mil": 0.4
+        "market_value_mil": 0.3
       },
       {
         "player": "Roberto Lopes",
@@ -1498,89 +1516,174 @@
         "market_value_mil": 0.25
       },
       {
+        "player": "Kristopher Da Graca",
+        "position": "CB",
+        "market_value_mil": 0.2
+      },
+      {
         "player": "Stopira",
         "position": "CB",
         "market_value_mil": 0.05
       },
       {
+        "player": "Bruno Almeida",
+        "position": "CB",
+        "market_value_mil": null
+      },
+      {
+        "player": "David Moreira",
+        "position": "CB",
+        "market_value_mil": null
+      },
+      {
+        "player": "Jordan Semedo",
+        "position": "FB",
+        "market_value_mil": 0.6
+      },
+      {
         "player": "Sidny Lopes Cabral",
         "position": "FB",
-        "market_value_mil": 4
+        "market_value_mil": 0.325
       },
       {
         "player": "Wagner Pina",
         "position": "FB",
-        "market_value_mil": 11
+        "market_value_mil": 3
       },
       {
         "player": "Steven Moreira",
         "position": "FB",
-        "market_value_mil": 1.5
+        "market_value_mil": 1.8
+      },
+      {
+        "player": "Rivaldo",
+        "position": "FB",
+        "market_value_mil": 0.3
+      },
+      {
+        "player": "Jójó",
+        "position": "FB",
+        "market_value_mil": 0.25
       },
       {
         "player": "Kevin Lenini",
         "position": "DM",
-        "market_value_mil": 5
+        "market_value_mil": 3.5
       },
       {
         "player": "Laros Duarte",
         "position": "DM",
-        "market_value_mil": 1
+        "market_value_mil": 0.9
       },
       {
         "player": "João Paulo",
         "position": "DM",
-        "market_value_mil": 0.9
+        "market_value_mil": 0.5
       },
       {
-        "player": "Deroy Duarte",
-        "position": "CM",
-        "market_value_mil": 1.8
+        "player": "Aílson Tavares",
+        "position": "DM",
+        "market_value_mil": 0.3
+      },
+      {
+        "player": "Elson Mendes",
+        "position": "DM",
+        "market_value_mil": 0.1
       },
       {
         "player": "Jamiro Monteiro",
         "position": "CM",
-        "market_value_mil": 0.65
+        "market_value_mil": 1.5
+      },
+      {
+        "player": "Deroy Duarte",
+        "position": "CM",
+        "market_value_mil": 1
+      },
+      {
+        "player": "Stéphane Cueni",
+        "position": "CM",
+        "market_value_mil": 0.4
       },
       {
         "player": "Yannick Semedo",
         "position": "CM",
+        "market_value_mil": 0.4
+      },
+      {
+        "player": "David Costa",
+        "position": "AM",
+        "market_value_mil": 0.8
+      },
+      {
+        "player": "David Tavares",
+        "position": "AM",
         "market_value_mil": 0.25
       },
       {
         "player": "Hélio Varela",
         "position": "WG",
-        "market_value_mil": 2.5
+        "market_value_mil": 2
       },
       {
         "player": "Jovane Cabral",
         "position": "WG",
-        "market_value_mil": 1
+        "market_value_mil": 1.5
+      },
+      {
+        "player": "Duk",
+        "position": "WG",
+        "market_value_mil": 1.2
       },
       {
         "player": "Willy Semedo",
         "position": "WG",
-        "market_value_mil": 1
+        "market_value_mil": 1.2
       },
       {
         "player": "Ryan Mendes",
         "position": "WG",
-        "market_value_mil": 0.2
+        "market_value_mil": 0.7
       },
       {
-        "player": "Telmo Arcanjo",
+        "player": "Heri Tavares",
         "position": "WG",
-        "market_value_mil": 3
+        "market_value_mil": 0.4
       },
       {
-        "player": "Garry Rodrigues",
+        "player": "Rúben Pina",
         "position": "WG",
         "market_value_mil": 0.3
       },
       {
-        "player": "Gilson Benchimol",
-        "position": "ATT",
-        "market_value_mil": 1.2
+        "player": "Ilano Silva Timas",
+        "position": "WG",
+        "market_value_mil": 0.3
+      },
+      {
+        "player": "Garry Rodrigues",
+        "position": "WG",
+        "market_value_mil": 0.9
+      },
+      {
+        "player": "Telmo Arcanjo",
+        "position": "WG",
+        "market_value_mil": 0.8
+      },
+      {
+        "player": "Fabrício Garcia",
+        "position": "WG",
+        "market_value_mil": 0.6
+      },
+      {
+        "player": "Alvin Fortes",
+        "position": "WG",
+        "market_value_mil": 0.4
+      },
+      {
+        "player": "Alessio Da Cruz",
+        "position": "AM",
+        "market_value_mil": 0.6
       },
       {
         "player": "Dailon Livramento",
@@ -1588,9 +1691,14 @@
         "market_value_mil": 0.8
       },
       {
+        "player": "Gilson Benchimol",
+        "position": "ATT",
+        "market_value_mil": 0.7
+      },
+      {
         "player": "Nuno da Costa",
         "position": "ATT",
-        "market_value_mil": 0.4
+        "market_value_mil": 0.65
       }
     ],
     "CRO": [
@@ -2916,134 +3024,204 @@
     ],
     "HAI": [
       {
-        "player": "Alexandre Pierre",
-        "position": "GK",
-        "market_value_mil": 0.7
-      },
-      {
         "player": "Johny Placide",
         "position": "GK",
-        "market_value_mil": 0.15
+        "market_value_mil": 0.2
       },
       {
-        "player": "Josué Duverger",
+        "player": "Garissone Innocent",
         "position": "GK",
         "market_value_mil": 0.05
       },
       {
+        "player": "Alexandre Pierre",
+        "position": "GK",
+        "market_value_mil": 0.05
+      },
+      {
+        "player": "Valendi Odelus",
+        "position": "GK",
+        "market_value_mil": null
+      },
+      {
+        "player": "Josué Duverger",
+        "position": "GK",
+        "market_value_mil": null
+      },
+      {
+        "player": "Tony Algarin",
+        "position": "GK",
+        "market_value_mil": null
+      },
+      {
+        "player": "Grant Leveille",
+        "position": "GK",
+        "market_value_mil": null
+      },
+      {
         "player": "Hannes Delcroix",
         "position": "CB",
-        "market_value_mil": 2
+        "market_value_mil": 4
       },
       {
         "player": "Jean-Kévin Duverne",
         "position": "CB",
-        "market_value_mil": 2
+        "market_value_mil": 3
       },
       {
         "player": "Ricardo Adé",
         "position": "CB",
-        "market_value_mil": 0.3
+        "market_value_mil": 0.35
+      },
+      {
+        "player": "François Dulysse",
+        "position": "CB",
+        "market_value_mil": 0.25
       },
       {
         "player": "Garven Metusala",
         "position": "CB",
-        "market_value_mil": 0.2
+        "market_value_mil": 0.15
       },
       {
         "player": "Keeto Thermoncy",
         "position": "CB",
-        "market_value_mil": 0.1
+        "market_value_mil": 0.025
+      },
+      {
+        "player": "Peterson Pierre-Louis",
+        "position": "CB",
+        "market_value_mil": null
       },
       {
         "player": "Martin Expérience",
         "position": "FB",
-        "market_value_mil": 0.35
+        "market_value_mil": 0.3
       },
       {
         "player": "Duke Lacroix",
         "position": "FB",
-        "market_value_mil": 0.125
+        "market_value_mil": 0.2
       },
       {
         "player": "Carlens Arcus",
         "position": "FB",
-        "market_value_mil": 1.8
+        "market_value_mil": 1.5
+      },
+      {
+        "player": "Stéphane Lambese",
+        "position": "FB",
+        "market_value_mil": 0.3
       },
       {
         "player": "Wilguens Paugain",
         "position": "FB",
-        "market_value_mil": 0.8
+        "market_value_mil": 0.2
       },
       {
         "player": "Danley Jean Jacques",
         "position": "DM",
-        "market_value_mil": 3
+        "market_value_mil": 1.2
       },
       {
-        "player": "Dominique Simon",
+        "player": "Leverton Pierre",
         "position": "DM",
-        "market_value_mil": 0.2
+        "market_value_mil": 0.25
+      },
+      {
+        "player": "Belmar Joseph",
+        "position": "DM",
+        "market_value_mil": 0.1
       },
       {
         "player": "Carl Sainté",
-        "position": "DM",
-        "market_value_mil": 0.125
-      },
-      {
-        "player": "Woodensky Pierre",
         "position": "DM",
         "market_value_mil": 0.1
       },
       {
         "player": "Jean-Ricner Bellegarde",
         "position": "CM",
-        "market_value_mil": 16
+        "market_value_mil": 18
+      },
+      {
+        "player": "Christopher Attys",
+        "position": "CM",
+        "market_value_mil": 0.075
+      },
+      {
+        "player": "Jerry Desdunes",
+        "position": "CM",
+        "market_value_mil": null
       },
       {
         "player": "Derrick Etienne Jr.",
         "position": "WG",
-        "market_value_mil": 0.8
+        "market_value_mil": 1.2
+      },
+      {
+        "player": "Fafà Picault",
+        "position": "WG",
+        "market_value_mil": 0.6
       },
       {
         "player": "Ruben Providence",
         "position": "WG",
-        "market_value_mil": 0.3
+        "market_value_mil": 0.45
+      },
+      {
+        "player": "Dany Jean",
+        "position": "WG",
+        "market_value_mil": 0.4
+      },
+      {
+        "player": "Mikaël Cantave",
+        "position": "WG",
+        "market_value_mil": 0.15
       },
       {
         "player": "Josué Casimir",
         "position": "WG",
-        "market_value_mil": 3
+        "market_value_mil": 3.5
       },
       {
         "player": "Louicius Deedson",
         "position": "WG",
-        "market_value_mil": 1.2
+        "market_value_mil": 1.7
       },
       {
-        "player": "Wilson Isidor",
-        "position": "ATT",
-        "market_value_mil": 18
-      },
-      {
-        "player": "Lenny Joseph",
-        "position": "ATT",
-        "market_value_mil": 2
+        "player": "Téo James Michel",
+        "position": "WG",
+        "market_value_mil": 0.1
       },
       {
         "player": "Frantzdy Pierrot",
         "position": "ATT",
-        "market_value_mil": 1.5
+        "market_value_mil": 3.5
       },
       {
         "player": "Duckens Nazon",
         "position": "ATT",
-        "market_value_mil": 0.8
+        "market_value_mil": 1.3
+      },
+      {
+        "player": "Mondy Prunier",
+        "position": "ATT",
+        "market_value_mil": 0.5
       },
       {
         "player": "Yassin Fortuné",
         "position": "ATT",
         "market_value_mil": 0.3
+      },
+      {
+        "player": "Woobens Pacius",
+        "position": "ATT",
+        "market_value_mil": 0.2
+      },
+      {
+        "player": "Emerson Laïssé",
+        "position": "ATT",
+        "market_value_mil": null
       }
     ],
     "IRN": [
@@ -3531,7 +3709,8 @@
       {
         "player": "Takefusa Kubo",
         "position": "WG",
-        "market_value_mil": 20
+        "market_value_mil": 20,
+        "injured": true
       },
       {
         "player": "Ritsu Doan",
@@ -4770,159 +4949,129 @@
         "market_value_mil": 40
       },
       {
-        "player": "José Sá",
-        "position": "GK",
-        "market_value_mil": 8
-      },
-      {
         "player": "Rui Silva",
         "position": "GK",
-        "market_value_mil": 5
+        "market_value_mil": 7
       },
       {
-        "player": "João Carvalho",
+        "player": "José Sá",
         "position": "GK",
-        "market_value_mil": null
+        "market_value_mil": 3.5
       },
       {
         "player": "Rúben Dias",
         "position": "CB",
-        "market_value_mil": 75
+        "market_value_mil": 55
       },
       {
         "player": "Gonçalo Inácio",
         "position": "CB",
-        "market_value_mil": 45
+        "market_value_mil": 40
       },
       {
-        "player": "António Silva",
+        "player": "Tomás Araújo",
         "position": "CB",
-        "market_value_mil": 38
+        "market_value_mil": 30
       },
       {
         "player": "Renato Veiga",
         "position": "CB",
-        "market_value_mil": 10
+        "market_value_mil": 25
       },
       {
         "player": "Nuno Mendes",
         "position": "FB",
-        "market_value_mil": 55
-      },
-      {
-        "player": "Nuno Tavares",
-        "position": "FB",
-        "market_value_mil": 25
-      },
-      {
-        "player": "Diogo Dalot",
-        "position": "FB",
-        "market_value_mil": 40
+        "market_value_mil": 80
       },
       {
         "player": "Matheus Nunes",
         "position": "FB",
-        "market_value_mil": 40
+        "market_value_mil": 50
+      },
+      {
+        "player": "Diogo Dalot",
+        "position": "FB",
+        "market_value_mil": 30
       },
       {
         "player": "João Cancelo",
         "position": "FB",
-        "market_value_mil": 18
+        "market_value_mil": 8
       },
       {
         "player": "Nélson Semedo",
         "position": "FB",
-        "market_value_mil": 10
+        "market_value_mil": 6
       },
       {
         "player": "Vitinha",
         "position": "DM",
-        "market_value_mil": 55
-      },
-      {
-        "player": "João Palhinha",
-        "position": "DM",
-        "market_value_mil": 40
+        "market_value_mil": 140
       },
       {
         "player": "Rúben Neves",
         "position": "DM",
-        "market_value_mil": 28
+        "market_value_mil": 25
+      },
+      {
+        "player": "Samú Costa",
+        "position": "DM",
+        "market_value_mil": 15
       },
       {
         "player": "João Neves",
         "position": "CM",
-        "market_value_mil": 60
-      },
-      {
-        "player": "Bernardo Silva",
-        "position": "AM",
-        "market_value_mil": 60
-      },
-      {
-        "player": "Bruno Fernandes",
-        "position": "AM",
-        "market_value_mil": 55
+        "market_value_mil": 140
       },
       {
         "player": "Francisco Trincão",
         "position": "AM",
-        "market_value_mil": 27
+        "market_value_mil": 40
       },
       {
-        "player": "Rodrigo Mora",
+        "player": "Bruno Fernandes",
         "position": "AM",
-        "market_value_mil": 10
+        "market_value_mil": 35
+      },
+      {
+        "player": "Bernardo Silva",
+        "position": "AM",
+        "market_value_mil": 22
       },
       {
         "player": "Rafael Leão",
         "position": "WG",
-        "market_value_mil": 75
-      },
-      {
-        "player": "Diogo Jota",
-        "position": "WG",
         "market_value_mil": 50
       },
       {
-        "player": "Pedro Gonçalves",
+        "player": "Gonçalo Guedes",
         "position": "WG",
-        "market_value_mil": 32
+        "market_value_mil": 6
       },
       {
         "player": "Pedro Neto",
         "position": "WG",
-        "market_value_mil": 55
+        "market_value_mil": 60
       },
       {
         "player": "Francisco Conceição",
         "position": "WG",
-        "market_value_mil": 36
-      },
-      {
-        "player": "Geovany Quenda",
-        "position": "WG",
         "market_value_mil": 30
-      },
-      {
-        "player": "Carlos Forbs",
-        "position": "WG",
-        "market_value_mil": 8
       },
       {
         "player": "João Félix",
         "position": "AM",
-        "market_value_mil": 30
+        "market_value_mil": 28
       },
       {
         "player": "Gonçalo Ramos",
         "position": "ATT",
-        "market_value_mil": 50
+        "market_value_mil": 30
       },
       {
         "player": "Cristiano Ronaldo",
         "position": "ATT",
-        "market_value_mil": 12
+        "market_value_mil": 10
       }
     ],
     "QAT": [
@@ -5059,134 +5208,365 @@
     ],
     "RSA": [
       {
-        "player": "Sipho Chaine",
-        "position": "GK",
-        "market_value_mil": 1.6
-      },
-      {
         "player": "Ronwen Williams",
         "position": "GK",
-        "market_value_mil": 0.8
+        "market_value_mil": 1
+      },
+      {
+        "player": "Sipho Chaine",
+        "position": "GK",
+        "market_value_mil": 0.7
       },
       {
         "player": "Ricardo Goss",
         "position": "GK",
-        "market_value_mil": 0.35
+        "market_value_mil": 0.7
       },
       {
-        "player": "Mbekezeli Mbokazi",
-        "position": "CB",
-        "market_value_mil": 3.5
+        "player": "Renaldo Leaner",
+        "position": "GK",
+        "market_value_mil": 0.3
       },
       {
-        "player": "Ime Okon",
-        "position": "CB",
-        "market_value_mil": 2
+        "player": "Andile Mbanjwa",
+        "position": "GK",
+        "market_value_mil": 0.025
       },
       {
-        "player": "Olwethu Makhanya",
+        "player": "Samukelo Xulu",
+        "position": "GK",
+        "market_value_mil": 0.025
+      },
+      {
+        "player": "Kopano Thuntsane",
+        "position": "GK",
+        "market_value_mil": null
+      },
+      {
+        "player": "Siyabonga Ngezana",
         "position": "CB",
-        "market_value_mil": 2
+        "market_value_mil": 2.2,
+        "injured": true
       },
       {
         "player": "Nkosinathi Sibisi",
         "position": "CB",
-        "market_value_mil": 1.6
+        "market_value_mil": 1.4
+      },
+      {
+        "player": "Thabo Moloisane",
+        "position": "CB",
+        "market_value_mil": 0.65
+      },
+      {
+        "player": "Grant Kekana",
+        "position": "CB",
+        "market_value_mil": 0.6
+      },
+      {
+        "player": "Kwanda Mngonyama",
+        "position": "CB",
+        "market_value_mil": 0.25
+      },
+      {
+        "player": "Ramahlwe Mphahlele",
+        "position": "CB",
+        "market_value_mil": 0.15
+      },
+      {
+        "player": "Thabang Molaoa",
+        "position": "CB",
+        "market_value_mil": 0.1
+      },
+      {
+        "player": "Harold Majadibodu",
+        "position": "CB",
+        "market_value_mil": null
+      },
+      {
+        "player": "Tylon Smith",
+        "position": "CB",
+        "market_value_mil": null
+      },
+      {
+        "player": "Malibongwe Khoza",
+        "position": "CB",
+        "market_value_mil": null
       },
       {
         "player": "Khulumani Ndamane",
         "position": "CB",
-        "market_value_mil": 1.2
+        "market_value_mil": null
       },
       {
-        "player": "Samukele Kabini",
-        "position": "FB",
-        "market_value_mil": 2.5
+        "player": "Mbekezeli Mbokazi",
+        "position": "CB",
+        "market_value_mil": null
       },
       {
         "player": "Aubrey Modiba",
         "position": "FB",
-        "market_value_mil": 1.8
+        "market_value_mil": 1.6
       },
       {
-        "player": "Bradley Cross",
-        "position": "FB",
-        "market_value_mil": 1
-      },
-      {
-        "player": "Thabang Matuludi",
+        "player": "Fawaaz Basadien",
         "position": "FB",
         "market_value_mil": 1.2
+      },
+      {
+        "player": "Terrence Mashego",
+        "position": "FB",
+        "market_value_mil": 0.55
+      },
+      {
+        "player": "Samukele Kabini",
+        "position": "FB",
+        "market_value_mil": 0.2
+      },
+      {
+        "player": "Vuyo Letlapa",
+        "position": "FB",
+        "market_value_mil": null
       },
       {
         "player": "Khuliso Mudau",
         "position": "FB",
-        "market_value_mil": 1.2
+        "market_value_mil": 1.4
       },
       {
-        "player": "Kamogelo Sebelebele",
+        "player": "Thapelo Morena",
         "position": "FB",
         "market_value_mil": 1.2
       },
       {
-        "player": "Teboho Mokoena",
-        "position": "DM",
-        "market_value_mil": 2.8
+        "player": "Nyiko Mobbie",
+        "position": "FB",
+        "market_value_mil": 1.2
       },
       {
-        "player": "Thalente Mbatha",
-        "position": "CM",
-        "market_value_mil": 2
+        "player": "Deano Van Rooyen",
+        "position": "FB",
+        "market_value_mil": 1.2
+      },
+      {
+        "player": "Kegan Johannes",
+        "position": "FB",
+        "market_value_mil": 0.85
+      },
+      {
+        "player": "Thabiso Monyane",
+        "position": "FB",
+        "market_value_mil": 0.75
+      },
+      {
+        "player": "Zuko Mdunyelwa",
+        "position": "FB",
+        "market_value_mil": 0.7
+      },
+      {
+        "player": "Kamogelo Sebelebele",
+        "position": "FB",
+        "market_value_mil": 0.55
+      },
+      {
+        "player": "Thabang Matuludi",
+        "position": "FB",
+        "market_value_mil": 0.4
+      },
+      {
+        "player": "Wayde Jooste",
+        "position": "FB",
+        "market_value_mil": 0.1
+      },
+      {
+        "player": "Teboho Mokoena",
+        "position": "DM",
+        "market_value_mil": 2.4
+      },
+      {
+        "player": "Bathusi Aubaas",
+        "position": "DM",
+        "market_value_mil": 0.5
       },
       {
         "player": "Jayden Adams",
         "position": "CM",
-        "market_value_mil": 1.8
+        "market_value_mil": 1
+      },
+      {
+        "player": "Sipho Mbule",
+        "position": "CM",
+        "market_value_mil": 0.8
+      },
+      {
+        "player": "Luke Le Roux",
+        "position": "CM",
+        "market_value_mil": 0.7
+      },
+      {
+        "player": "Thalente Mbatha",
+        "position": "CM",
+        "market_value_mil": 0.35
       },
       {
         "player": "Yaya Sithole",
         "position": "CM",
-        "market_value_mil": 0.6
+        "market_value_mil": 0.275
       },
       {
-        "player": "Themba Zwane",
-        "position": "AM",
+        "player": "Ndamulelo Maphangule",
+        "position": "CM",
         "market_value_mil": 0.25
+      },
+      {
+        "player": "Ntando Nkosi",
+        "position": "CM",
+        "market_value_mil": 0.05
+      },
+      {
+        "player": "Masindi Nemtajela",
+        "position": "CM",
+        "market_value_mil": null
+      },
+      {
+        "player": "Simphiwe Selepe",
+        "position": "CM",
+        "market_value_mil": null
+      },
+      {
+        "player": "Momelezi Dlambewu",
+        "position": "CM",
+        "market_value_mil": null
+      },
+      {
+        "player": "Neo Maema",
+        "position": "AM",
+        "market_value_mil": 1.5
+      },
+      {
+        "player": "Patrick Maswanganyi",
+        "position": "AM",
+        "market_value_mil": 1.4
+      },
+      {
+        "player": "Ndabayithethwa Ndlondlo",
+        "position": "AM",
+        "market_value_mil": 0.85
+      },
+      {
+        "player": "Fortune Makaringe",
+        "position": "AM",
+        "market_value_mil": 0.75
+      },
+      {
+        "player": "Mduduzi Shabalala",
+        "position": "AM",
+        "market_value_mil": 0.55
+      },
+      {
+        "player": "Shandre Campbell",
+        "position": "WG",
+        "market_value_mil": 0.8
       },
       {
         "player": "Relebohile Mofokeng",
         "position": "WG",
-        "market_value_mil": 3
+        "market_value_mil": 0.8
+      },
+      {
+        "player": "Keagan Dolly",
+        "position": "WG",
+        "market_value_mil": 0.6
       },
       {
         "player": "Oswin Appollis",
         "position": "WG",
-        "market_value_mil": 2.5
+        "market_value_mil": 0.6
       },
       {
         "player": "Tshepang Moremi",
         "position": "WG",
-        "market_value_mil": 1.4
+        "market_value_mil": 0.35
       },
       {
-        "player": "Thapelo Maseko",
+        "player": "Tebogo Tlolane",
         "position": "WG",
-        "market_value_mil": 0.75
+        "market_value_mil": 0.3
+      },
+      {
+        "player": "Keletso Makgalwa",
+        "position": "WG",
+        "market_value_mil": null
+      },
+      {
+        "player": "Percy Tau",
+        "position": "WG",
+        "market_value_mil": 1.5
+      },
+      {
+        "player": "Elias Mokwana",
+        "position": "WG",
+        "market_value_mil": 0.9
+      },
+      {
+        "player": "Thamsanqa Masiya",
+        "position": "WG",
+        "market_value_mil": 0.55
+      },
+      {
+        "player": "Menzi Masuku",
+        "position": "WG",
+        "market_value_mil": 0.35
+      },
+      {
+        "player": "Mohau Nkota",
+        "position": "WG",
+        "market_value_mil": null
+      },
+      {
+        "player": "Siyabonga Mashinini",
+        "position": "WG",
+        "market_value_mil": null
       },
       {
         "player": "Lyle Foster",
         "position": "ATT",
-        "market_value_mil": 8
+        "market_value_mil": 9
       },
       {
         "player": "Iqraam Rayners",
         "position": "ATT",
-        "market_value_mil": 2.8
+        "market_value_mil": 1.8
+      },
+      {
+        "player": "Zakhele Lepasa",
+        "position": "ATT",
+        "market_value_mil": 0.65
       },
       {
         "player": "Evidence Makgopa",
         "position": "ATT",
-        "market_value_mil": 1.4
+        "market_value_mil": 0.65
+      },
+      {
+        "player": "Ashley Cupido",
+        "position": "ATT",
+        "market_value_mil": 0.5
+      },
+      {
+        "player": "Yanela Mbuthuma",
+        "position": "ATT",
+        "market_value_mil": 0.5
+      },
+      {
+        "player": "Thabiso Kutumela",
+        "position": "ATT",
+        "market_value_mil": 0.4
+      },
+      {
+        "player": "Sinoxolo Kwayiba",
+        "position": "ATT",
+        "market_value_mil": 0.15
       }
     ],
     "SCO": [
@@ -6224,7 +6604,8 @@
       {
         "player": "Christian Pulisic",
         "position": "WG",
-        "market_value_mil": 40
+        "market_value_mil": 40,
+        "injured": true
       },
       {
         "player": "Álex Zendejas",

@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-06-20T11:15:27.001Z",
+    "current_updated_at": "2026-06-21T11:44:40.370Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -106,6 +106,13 @@
         "minutes_qual": 0,
         "market_value_mil": 28,
         "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Jérémy Doku",
+        "position": "WG",
+        "minutes_qual": 0,
+        "market_value_mil": 75,
+        "reason": "Injured (flagged by transfermarkt)"
       }
     ],
     "BIH": [],
@@ -115,6 +122,13 @@
         "position": "AM",
         "minutes_qual": 0,
         "market_value_mil": 8,
+        "reason": "Injured (flagged by transfermarkt)"
+      },
+      {
+        "player": "Raphinha",
+        "position": "WG",
+        "minutes_qual": 0,
+        "market_value_mil": 70,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -130,7 +144,15 @@
     "CIV": [],
     "COD": [],
     "COL": [],
-    "CPV": [],
+    "CPV": [
+      {
+        "player": "Bruno Varela",
+        "position": "GK",
+        "minutes_qual": 0,
+        "market_value_mil": 4,
+        "reason": "Injured (flagged by transfermarkt)"
+      }
+    ],
     "CRO": [],
     "CUW": [],
     "CZE": [
@@ -153,7 +175,15 @@
     "IRN": [],
     "IRQ": [],
     "JOR": [],
-    "JPN": [],
+    "JPN": [
+      {
+        "player": "Takefusa Kubo",
+        "position": "WG",
+        "minutes_qual": 0,
+        "market_value_mil": 20,
+        "reason": "Injured (flagged by transfermarkt)"
+      }
+    ],
     "KOR": [],
     "KSA": [],
     "MAR": [],
@@ -173,7 +203,15 @@
     "PAR": [],
     "POR": [],
     "QAT": [],
-    "RSA": [],
+    "RSA": [
+      {
+        "player": "Siyabonga Ngezana",
+        "position": "CB",
+        "minutes_qual": 0,
+        "market_value_mil": 2.2,
+        "reason": "Injured (flagged by transfermarkt)"
+      }
+    ],
     "SCO": [],
     "SEN": [],
     "SUI": [],
@@ -196,7 +234,15 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "USA": [],
+    "USA": [
+      {
+        "player": "Christian Pulisic",
+        "position": "WG",
+        "minutes_qual": 0,
+        "market_value_mil": 40,
+        "reason": "Injured (flagged by transfermarkt)"
+      }
+    ],
     "UZB": []
   }
 }
