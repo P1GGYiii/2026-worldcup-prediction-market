@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-06-23T11:59:29.529Z",
+    "updated_at": "2026-06-24T11:45:40.502Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -800,39 +800,19 @@
     ],
     "BRA": [
       {
-        "player": "Ederson",
-        "position": "GK",
-        "market_value_mil": 30
-      },
-      {
         "player": "Alisson",
         "position": "GK",
-        "market_value_mil": 25
+        "market_value_mil": 15
       },
       {
-        "player": "Bento",
+        "player": "Ederson",
         "position": "GK",
-        "market_value_mil": 12
-      },
-      {
-        "player": "Lucas Perri",
-        "position": "GK",
-        "market_value_mil": 8
-      },
-      {
-        "player": "Hugo Souza",
-        "position": "GK",
-        "market_value_mil": 8
-      },
-      {
-        "player": "John Victor",
-        "position": "GK",
-        "market_value_mil": 7
+        "market_value_mil": 10
       },
       {
         "player": "Weverton",
         "position": "GK",
-        "market_value_mil": 1.8
+        "market_value_mil": 0.7
       },
       {
         "player": "Gabriel",
@@ -840,241 +820,116 @@
         "market_value_mil": 75
       },
       {
-        "player": "Murillo",
+        "player": "Bremer",
         "position": "CB",
-        "market_value_mil": 50
-      },
-      {
-        "player": "Éder Militão",
-        "position": "CB",
-        "market_value_mil": 40,
-        "injured": true
+        "market_value_mil": 35
       },
       {
         "player": "Marquinhos",
         "position": "CB",
-        "market_value_mil": 40
+        "market_value_mil": 28
       },
       {
-        "player": "Lucas Beraldo",
+        "player": "Roger Ibañez",
         "position": "CB",
-        "market_value_mil": 30
+        "market_value_mil": 18
       },
       {
-        "player": "Alexsandro",
+        "player": "Léo Pereira",
         "position": "CB",
         "market_value_mil": 12
-      },
-      {
-        "player": "Léo Ortiz",
-        "position": "CB",
-        "market_value_mil": 11
-      },
-      {
-        "player": "Fabrício Bruno",
-        "position": "CB",
-        "market_value_mil": 7
       },
       {
         "player": "Danilo",
         "position": "CB",
-        "market_value_mil": 4
-      },
-      {
-        "player": "Carlos Augusto",
-        "position": "FB",
-        "market_value_mil": 22
-      },
-      {
-        "player": "Caio Henrique",
-        "position": "FB",
-        "market_value_mil": 18
-      },
-      {
-        "player": "Guilherme Arana",
-        "position": "FB",
-        "market_value_mil": 13
+        "market_value_mil": 2
       },
       {
         "player": "Douglas Santos",
         "position": "FB",
-        "market_value_mil": 10
-      },
-      {
-        "player": "Luciano Juba",
-        "position": "FB",
-        "market_value_mil": 3,
-        "injured": true
+        "market_value_mil": 7.5
       },
       {
         "player": "Alex Sandro",
         "position": "FB",
-        "market_value_mil": 1.8
-      },
-      {
-        "player": "Vanderson",
-        "position": "FB",
-        "market_value_mil": 20
-      },
-      {
-        "player": "Wesley",
-        "position": "FB",
-        "market_value_mil": 9,
-        "injured": true
-      },
-      {
-        "player": "Vitinho",
-        "position": "FB",
-        "market_value_mil": 6
-      },
-      {
-        "player": "Paulo Henrique",
-        "position": "FB",
-        "market_value_mil": 1.7
-      },
-      {
-        "player": "André",
-        "position": "DM",
-        "market_value_mil": 25
+        "market_value_mil": 1
       },
       {
         "player": "Fabinho",
         "position": "DM",
-        "market_value_mil": 18
+        "market_value_mil": 12
       },
       {
         "player": "Casemiro",
         "position": "DM",
-        "market_value_mil": 12
+        "market_value_mil": 6
       },
       {
         "player": "Bruno Guimarães",
         "position": "CM",
-        "market_value_mil": 80
+        "market_value_mil": 70
       },
       {
         "player": "Éderson",
         "position": "CM",
-        "market_value_mil": 50
+        "market_value_mil": 45
       },
       {
-        "player": "Joelinton",
+        "player": "Danilo",
         "position": "CM",
-        "market_value_mil": 40
-      },
-      {
-        "player": "João Gomes",
-        "position": "CM",
-        "market_value_mil": 40
-      },
-      {
-        "player": "Andrey Santos",
-        "position": "CM",
-        "market_value_mil": 25
-      },
-      {
-        "player": "Andreas Pereira",
-        "position": "CM",
-        "market_value_mil": 20
-      },
-      {
-        "player": "Gerson",
-        "position": "CM",
-        "market_value_mil": 20
-      },
-      {
-        "player": "Jean Lucas",
-        "position": "CM",
-        "market_value_mil": 8
+        "market_value_mil": 32
       },
       {
         "player": "Lucas Paquetá",
         "position": "AM",
-        "market_value_mil": 40
+        "market_value_mil": 32
+      },
+      {
+        "player": "Neymar",
+        "position": "AM",
+        "market_value_mil": 8,
+        "injured": true
       },
       {
         "player": "Vinicius Junior",
         "position": "WG",
-        "market_value_mil": 200
+        "market_value_mil": 140
       },
       {
         "player": "Raphinha",
         "position": "WG",
-        "market_value_mil": 80,
+        "market_value_mil": 70,
         "injured": true
-      },
-      {
-        "player": "Savinho",
-        "position": "WG",
-        "market_value_mil": 55
       },
       {
         "player": "Gabriel Martinelli",
         "position": "WG",
-        "market_value_mil": 55
+        "market_value_mil": 45
       },
       {
-        "player": "Samuel Lino",
+        "player": "Rayan",
         "position": "WG",
-        "market_value_mil": 25
-      },
-      {
-        "player": "Rodrygo",
-        "position": "WG",
-        "market_value_mil": 100,
-        "injured": true
-      },
-      {
-        "player": "Estêvão",
-        "position": "WG",
-        "market_value_mil": 50,
-        "injured": true
+        "market_value_mil": 60
       },
       {
         "player": "Luiz Henrique",
         "position": "WG",
-        "market_value_mil": 22
-      },
-      {
-        "player": "Antony",
-        "position": "WG",
-        "market_value_mil": 20
-      },
-      {
-        "player": "João Pedro",
-        "position": "ATT",
-        "market_value_mil": 50
+        "market_value_mil": 24
       },
       {
         "player": "Matheus Cunha",
         "position": "ATT",
-        "market_value_mil": 50
+        "market_value_mil": 75
+      },
+      {
+        "player": "Igor Thiago",
+        "position": "ATT",
+        "market_value_mil": 65
       },
       {
         "player": "Endrick",
         "position": "ATT",
         "market_value_mil": 40
-      },
-      {
-        "player": "Richarlison",
-        "position": "ATT",
-        "market_value_mil": 30
-      },
-      {
-        "player": "Vitor Roque",
-        "position": "ATT",
-        "market_value_mil": 20,
-        "injured": true
-      },
-      {
-        "player": "Igor Jesus",
-        "position": "ATT",
-        "market_value_mil": 15
-      },
-      {
-        "player": "Kaio Jorge",
-        "position": "ATT",
-        "market_value_mil": 4.5
       }
     ],
     "CAN": [
@@ -2208,6 +2063,11 @@
         "market_value_mil": 7
       },
       {
+        "player": "Pedro Vite",
+        "position": "CM",
+        "market_value_mil": 6
+      },
+      {
         "player": "Alan Franco",
         "position": "CM",
         "market_value_mil": 4.5
@@ -2216,11 +2076,6 @@
         "player": "Kendry Páez",
         "position": "AM",
         "market_value_mil": 8
-      },
-      {
-        "player": "Pedro Vite",
-        "position": "AM",
-        "market_value_mil": 6
       },
       {
         "player": "Nilson Angulo",
@@ -4437,7 +4292,8 @@
       {
         "player": "Julian Ryerson",
         "position": "FB",
-        "market_value_mil": 25
+        "market_value_mil": 25,
+        "injured": true
       },
       {
         "player": "Marcus Pedersen",
@@ -4940,8 +4796,7 @@
       {
         "player": "Tomás Araújo",
         "position": "CB",
-        "market_value_mil": 30,
-        "injured": true
+        "market_value_mil": 30
       },
       {
         "player": "Renato Veiga",
