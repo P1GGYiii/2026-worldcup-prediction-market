@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-06-25T11:38:59.350Z",
+    "updated_at": "2026-06-26T11:45:23.078Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -887,8 +887,7 @@
       {
         "player": "Neymar",
         "position": "AM",
-        "market_value_mil": 8,
-        "injured": true
+        "market_value_mil": 8
       },
       {
         "player": "Vinicius Junior",
@@ -1114,8 +1113,7 @@
       {
         "player": "Wilfried Singo",
         "position": "FB",
-        "market_value_mil": 23,
-        "injured": true
+        "market_value_mil": 23
       },
       {
         "player": "Guéla Doué",
@@ -1918,7 +1916,8 @@
       {
         "player": "Tomáš Souček",
         "position": "DM",
-        "market_value_mil": 10
+        "market_value_mil": 10,
+        "injured": true
       },
       {
         "player": "Michal Sadílek",
@@ -4189,8 +4188,7 @@
       {
         "player": "Quinten Timber",
         "position": "CM",
-        "market_value_mil": 25,
-        "injured": true
+        "market_value_mil": 25
       },
       {
         "player": "Justin Kluivert",
@@ -4986,7 +4984,7 @@
         "market_value_mil": 0.25
       },
       {
-        "player": "Hasan Al-Haydos",
+        "player": "Hassan Al-Haydos",
         "position": "AM",
         "market_value_mil": 0.3
       },
@@ -5471,7 +5469,8 @@
       {
         "player": "Miro Muheim",
         "position": "FB",
-        "market_value_mil": 5
+        "market_value_mil": 5,
+        "injured": true
       },
       {
         "player": "Ricardo Rodríguez",
@@ -6198,8 +6197,7 @@
       {
         "player": "Christian Pulisic",
         "position": "WG",
-        "market_value_mil": 40,
-        "injured": true
+        "market_value_mil": 40
       },
       {
         "player": "Álex Zendejas",
