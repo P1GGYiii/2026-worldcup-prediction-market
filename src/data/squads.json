@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-06-26T11:45:23.078Z",
+    "updated_at": "2026-06-27T10:58:28.567Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -5302,7 +5302,8 @@
       {
         "player": "Edouard Mendy",
         "position": "GK",
-        "market_value_mil": 4
+        "market_value_mil": 4,
+        "injured": true
       },
       {
         "player": "Mory Diaw",
