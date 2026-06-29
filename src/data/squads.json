@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-06-28T11:05:14.950Z",
+    "updated_at": "2026-06-29T13:04:43.812Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -3303,7 +3303,8 @@
       {
         "player": "Aymen Hussein",
         "position": "ATT",
-        "market_value_mil": 0.4
+        "market_value_mil": 0.4,
+        "injured": true
       },
       {
         "player": "Ali Yousif",
@@ -4290,8 +4291,7 @@
       {
         "player": "Julian Ryerson",
         "position": "FB",
-        "market_value_mil": 25,
-        "injured": true
+        "market_value_mil": 25
       },
       {
         "player": "Marcus Pedersen",
@@ -5974,8 +5974,7 @@
       {
         "player": "Ronald Araujo",
         "position": "CB",
-        "market_value_mil": 20,
-        "injured": true
+        "market_value_mil": 20
       },
       {
         "player": "Santiago Bueno",
@@ -6025,7 +6024,8 @@
       {
         "player": "Manuel Ugarte",
         "position": "DM",
-        "market_value_mil": 25
+        "market_value_mil": 25,
+        "injured": true
       },
       {
         "player": "Rodrigo Bentancur",
@@ -6055,8 +6055,7 @@
       {
         "player": "Giorgian de Arrascaeta",
         "position": "AM",
-        "market_value_mil": 14,
-        "injured": true
+        "market_value_mil": 14
       },
       {
         "player": "Brian Rodríguez",
