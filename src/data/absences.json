@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-07-02T11:32:29.972Z",
+    "current_updated_at": "2026-07-03T11:31:31.848Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -87,16 +87,32 @@
     }
   },
   "current": {
-    "ALG": [],
+    "ALG": [
+      {
+        "player": "Mohamed Amoura",
+        "position": "ATT",
+        "minutes_qual": 0,
+        "market_value_mil": 20,
+        "reason": "Injured (flagged by transfermarkt)"
+      }
+    ],
     "ARG": [],
-    "AUS": [],
+    "AUS": [
+      {
+        "player": "Jacob Italiano",
+        "position": "FB",
+        "minutes_qual": 0,
+        "market_value_mil": 0.6,
+        "reason": "Injured (flagged by transfermarkt)"
+      }
+    ],
     "AUT": [],
     "BEL": [
       {
         "player": "Zeno Debast",
         "position": "CB",
         "minutes_qual": 0,
-        "market_value_mil": 24,
+        "market_value_mil": 28,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
@@ -151,15 +167,7 @@
     "ECU": [],
     "EGY": [],
     "ENG": [],
-    "ESP": [
-      {
-        "player": "Nico Williams",
-        "position": "WG",
-        "minutes_qual": 0,
-        "market_value_mil": 40,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "ESP": [],
     "FRA": [],
     "GER": [
       {
@@ -200,10 +208,10 @@
     ],
     "SUI": [
       {
-        "player": "Miro Muheim",
-        "position": "FB",
+        "player": "Luca Jaquez",
+        "position": "CB",
         "minutes_qual": 0,
-        "market_value_mil": 5,
+        "market_value_mil": 10,
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
