@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-07-03T11:31:31.850Z",
+    "updated_at": "2026-07-04T10:54:37.768Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -115,11 +115,6 @@
         "player": "Farès Ghedjemis",
         "position": "WG",
         "market_value_mil": 7.5
-      },
-      {
-        "player": "Riyad Mahrez",
-        "position": "WG",
-        "market_value_mil": 5
       },
       {
         "player": "Amine Gouiri",
@@ -2585,7 +2580,8 @@
       {
         "player": "Aurélien Tchouaméni",
         "position": "DM",
-        "market_value_mil": 70
+        "market_value_mil": 70,
+        "injured": true
       },
       {
         "player": "N'Golo Kanté",
@@ -5520,6 +5516,11 @@
         "market_value_mil": 3
       },
       {
+        "player": "Christian Fassnacht",
+        "position": "CM",
+        "market_value_mil": 2
+      },
+      {
         "player": "Fabian Rieder",
         "position": "AM",
         "market_value_mil": 12
@@ -5538,11 +5539,6 @@
         "player": "Dan Ndoye",
         "position": "WG",
         "market_value_mil": 32
-      },
-      {
-        "player": "Christian Fassnacht",
-        "position": "WG",
-        "market_value_mil": 2
       },
       {
         "player": "Breel Embolo",
