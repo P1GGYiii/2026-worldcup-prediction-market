@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-07-06T12:44:08.584Z",
+    "updated_at": "2026-07-07T11:46:40.655Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -115,6 +115,11 @@
         "player": "Farès Ghedjemis",
         "position": "WG",
         "market_value_mil": 7.5
+      },
+      {
+        "player": "Riyad Mahrez",
+        "position": "WG",
+        "market_value_mil": 5
       },
       {
         "player": "Amine Gouiri",
@@ -549,8 +554,7 @@
       {
         "player": "Zeno Debast",
         "position": "CB",
-        "market_value_mil": 28,
-        "injured": true
+        "market_value_mil": 28
       },
       {
         "player": "Nathan Ngoy",
@@ -895,8 +899,7 @@
       {
         "player": "Raphinha",
         "position": "WG",
-        "market_value_mil": 70,
-        "injured": true
+        "market_value_mil": 70
       },
       {
         "player": "Gabriel Martinelli",
@@ -1283,7 +1286,7 @@
       {
         "player": "Gaël Kakuta",
         "position": "AM",
-        "market_value_mil": 0.25
+        "market_value_mil": null
       },
       {
         "player": "Nathanaël Mbuku",
@@ -1455,7 +1458,8 @@
       {
         "player": "Jhon Córdoba",
         "position": "ATT",
-        "market_value_mil": 10
+        "market_value_mil": 10,
+        "injured": true
       }
     ],
     "CPV": [
@@ -2316,7 +2320,8 @@
       {
         "player": "Jordan Henderson",
         "position": "DM",
-        "market_value_mil": 1.2
+        "market_value_mil": 1.2,
+        "injured": true
       },
       {
         "player": "Declan Rice",
@@ -2580,8 +2585,7 @@
       {
         "player": "Aurélien Tchouaméni",
         "position": "DM",
-        "market_value_mil": 70,
-        "injured": true
+        "market_value_mil": 70
       },
       {
         "player": "N'Golo Kanté",
@@ -3927,7 +3931,8 @@
       {
         "player": "Ismael Saibari",
         "position": "AM",
-        "market_value_mil": 40
+        "market_value_mil": 40,
+        "injured": true
       },
       {
         "player": "Bilal El Khannouss",
@@ -5498,7 +5503,8 @@
       {
         "player": "Johan Manzambi",
         "position": "CM",
-        "market_value_mil": 50
+        "market_value_mil": 50,
+        "injured": true
       },
       {
         "player": "Djibril Sow",
