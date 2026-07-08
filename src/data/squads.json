@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-07-07T11:46:40.655Z",
+    "updated_at": "2026-07-08T11:02:31.638Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -314,7 +314,8 @@
       {
         "player": "Jordan Bos",
         "position": "FB",
-        "market_value_mil": 12
+        "market_value_mil": 12,
+        "injured": true
       },
       {
         "player": "Aziz Behich",
@@ -599,7 +600,8 @@
       {
         "player": "Amadou Onana",
         "position": "DM",
-        "market_value_mil": 45
+        "market_value_mil": 45,
+        "injured": true
       },
       {
         "player": "Nicolas Raskin",
@@ -1708,7 +1710,8 @@
       {
         "player": "Andrej Kramaric",
         "position": "AM",
-        "market_value_mil": 2.5
+        "market_value_mil": 2.5,
+        "injured": true
       },
       {
         "player": "Igor Matanovic",
@@ -1875,7 +1878,7 @@
         "market_value_mil": 2
       },
       {
-        "player": "Ladislav Krejčí",
+        "player": "Ladislav Krejci",
         "position": "CB",
         "market_value_mil": 22
       },
@@ -2148,7 +2151,8 @@
       {
         "player": "Mohamed Abdelmonem",
         "position": "CB",
-        "market_value_mil": 2.5
+        "market_value_mil": 2.5,
+        "injured": true
       },
       {
         "player": "Hossam Abdelmaguid",
@@ -2168,7 +2172,8 @@
       {
         "player": "Ahmed Fatouh",
         "position": "FB",
-        "market_value_mil": 1
+        "market_value_mil": 1,
+        "injured": true
       },
       {
         "player": "Karim Hafez",
@@ -2608,6 +2613,11 @@
         "market_value_mil": 18
       },
       {
+        "player": "Michael Olise",
+        "position": "AM",
+        "market_value_mil": 150
+      },
+      {
         "player": "Rayan Cherki",
         "position": "AM",
         "market_value_mil": 90
@@ -2616,11 +2626,6 @@
         "player": "Bradley Barcola",
         "position": "WG",
         "market_value_mil": 70
-      },
-      {
-        "player": "Michael Olise",
-        "position": "WG",
-        "market_value_mil": 150
       },
       {
         "player": "Désiré Doué",
@@ -4806,7 +4811,8 @@
       {
         "player": "Nuno Mendes",
         "position": "FB",
-        "market_value_mil": 80
+        "market_value_mil": 80,
+        "injured": true
       },
       {
         "player": "Matheus Nunes",
