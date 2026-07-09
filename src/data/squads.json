@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-07-08T11:02:31.638Z",
+    "updated_at": "2026-07-09T11:55:34.492Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -1460,8 +1460,7 @@
       {
         "player": "Jhon Córdoba",
         "position": "ATT",
-        "market_value_mil": 10,
-        "injured": true
+        "market_value_mil": 10
       }
     ],
     "CPV": [
