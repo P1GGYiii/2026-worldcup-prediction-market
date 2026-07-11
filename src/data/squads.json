@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-07-10T11:48:49.450Z",
+    "updated_at": "2026-07-11T10:18:09.486Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -2612,11 +2612,6 @@
         "market_value_mil": 18
       },
       {
-        "player": "Michael Olise",
-        "position": "AM",
-        "market_value_mil": 150
-      },
-      {
         "player": "Rayan Cherki",
         "position": "AM",
         "market_value_mil": 90
@@ -2625,6 +2620,11 @@
         "player": "Bradley Barcola",
         "position": "WG",
         "market_value_mil": 70
+      },
+      {
+        "player": "Michael Olise",
+        "position": "WG",
+        "market_value_mil": 150
       },
       {
         "player": "Désiré Doué",
@@ -2849,7 +2849,8 @@
       {
         "player": "Marvin Senaya",
         "position": "FB",
-        "market_value_mil": 3
+        "market_value_mil": 3,
+        "injured": true
       },
       {
         "player": "Elisha Owusu",
@@ -3935,8 +3936,7 @@
       {
         "player": "Ismael Saibari",
         "position": "AM",
-        "market_value_mil": 40,
-        "injured": true
+        "market_value_mil": 40
       },
       {
         "player": "Bilal El Khannouss",
@@ -6206,7 +6206,8 @@
       {
         "player": "Christian Pulisic",
         "position": "WG",
-        "market_value_mil": 40
+        "market_value_mil": 40,
+        "injured": true
       },
       {
         "player": "Álex Zendejas",
