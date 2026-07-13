@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-07-12T10:24:12.081Z",
+    "updated_at": "2026-07-13T12:02:22.813Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -265,7 +265,7 @@
         "market_value_mil": 85
       },
       {
-        "player": "Flaco López",
+        "player": "José Manuel López",
         "position": "ATT",
         "market_value_mil": 25
       }
@@ -2324,8 +2324,7 @@
       {
         "player": "Jordan Henderson",
         "position": "DM",
-        "market_value_mil": 1.2,
-        "injured": true
+        "market_value_mil": 1.2
       },
       {
         "player": "Declan Rice",
@@ -5118,11 +5117,6 @@
         "market_value_mil": 2
       },
       {
-        "player": "Jayden Adams",
-        "position": "CM",
-        "market_value_mil": 1.8
-      },
-      {
         "player": "Yaya Sithole",
         "position": "CM",
         "market_value_mil": 0.6
@@ -5462,8 +5456,7 @@
       {
         "player": "Luca Jaquez",
         "position": "CB",
-        "market_value_mil": 10,
-        "injured": true
+        "market_value_mil": 10
       },
       {
         "player": "Nico Elvedi",

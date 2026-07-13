@@ -16,7 +16,7 @@
     },
     "historical_note": "Historical seed restricted to OUT-FROM-START cases that are publicly documented. Partial absences (injuries mid-tournament) are noted but excluded from calibration to keep the signal clean.",
     "compiled_at": "2026-05-17",
-    "current_updated_at": "2026-07-12T10:24:12.079Z",
+    "current_updated_at": "2026-07-13T12:02:22.811Z",
     "current_source": "transfermarkt squad pages (injury flag)"
   },
   "historical": {
@@ -189,15 +189,7 @@
         "reason": "Injured (flagged by transfermarkt)"
       }
     ],
-    "ENG": [
-      {
-        "player": "Jordan Henderson",
-        "position": "DM",
-        "minutes_qual": 0,
-        "market_value_mil": 1.2,
-        "reason": "Injured (flagged by transfermarkt)"
-      }
-    ],
+    "ENG": [],
     "ESP": [],
     "FRA": [],
     "GER": [
@@ -254,13 +246,6 @@
       }
     ],
     "SUI": [
-      {
-        "player": "Luca Jaquez",
-        "position": "CB",
-        "minutes_qual": 0,
-        "market_value_mil": 10,
-        "reason": "Injured (flagged by transfermarkt)"
-      },
       {
         "player": "Johan Manzambi",
         "position": "CM",
