@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-07-13T12:02:22.813Z",
+    "updated_at": "2026-07-14T10:44:03.426Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -4590,7 +4590,8 @@
       {
         "player": "Adalberto Carrasquilla",
         "position": "CM",
-        "market_value_mil": 4
+        "market_value_mil": 4,
+        "injured": true
       },
       {
         "player": "José Luis Rodríguez",
