@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-07-14T10:44:03.426Z",
+    "updated_at": "2026-07-15T10:49:44.795Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
@@ -4778,130 +4778,160 @@
         "market_value_mil": 40
       },
       {
-        "player": "Rui Silva",
-        "position": "GK",
-        "market_value_mil": 7
-      },
-      {
         "player": "José Sá",
         "position": "GK",
-        "market_value_mil": 3.5
+        "market_value_mil": 8
+      },
+      {
+        "player": "Rui Silva",
+        "position": "GK",
+        "market_value_mil": 5
+      },
+      {
+        "player": "João Carvalho",
+        "position": "GK",
+        "market_value_mil": null
       },
       {
         "player": "Rúben Dias",
         "position": "CB",
-        "market_value_mil": 55
+        "market_value_mil": 75
       },
       {
         "player": "Gonçalo Inácio",
         "position": "CB",
-        "market_value_mil": 40
+        "market_value_mil": 45
       },
       {
-        "player": "Tomás Araújo",
+        "player": "António Silva",
         "position": "CB",
-        "market_value_mil": 30
+        "market_value_mil": 38
       },
       {
         "player": "Renato Veiga",
         "position": "CB",
-        "market_value_mil": 25
+        "market_value_mil": 10
       },
       {
         "player": "Nuno Mendes",
         "position": "FB",
-        "market_value_mil": 80,
+        "market_value_mil": 55,
         "injured": true
       },
       {
-        "player": "Matheus Nunes",
+        "player": "Nuno Tavares",
         "position": "FB",
-        "market_value_mil": 50
+        "market_value_mil": 25
       },
       {
         "player": "Diogo Dalot",
         "position": "FB",
-        "market_value_mil": 30
+        "market_value_mil": 40
+      },
+      {
+        "player": "Matheus Nunes",
+        "position": "FB",
+        "market_value_mil": 40
       },
       {
         "player": "João Cancelo",
         "position": "FB",
-        "market_value_mil": 8
+        "market_value_mil": 18
       },
       {
         "player": "Nélson Semedo",
         "position": "FB",
-        "market_value_mil": 6
+        "market_value_mil": 10
       },
       {
         "player": "Vitinha",
         "position": "DM",
-        "market_value_mil": 140
+        "market_value_mil": 55
+      },
+      {
+        "player": "João Palhinha",
+        "position": "DM",
+        "market_value_mil": 40
       },
       {
         "player": "Rúben Neves",
         "position": "DM",
-        "market_value_mil": 25
-      },
-      {
-        "player": "Samú Costa",
-        "position": "DM",
-        "market_value_mil": 15
+        "market_value_mil": 28
       },
       {
         "player": "João Neves",
         "position": "CM",
-        "market_value_mil": 140
-      },
-      {
-        "player": "Francisco Trincão",
-        "position": "AM",
-        "market_value_mil": 40
-      },
-      {
-        "player": "Bruno Fernandes",
-        "position": "AM",
-        "market_value_mil": 35
+        "market_value_mil": 60
       },
       {
         "player": "Bernardo Silva",
         "position": "AM",
-        "market_value_mil": 22
+        "market_value_mil": 60
+      },
+      {
+        "player": "Bruno Fernandes",
+        "position": "AM",
+        "market_value_mil": 55
+      },
+      {
+        "player": "Francisco Trincão",
+        "position": "AM",
+        "market_value_mil": 27
+      },
+      {
+        "player": "Rodrigo Mora",
+        "position": "AM",
+        "market_value_mil": 10
       },
       {
         "player": "Rafael Leão",
         "position": "WG",
+        "market_value_mil": 75
+      },
+      {
+        "player": "Diogo Jota",
+        "position": "WG",
         "market_value_mil": 50
       },
       {
-        "player": "Gonçalo Guedes",
+        "player": "Pedro Gonçalves",
         "position": "WG",
-        "market_value_mil": 6
+        "market_value_mil": 32
       },
       {
         "player": "Pedro Neto",
         "position": "WG",
-        "market_value_mil": 60
+        "market_value_mil": 55
       },
       {
         "player": "Francisco Conceição",
         "position": "WG",
+        "market_value_mil": 36
+      },
+      {
+        "player": "Geovany Quenda",
+        "position": "WG",
         "market_value_mil": 30
+      },
+      {
+        "player": "Carlos Forbs",
+        "position": "WG",
+        "market_value_mil": 8
       },
       {
         "player": "João Félix",
         "position": "AM",
-        "market_value_mil": 28
+        "market_value_mil": 30
       },
       {
         "player": "Gonçalo Ramos",
         "position": "ATT",
-        "market_value_mil": 30
+        "market_value_mil": 50
       },
       {
         "player": "Cristiano Ronaldo",
         "position": "ATT",
-        "market_value_mil": 10
+        "market_value_mil": 12
       }
     ],
     "QAT": [
