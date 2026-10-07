@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Full national-team squads scraped from transfermarkt. Powers the 'what if X gets injured' scenario panel in TeamDetailDrawer. Refreshed by the daily fetch-absences cron alongside absences.json.",
-    "updated_at": "2026-10-06T15:41:15.069Z",
+    "updated_at": "2026-10-07T16:02:00.292Z",
     "source": "transfermarkt squad pages"
   },
   "squads": {
